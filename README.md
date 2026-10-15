@@ -65,7 +65,7 @@ Runs are generated in CARLA 0.9.15 with the Autoware localization stack (NDT sca
 error monitor) on a pinned workspace. A perturbation node rewrites every LiDAR scan according to a
 recipe (dropout, range clip, sector removal or thinning, rigid translation and rotation,
 lateral / longitudinal / yaw shear), scheduled by route progress, while the logger records the
-matcher's internal signals and the ground-truth pose at 10 Hz. The 334 archived runs cover a
+matcher's internal signals and the ground-truth pose at 10 Hz. The 334 runs behind the shipped results cover a
 development cohort, an in-route holdout, a cross-route set, speed-profile and high-intensity
 stress sets, and runs with the matcher's Hessian covariance output enabled.
 
@@ -91,7 +91,7 @@ threads), 32 GB RAM, NVIDIA RTX 3090 (24 GB).
 | what you want to run | needs |
 |---|---|
 | scoring, tables and figures from the shipped files | Linux or macOS, Python 3.10, about 2 GB RAM; no GPU. The scripts use up to 12 threads (`n_jobs` in `meldloc_core.py`) and simply take longer on fewer cores. On this machine: re-scoring the development split about 2 min, the model-component ablations about 10 min, the seed-variability retraining about 30 min (2 min per seed and axis), the feature-pruning retraining about 70 min (5 min per configuration) |
-| rerunning the pipeline from run logs | the above plus the run logs (0.9 GB for the archived cohorts, not in the repository); feature extraction reads every log once (a few minutes) |
+| rerunning the pipeline from run logs | the above plus run logs (0.9 GB for the original cohorts, which are not in the repository); feature extraction reads every log once (a few minutes) |
 | generating new runs | Ubuntu 22.04, ROS 2 Humble, the Autoware workspace of `env/README.md` (about 5 GB built), CARLA 0.9.15 (19 GB) and the two maps (0.9 GB); an NVIDIA GPU for CARLA (run at `-quality-level=Low`, the RTX 3090 is far more than needed). One run takes about 6 min wall-clock including the CARLA restart, so a full role is hours to a day |
 
 ## Installation
@@ -130,7 +130,7 @@ python3 models/meldloc/coverage_timing_analyses.py condcov capraw delay latency 
 
 `models/README.md` lists every script with its inputs and outputs.
 
-To generate runs instead of using the archived ones, run one script per role from `datagen/`.
+To generate runs, run one script per role from `datagen/`.
 Each reads its cohort table, restarts CARLA before every run and appends to a ledger:
 
 ```
@@ -138,7 +138,7 @@ cd datagen && ./generate_holdout.sh              # likewise generate_development
 ```
 
 CARLA is not deterministic, so regenerated runs follow the same recipes but are not identical to
-the archived logs.
+the original logs.
 
 ## Data
 
