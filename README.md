@@ -90,7 +90,7 @@ threads), 32 GB RAM, NVIDIA RTX 3090 (24 GB).
 
 | what you want to run | needs |
 |---|---|
-| scoring, tables and figures from the shipped files | Linux or macOS, Python 3.10, about 2 GB RAM; no GPU. The scripts use up to 12 threads (`n_jobs` in `meldloc_core.py`) and simply take longer on fewer cores: re-scoring the development split takes about 2 min, the feature-pruning and seed-variability retrainings about 30 min each on this machine |
+| scoring, tables and figures from the shipped files | Linux or macOS, Python 3.10, about 2 GB RAM; no GPU. The scripts use up to 12 threads (`n_jobs` in `meldloc_core.py`) and simply take longer on fewer cores. On this machine: re-scoring the development split about 2 min, the model-component ablations about 10 min, the seed-variability retraining about 30 min (2 min per seed and axis), the feature-pruning retraining about 70 min (5 min per configuration) |
 | rerunning the pipeline from run logs | the above plus the run logs (0.9 GB for the archived cohorts, not in the repository); feature extraction reads every log once (a few minutes) |
 | generating new runs | Ubuntu 22.04, ROS 2 Humble, the Autoware workspace of `env/README.md` (about 5 GB built), CARLA 0.9.15 (19 GB) and the two maps (0.9 GB); an NVIDIA GPU for CARLA (run at `-quality-level=Low`, the RTX 3090 is far more than needed). One run takes about 6 min wall-clock including the CARLA restart, so a full role is hours to a day |
 
