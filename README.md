@@ -83,6 +83,17 @@ figures/        plotting scripts
 docs/images/    figures for this page
 ```
 
+## Requirements
+
+Everything was developed and run on one desktop: Ubuntu 22.04, AMD Ryzen 9 9900X (12 cores / 24
+threads), 32 GB RAM, NVIDIA RTX 3090 (24 GB).
+
+| what you want to run | needs |
+|---|---|
+| scoring, tables and figures from the shipped files | Linux or macOS, Python 3.10, about 2 GB RAM; no GPU. The scripts use up to 12 threads (`n_jobs` in `meldloc_core.py`) and simply take longer on fewer cores: re-scoring the development split takes about 2 min, the feature-pruning and seed-variability retrainings about 30 min each on this machine |
+| rerunning the pipeline from the run logs | the above plus the data archive (0.9 GB of logs); feature extraction reads every log once (a few minutes) |
+| generating new runs | Ubuntu 22.04, ROS 2 Humble, the Autoware workspace of `env/README.md` (about 5 GB built), CARLA 0.9.15 (19 GB) and the two maps (0.9 GB); an NVIDIA GPU for CARLA (run at `-quality-level=Low`, the RTX 3090 is far more than needed). One run takes about 6 min wall-clock including the CARLA restart, so a full role is hours to a day |
+
 ## Installation
 
 Python 3.10 with the pinned packages:
