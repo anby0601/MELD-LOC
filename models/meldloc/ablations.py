@@ -52,8 +52,7 @@ def main():
     last_cols = np.array([f.endswith("|2s|last") for f in fname])
     qm = json.loads(QMULTI.read_text())
 
-    res = {"status": "REGISTERED_ABLATIONS (rev.9) — dev, NON_CONFIRMATORY, "
-                     "frozen assets unchanged",
+    res = {"status": "REGISTERED_ABLATIONS (dev-val; frozen assets unchanged)",
            "n_boot": N_BOOT, "axes": {}}
 
     for ax in ("lon", "lat", "yaw"):

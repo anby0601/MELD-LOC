@@ -89,8 +89,7 @@ def main():
     gw_va = mc.group_equal_weights(grp[va])
     gbdt = mc.GBDT_DEFAULT
 
-    res = {"status": "REGISTERED_BASELINE_IMPLEMENTATION_FIX (rev.6) — "
-                     "dev-val scoring",
+    res = {"status": "DISTRIBUTIONAL_BASELINES (dev-val scoring)",
            "spec": "Q-multi q10..q90 in asinh space, maximum.accumulate, arcsinh piecewise-linear, "
                    "clipped extrapolation / K-indep calibrated: is_unbalance=False + dev isotonic "
                    "(equal group weights, same procedure as MELD)",

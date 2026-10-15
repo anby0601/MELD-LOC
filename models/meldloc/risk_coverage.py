@@ -48,7 +48,7 @@ def main():
     grp = Z["recipe_group"].astype(str)
     tr, va = split == "train", split == "validation"
 
-    res = {"status": "REGISTERED_METRIC_COMPLETION (rev.7) — dev, NON_CONFIRMATORY",
+    res = {"status": "RISK_COVERAGE (dev-val)",
            "spec": "rank=median estimate / rejection 0-50% in 1% steps / risk=mean realized "
                    "|error| of retained anchors / AURC=grid mean / comparison=P_asinh / group bootstrap CI",
            "n_boot": N_BOOT, "axes": {}}

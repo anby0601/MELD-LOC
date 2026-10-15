@@ -73,8 +73,7 @@ def main():
 
     report = {"version_hash": mc.version_hash(), "feature_set": mc.FEATURE_SET_ID,
               "gbdt": gbdt, "cache": str(a.cache),
-              "status": "IMPLEMENTATION_TRAINING_NON_CONFIRMATORY "
-                        "",
+              "status": "TRAINING (the models every result refers to are the shipped ones in models/frozen)",
               "deviations": ["conformal/calibration unit = recipe_group (cluster_id fallback for indices that predate recipe groups)"],
               "axes": {}}
 
