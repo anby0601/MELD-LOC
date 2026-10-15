@@ -39,10 +39,12 @@ python3 models/meldloc/seed_variability_summary.py
 ```
 
 `models/frozen/` holds the models every result file was computed with. `train.py` writes to `models/trained/`
-and leaves them untouched: the shipped models were produced by an earlier revision of the same training
-code, and a rerun reproduces their metrics to about 1e-3 but not the files bit-for-bit. The evaluation
-scripts verify the shipped models against `results/evaluation/model_freeze_manifest.json` before scoring.
-(The seed-variability runs, made with the current code, do reproduce bit-for-bit.)
+and leaves them untouched: a rerun reproduces their metrics to about 1e-3 but not the files bit-for-bit,
+because multi-threaded LightGBM training is not fully deterministic. The same holds for the scripts that
+retrain models (`ablations.py`, `baselines_pruning.py featprune`, `seed_variability.py`): most of their
+entries rerun identically, the rest differ at the 1e-3 to 1e-2 level in small subgroups. Scripts that only
+score the shipped models reproduce the shipped result files exactly, and verify the models against
+`results/evaluation/model_freeze_manifest.json` before scoring.
 
 `build_features.py` reproduces the frozen cache (237 runs; the 18 development runs marked `frozen_cache = 0`
 in the index are skipped unless `--all` is given, see `data/indices/README.md`).
