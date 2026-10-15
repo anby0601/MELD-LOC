@@ -1,0 +1,28 @@
+\begin{table}[!t]
+\caption{Grouped feature-pruning ablation (holdout). Each row retrains the registered pipeline without one statistic group (10 columns: 5 signals $\times$ 2 windows) or without the exactly redundant columns (dedup: most-recent value of the 8\,s window and the range, 15 columns). Entries are differences from the full 120-d model; negative twIBS and positive AUROC/coverage are better.}
+\label{tab:featprune}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{lrccccccccc}
+\toprule
+ & & \multicolumn{3}{c}{$\Delta$twIBS ($\times 10^{-3}$)} & \multicolumn{3}{c}{$\Delta$AUROC ($\times 10^{-3}$)} & \multicolumn{3}{c}{$\Delta$cov.\ mid} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}
+Config & $d$ & lon & lat & yaw & lon & lat & yaw & lon & lat & yaw \\
+\midrule
+dedup\_105 & 105 & -0.0 & +0.5 & +0.4 & +0.0 & -0.5 & -0.3 & +0.008 & +0.026 & -0.008 \\
+drop\_mean & 110 & -0.1 & -0.4 & +0.1 & -0.0 & +0.1 & -0.4 & +0.016 & +0.007 & -0.004 \\
+drop\_std & 110 & +0.0 & -0.2 & +0.4 & -0.1 & +0.3 & -0.1 & -0.008 & +0.009 & -0.004 \\
+drop\_min & 110 & +0.8 & -0.1 & -0.2 & -0.2 & -0.2 & +0.2 & +0.024 & +0.026 & +0.008 \\
+drop\_max & 110 & -0.0 & -0.1 & -0.1 & +0.0 & -0.1 & -0.3 & +0.016 & +0.012 & -0.016 \\
+drop\_last & 110 & +0.0 & +0.1 & -0.3 & -0.0 & -0.3 & -0.2 & -0.008 & +0.023 & -0.004 \\
+drop\_slope & 110 & +0.4 & +0.3 & +0.4 & -0.0 & -2.4 & -0.1 & -0.008 & +0.028 & +0.023 \\
+drop\_q25 & 110 & +0.2 & +1.9 & +1.0 & -0.1 & -2.0 & -0.8 & -0.008 & -0.009 & -0.043 \\
+drop\_q50 & 110 & +0.1 & -0.7 & +0.0 & +0.1 & -0.4 & -0.3 & +0.000 & +0.002 & -0.020 \\
+drop\_q75 & 110 & -0.0 & +0.2 & +0.1 & +0.1 & -0.5 & -0.3 & -0.008 & -0.028 & +0.004 \\
+drop\_ptp & 110 & -0.2 & +1.0 & +1.0 & -0.0 & -1.0 & +0.0 & +0.000 & +0.014 & +0.023 \\
+drop\_mad & 110 & +0.1 & -0.3 & +0.1 & +0.0 & -1.4 & +0.5 & +0.000 & +0.051 & +0.016 \\
+drop\_acf1 & 110 & -0.1 & +0.8 & +0.3 & -0.0 & -0.9 & +0.5 & +0.000 & +0.002 & +0.008 \\
+\bottomrule
+\end{tabular}
+\end{table}

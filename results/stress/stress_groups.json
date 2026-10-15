@@ -1,0 +1,39 @@
+{
+ "std_h": [
+  "healthy_std_fixed_r61",
+  "healthy_std_fixed_r62"
+ ],
+ "fast_h": [
+  "healthy_fast_fixed_r61",
+  "healthy_fast_fixed_r62"
+ ],
+ "aggr_h": [
+  "healthy_aggr_fixed_r61",
+  "healthy_aggr_fixed_r62"
+ ],
+ "fast_d": [
+  "ho_ls08_fast_fixed_r61",
+  "ho_rc_early12_fast_fixed_r61",
+  "ho_rd_7090_fast_fixed_r61",
+  "ho_ys15_fast_fixed_r61"
+ ],
+ "aggr_d": [
+  "ho_ls08_aggr_fixed_r61",
+  "ho_rc_early12_aggr_fixed_r61",
+  "ho_rd_7090_aggr_fixed_r61",
+  "ho_ys15_aggr_fixed_r61"
+ ],
+ "point": [
+  "st_rc_8m_std_fixed_r61",
+  "st_rd_95_std_fixed_r61",
+  "st_sr_right170_std_fixed_r61"
+ ],
+ "geom": [
+  "st_ls14_std_fixed_r61",
+  "st_yr_3p5_std_fixed_r61",
+  "st_ys26_std_fixed_r61"
+ ],
+ "yr35": [
+  "st_yr_3p5_std_fixed_r61"
+ ]
+}

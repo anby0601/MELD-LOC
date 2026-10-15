@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CARLA Town01 localization-only bring-up.
+
+     Official Autoware launch/config files are not modified. This launch starts
+     only the modules needed for GT-NDT stationary alignment checks:
+       global params, pointcloud container, vehicle TF, map, and localization.
+
+     system_run_mode defaults to logging_simulation. In the official
+     pose_twist_estimator launch this disables pose_initializer stop-check and
+     disables twist estimator selection. The CARLA stack wrapper also disables
+     the automatic GNSS initializer; use carla_direct_init.py once after startup. -->
+<launch>
+  <arg name="map_path"/>
+  <arg name="vehicle_model" default="sample_vehicle"/>
+  <arg name="sensor_model" default="carla_sensor_kit"/>
+  <arg name="pointcloud_container_name" default="pointcloud_container"/>
+  <arg name="carla_pilot_dir" default="$(dirname)"/>
+
+  <arg name="launch_vehicle" default="true"/>
+  <arg name="launch_map" default="true"/>
+  <arg name="launch_localization" default="true"/>
+  <arg name="launch_sensing" default="false"/>
+  <arg name="launch_sensing_driver" default="false"/>
+
+  <arg name="use_sim_time" default="true"/>
+  <arg name="system_run_mode" default="logging_simulation"/>
+  <arg name="input_pointcloud" default="/sensing/lidar/top/pointcloud_before_sync"/>
+  <arg name="ndt_param_path" default="$(find-pkg-share autoware_launch)/config/localization/ndt_scan_matcher/ndt_scan_matcher.param.yaml"/>
+
+  <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
+  <arg name="launch_vehicle_interface" default="false"/>
+  <arg name="lanelet2_map_file" default="lanelet2_map.osm"/>
+  <arg name="pointcloud_map_file" default="pointcloud_map.pcd"/>
+
+  <group scoped="false">
+    <include file="$(find-pkg-share autoware_global_parameter_loader)/launch/global_params.launch.py">
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="vehicle_model" value="$(var vehicle_model)"/>
+    </include>
+  </group>
+
+  <include file="$(find-pkg-share autoware_launch)/launch/pointcloud_container.launch.py">
+    <arg name="use_multithread" value="true"/>
+    <arg name="container_name" value="$(var pointcloud_container_name)"/>
+  </include>
+
+  <group if="$(var launch_vehicle)">
+    <include file="$(find-pkg-share tier4_vehicle_launch)/launch/vehicle.launch.xml">
+      <arg name="vehicle_model" value="$(var vehicle_model)"/>
+      <arg name="sensor_model" value="$(var sensor_model)"/>
+      <arg name="vehicle_id" value="$(var vehicle_id)"/>
+      <arg name="launch_vehicle_interface" value="$(var launch_vehicle_interface)"/>
+      <arg name="config_dir" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/$(var sensor_model)"/>
+      <arg name="raw_vehicle_cmd_converter_param_path" value="$(find-pkg-share autoware_launch)/config/vehicle/raw_vehicle_cmd_converter/raw_vehicle_cmd_converter.param.yaml"/>
+    </include>
+  </group>
+
+  <group if="$(var launch_map)">
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_map_component.launch.xml"/>
+  </group>
+
+  <group if="$(var launch_sensing)">
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_sensing_component.launch.xml"/>
+  </group>
+
+  <group if="$(var launch_localization)">
+    <include file="$(var carla_pilot_dir)/localization_stack.launch.xml">
+      <arg name="system_run_mode" value="$(var system_run_mode)"/>
+      <arg name="input_pointcloud" value="$(var input_pointcloud)"/>
+      <arg name="localization_pointcloud_container_name" value="/$(var pointcloud_container_name)"/>
+      <arg name="ndt_scan_matcher/ndt_scan_matcher_param_path" value="$(var ndt_param_path)"/>
+    </include>
+  </group>
+</launch>

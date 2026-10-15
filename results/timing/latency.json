@@ -1,0 +1,94 @@
+{
+ "n_anchors_timed": 300,
+ "note": "single-anchor wall-clock per call; idle CPU required",
+ "axes": {
+  "lon": {
+   "grid_batched_max_abs_diff_vs_core": 0.0,
+   "core_outputs_as_reported": {
+    "mean_ms": 48.19,
+    "p50_ms": 47.69,
+    "p99_ms": 51.59,
+    "max_ms": 51.93
+   },
+   "grid_batched": {
+    "mean_ms": 0.71,
+    "p50_ms": 0.7,
+    "p99_ms": 0.78,
+    "max_ms": 0.81
+   },
+   "grid_batched_1thread": {
+    "mean_ms": 2.02,
+    "p50_ms": 2.02,
+    "p99_ms": 2.18,
+    "max_ms": 2.24
+   },
+   "batched_ms_per_anchor_2000": 0.282
+  },
+  "lat": {
+   "grid_batched_max_abs_diff_vs_core": 0.0,
+   "core_outputs_as_reported": {
+    "mean_ms": 49.12,
+    "p50_ms": 47.85,
+    "p99_ms": 52.51,
+    "max_ms": 54.65
+   },
+   "grid_batched": {
+    "mean_ms": 0.72,
+    "p50_ms": 0.72,
+    "p99_ms": 0.79,
+    "max_ms": 0.8
+   },
+   "grid_batched_1thread": {
+    "mean_ms": 2.04,
+    "p50_ms": 2.06,
+    "p99_ms": 2.16,
+    "max_ms": 2.21
+   },
+   "batched_ms_per_anchor_2000": 0.278
+  },
+  "yaw": {
+   "grid_batched_max_abs_diff_vs_core": 0.0,
+   "core_outputs_as_reported": {
+    "mean_ms": 47.12,
+    "p50_ms": 47.09,
+    "p99_ms": 48.71,
+    "max_ms": 48.89
+   },
+   "grid_batched": {
+    "mean_ms": 0.69,
+    "p50_ms": 0.68,
+    "p99_ms": 0.75,
+    "max_ms": 0.78
+   },
+   "grid_batched_1thread": {
+    "mean_ms": 1.92,
+    "p50_ms": 1.9,
+    "p99_ms": 2.1,
+    "max_ms": 2.16
+   },
+   "batched_ms_per_anchor_2000": 0.263
+  }
+ },
+ "three_axes_sequential_ms": {
+  "core_outputs_as_reported": {
+   "mean": 142.07,
+   "p50": 140.98,
+   "p99": 147.99,
+   "max": 158.52
+  },
+  "grid_batched": {
+   "mean": 2.15,
+   "p50": 2.15,
+   "p99": 2.26,
+   "max": 2.29
+  },
+  "grid_batched_1thread": {
+   "mean": 5.98,
+   "p50": 5.97,
+   "p99": 6.67,
+   "max": 7.4
+  }
+ },
+ "cpu": "AMD Ryzen 9 9900X 12-Core Processor",
+ "load_1min": 11.5
+}

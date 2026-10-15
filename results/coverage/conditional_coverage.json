@@ -1,0 +1,1097 @@
+{
+ "bins_on": "calibrated P(Y>T1) (online-available, no ground truth)",
+ "bin_edges": [
+  0.0,
+  0.1,
+  0.3,
+  0.5,
+  0.7,
+  0.9,
+  1.0
+ ],
+ "axes": {
+  "lon": {
+   "frozen_delta": 0.0141,
+   "mondrian_delta_by_bin": {
+    "[0.0,0.1)": 0.0149,
+    "[0.1,0.3)": 0.1652,
+    "[0.3,0.5)": 0.0141,
+    "[0.5,0.7)": 0.0141,
+    "[0.7,0.9)": 0.0141,
+    "[0.9,1.0)": -0.014
+   },
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "marginal_cov_frozen": 0.9325,
+     "marginal_cov_mondrian": 0.9331,
+     "mid_cov_frozen": 0.333,
+     "mid_cov_mondrian": 0.37,
+     "min_bin_cov_frozen": 0.832,
+     "min_bin_cov_mondrian": 0.875,
+     "homogeneity_chi2": 75.32,
+     "df": 5,
+     "p_value": 7.958318516103866e-15,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 22529,
+       "mean_pT1": 0.02,
+       "empirical_exceed_T1": 0.022,
+       "cov_frozen": 0.936,
+       "cov_frozen_ci": [
+        0.9328,
+        0.9392
+       ],
+       "cov_mondrian": 0.937,
+       "band_mix": {
+        "normal": 22030,
+        "middle": 499,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 340,
+       "mean_pT1": 0.186,
+       "empirical_exceed_T1": 0.209,
+       "cov_frozen": 0.832,
+       "cov_frozen_ci": [
+        0.789,
+        0.8683
+       ],
+       "cov_mondrian": 0.926,
+       "band_mix": {
+        "normal": 269,
+        "middle": 71,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 162,
+       "mean_pT1": 0.393,
+       "empirical_exceed_T1": 0.395,
+       "cov_frozen": 0.926,
+       "cov_frozen_ci": [
+        0.875,
+        0.9571
+       ],
+       "cov_mondrian": 0.926,
+       "band_mix": {
+        "normal": 98,
+        "middle": 60,
+        "div": 4
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 105,
+       "mean_pT1": 0.594,
+       "empirical_exceed_T1": 0.629,
+       "cov_frozen": 0.952,
+       "cov_frozen_ci": [
+        0.8933,
+        0.9795
+       ],
+       "cov_mondrian": 0.952,
+       "band_mix": {
+        "normal": 39,
+        "middle": 63,
+        "div": 3
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 152,
+       "mean_pT1": 0.817,
+       "empirical_exceed_T1": 0.822,
+       "cov_frozen": 0.875,
+       "cov_frozen_ci": [
+        0.813,
+        0.9185
+       ],
+       "cov_mondrian": 0.875,
+       "band_mix": {
+        "normal": 27,
+        "middle": 83,
+        "div": 42
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 2863,
+       "mean_pT1": 0.992,
+       "empirical_exceed_T1": 0.992,
+       "cov_frozen": 0.919,
+       "cov_frozen_ci": [
+        0.9088,
+        0.9287
+       ],
+       "cov_mondrian": 0.908,
+       "band_mix": {
+        "normal": 24,
+        "middle": 75,
+        "div": 2764
+       }
+      }
+     ]
+    },
+    "holdout": {
+     "n": 10827,
+     "marginal_cov_frozen": 0.9324,
+     "marginal_cov_mondrian": 0.9316,
+     "mid_cov_frozen": 0.904,
+     "mid_cov_mondrian": 0.912,
+     "min_bin_cov_frozen": 0.594,
+     "min_bin_cov_mondrian": 0.594,
+     "homogeneity_chi2": 360.6,
+     "df": 5,
+     "p_value": 9.112285171055221e-76,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 9380,
+       "mean_pT1": 0.021,
+       "empirical_exceed_T1": 0.001,
+       "cov_frozen": 0.948,
+       "cov_frozen_ci": [
+        0.9431,
+        0.9521
+       ],
+       "cov_mondrian": 0.949,
+       "band_mix": {
+        "normal": 9374,
+        "middle": 6,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 151,
+       "mean_pT1": 0.171,
+       "empirical_exceed_T1": 0.026,
+       "cov_frozen": 0.98,
+       "cov_frozen_ci": [
+        0.9432,
+        0.9932
+       ],
+       "cov_mondrian": 0.987,
+       "band_mix": {
+        "normal": 147,
+        "middle": 3,
+        "div": 1
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 40,
+       "mean_pT1": 0.386,
+       "empirical_exceed_T1": 0.05,
+       "cov_frozen": 0.95,
+       "cov_frozen_ci": [
+        0.835,
+        0.9862
+       ],
+       "cov_mondrian": 0.95,
+       "band_mix": {
+        "normal": 38,
+        "middle": 2,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 22,
+       "mean_pT1": 0.568,
+       "empirical_exceed_T1": 0.182,
+       "cov_frozen": 0.909,
+       "cov_frozen_ci": [
+        0.7218,
+        0.9747
+       ],
+       "cov_mondrian": 0.909,
+       "band_mix": {
+        "normal": 18,
+        "middle": 4,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 32,
+       "mean_pT1": 0.821,
+       "empirical_exceed_T1": 0.812,
+       "cov_frozen": 0.594,
+       "cov_frozen_ci": [
+        0.4226,
+        0.7448
+       ],
+       "cov_mondrian": 0.594,
+       "band_mix": {
+        "normal": 6,
+        "middle": 4,
+        "div": 22
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 1202,
+       "mean_pT1": 0.991,
+       "empirical_exceed_T1": 0.983,
+       "cov_frozen": 0.815,
+       "cov_frozen_ci": [
+        0.7924,
+        0.8362
+       ],
+       "cov_mondrian": 0.8,
+       "band_mix": {
+        "normal": 21,
+        "middle": 106,
+        "div": 1075
+       }
+      }
+     ]
+    },
+    "crossroute": {
+     "n": 6023,
+     "marginal_cov_frozen": 0.9643,
+     "marginal_cov_mondrian": 0.9623,
+     "mid_cov_frozen": 0.614,
+     "mid_cov_mondrian": 0.614,
+     "min_bin_cov_frozen": 0.776,
+     "min_bin_cov_mondrian": 0.756,
+     "homogeneity_chi2": 764.94,
+     "df": 5,
+     "p_value": 4.4397251501755266e-163,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 4958,
+       "mean_pT1": 0.018,
+       "empirical_exceed_T1": 0.001,
+       "cov_frozen": 0.992,
+       "cov_frozen_ci": [
+        0.989,
+        0.9941
+       ],
+       "cov_mondrian": 0.992,
+       "band_mix": {
+        "normal": 4955,
+        "middle": 2,
+        "div": 1
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 62,
+       "mean_pT1": 0.198,
+       "empirical_exceed_T1": 0.113,
+       "cov_frozen": 0.919,
+       "cov_frozen_ci": [
+        0.8247,
+        0.9651
+       ],
+       "cov_mondrian": 0.919,
+       "band_mix": {
+        "normal": 55,
+        "middle": 5,
+        "div": 2
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 57,
+       "mean_pT1": 0.397,
+       "empirical_exceed_T1": 0.211,
+       "cov_frozen": 0.947,
+       "cov_frozen_ci": [
+        0.8563,
+        0.9819
+       ],
+       "cov_mondrian": 0.947,
+       "band_mix": {
+        "normal": 45,
+        "middle": 9,
+        "div": 3
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 47,
+       "mean_pT1": 0.581,
+       "empirical_exceed_T1": 0.213,
+       "cov_frozen": 0.894,
+       "cov_frozen_ci": [
+        0.7741,
+        0.9537
+       ],
+       "cov_mondrian": 0.894,
+       "band_mix": {
+        "normal": 37,
+        "middle": 3,
+        "div": 7
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 300,
+       "mean_pT1": 0.839,
+       "empirical_exceed_T1": 0.223,
+       "cov_frozen": 0.907,
+       "cov_frozen_ci": [
+        0.8684,
+        0.9346
+       ],
+       "cov_mondrian": 0.907,
+       "band_mix": {
+        "normal": 233,
+        "middle": 11,
+        "div": 56
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 599,
+       "mean_pT1": 0.969,
+       "empirical_exceed_T1": 0.8,
+       "cov_frozen": 0.776,
+       "cov_frozen_ci": [
+        0.7412,
+        0.8078
+       ],
+       "cov_mondrian": 0.756,
+       "band_mix": {
+        "normal": 120,
+        "middle": 27,
+        "div": 452
+       }
+      }
+     ]
+    }
+   }
+  },
+  "lat": {
+   "frozen_delta": -0.0645,
+   "mondrian_delta_by_bin": {
+    "[0.0,0.1)": -0.0905,
+    "[0.1,0.3)": -0.108,
+    "[0.3,0.5)": -0.0541,
+    "[0.5,0.7)": -0.0416,
+    "[0.7,0.9)": 0.7739,
+    "[0.9,1.0)": 0.0407
+   },
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "marginal_cov_frozen": 0.9244,
+     "marginal_cov_mondrian": 0.9033,
+     "mid_cov_frozen": 0.578,
+     "mid_cov_mondrian": 0.596,
+     "min_bin_cov_frozen": 0.741,
+     "min_bin_cov_mondrian": 0.9,
+     "homogeneity_chi2": 643.5,
+     "df": 5,
+     "p_value": 8.032924998384826e-137,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 19625,
+       "mean_pT1": 0.012,
+       "empirical_exceed_T1": 0.004,
+       "cov_frozen": 0.942,
+       "cov_frozen_ci": [
+        0.9383,
+        0.9448
+       ],
+       "cov_mondrian": 0.902,
+       "band_mix": {
+        "normal": 19538,
+        "middle": 86,
+        "div": 1
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 2472,
+       "mean_pT1": 0.173,
+       "empirical_exceed_T1": 0.096,
+       "cov_frozen": 0.934,
+       "cov_frozen_ci": [
+        0.924,
+        0.9436
+       ],
+       "cov_mondrian": 0.904,
+       "band_mix": {
+        "normal": 2235,
+        "middle": 225,
+        "div": 12
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 592,
+       "mean_pT1": 0.392,
+       "empirical_exceed_T1": 0.28,
+       "cov_frozen": 0.889,
+       "cov_frozen_ci": [
+        0.8606,
+        0.9114
+       ],
+       "cov_mondrian": 0.9,
+       "band_mix": {
+        "normal": 426,
+        "middle": 151,
+        "div": 15
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 374,
+       "mean_pT1": 0.603,
+       "empirical_exceed_T1": 0.447,
+       "cov_frozen": 0.874,
+       "cov_frozen_ci": [
+        0.8369,
+        0.9042
+       ],
+       "cov_mondrian": 0.922,
+       "band_mix": {
+        "normal": 207,
+        "middle": 145,
+        "div": 22
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 437,
+       "mean_pT1": 0.806,
+       "empirical_exceed_T1": 0.764,
+       "cov_frozen": 0.741,
+       "cov_frozen_ci": [
+        0.6984,
+        0.7802
+       ],
+       "cov_mondrian": 0.931,
+       "band_mix": {
+        "normal": 103,
+        "middle": 141,
+        "div": 193
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 2651,
+       "mean_pT1": 0.98,
+       "empirical_exceed_T1": 0.971,
+       "cov_frozen": 0.832,
+       "cov_frozen_ci": [
+        0.8174,
+        0.8459
+       ],
+       "cov_mondrian": 0.906,
+       "band_mix": {
+        "normal": 78,
+        "middle": 67,
+        "div": 2506
+       }
+      }
+     ]
+    },
+    "holdout": {
+     "n": 10827,
+     "marginal_cov_frozen": 0.9075,
+     "marginal_cov_mondrian": 0.8942,
+     "mid_cov_frozen": 0.553,
+     "mid_cov_mondrian": 0.558,
+     "min_bin_cov_frozen": 0.55,
+     "min_bin_cov_mondrian": 0.753,
+     "homogeneity_chi2": 1342.95,
+     "df": 5,
+     "p_value": 3.1568286907424593e-288,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 8086,
+       "mean_pT1": 0.014,
+       "empirical_exceed_T1": 0.005,
+       "cov_frozen": 0.951,
+       "cov_frozen_ci": [
+        0.9465,
+        0.9559
+       ],
+       "cov_mondrian": 0.915,
+       "band_mix": {
+        "normal": 8042,
+        "middle": 44,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 1099,
+       "mean_pT1": 0.17,
+       "empirical_exceed_T1": 0.114,
+       "cov_frozen": 0.921,
+       "cov_frozen_ci": [
+        0.9034,
+        0.9354
+       ],
+       "cov_mondrian": 0.893,
+       "band_mix": {
+        "normal": 974,
+        "middle": 125,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 242,
+       "mean_pT1": 0.393,
+       "empirical_exceed_T1": 0.368,
+       "cov_frozen": 0.831,
+       "cov_frozen_ci": [
+        0.7782,
+        0.8726
+       ],
+       "cov_mondrian": 0.835,
+       "band_mix": {
+        "normal": 153,
+        "middle": 87,
+        "div": 2
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 126,
+       "mean_pT1": 0.604,
+       "empirical_exceed_T1": 0.548,
+       "cov_frozen": 0.873,
+       "cov_frozen_ci": [
+        0.8037,
+        0.9203
+       ],
+       "cov_mondrian": 0.937,
+       "band_mix": {
+        "normal": 57,
+        "middle": 66,
+        "div": 3
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 151,
+       "mean_pT1": 0.814,
+       "empirical_exceed_T1": 0.947,
+       "cov_frozen": 0.55,
+       "cov_frozen_ci": [
+        0.4701,
+        0.6268
+       ],
+       "cov_mondrian": 0.894,
+       "band_mix": {
+        "normal": 8,
+        "middle": 63,
+        "div": 80
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 1123,
+       "mean_pT1": 0.972,
+       "empirical_exceed_T1": 0.966,
+       "cov_frozen": 0.647,
+       "cov_frozen_ci": [
+        0.619,
+        0.6748
+       ],
+       "cov_mondrian": 0.753,
+       "band_mix": {
+        "normal": 38,
+        "middle": 47,
+        "div": 1038
+       }
+      }
+     ]
+    },
+    "crossroute": {
+     "n": 6023,
+     "marginal_cov_frozen": 0.9421,
+     "marginal_cov_mondrian": 0.9407,
+     "mid_cov_frozen": 0.264,
+     "mid_cov_mondrian": 0.224,
+     "min_bin_cov_frozen": 0.308,
+     "min_bin_cov_mondrian": 0.308,
+     "homogeneity_chi2": 720.01,
+     "df": 5,
+     "p_value": 2.310806490042733e-153,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 5284,
+       "mean_pT1": 0.008,
+       "empirical_exceed_T1": 0.013,
+       "cov_frozen": 0.962,
+       "cov_frozen_ci": [
+        0.9565,
+        0.9668
+       ],
+       "cov_mondrian": 0.959,
+       "band_mix": {
+        "normal": 5213,
+        "middle": 62,
+        "div": 9
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 185,
+       "mean_pT1": 0.159,
+       "empirical_exceed_T1": 0.341,
+       "cov_frozen": 0.751,
+       "cov_frozen_ci": [
+        0.6844,
+        0.8081
+       ],
+       "cov_mondrian": 0.714,
+       "band_mix": {
+        "normal": 122,
+        "middle": 41,
+        "div": 22
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 52,
+       "mean_pT1": 0.407,
+       "empirical_exceed_T1": 0.788,
+       "cov_frozen": 0.308,
+       "cov_frozen_ci": [
+        0.1991,
+        0.4427
+       ],
+       "cov_mondrian": 0.308,
+       "band_mix": {
+        "normal": 11,
+        "middle": 8,
+        "div": 33
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 54,
+       "mean_pT1": 0.613,
+       "empirical_exceed_T1": 0.741,
+       "cov_frozen": 0.593,
+       "cov_frozen_ci": [
+        0.4597,
+        0.7132
+       ],
+       "cov_mondrian": 0.593,
+       "band_mix": {
+        "normal": 14,
+        "middle": 7,
+        "div": 33
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 107,
+       "mean_pT1": 0.815,
+       "empirical_exceed_T1": 0.804,
+       "cov_frozen": 0.776,
+       "cov_frozen_ci": [
+        0.6879,
+        0.8444
+       ],
+       "cov_mondrian": 0.879,
+       "band_mix": {
+        "normal": 21,
+        "middle": 7,
+        "div": 79
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 341,
+       "mean_pT1": 0.946,
+       "empirical_exceed_T1": 0.977,
+       "cov_frozen": 0.941,
+       "cov_frozen_ci": [
+        0.9111,
+        0.9617
+       ],
+       "cov_mondrian": 0.956,
+       "band_mix": {
+        "normal": 8,
+        "middle": 0,
+        "div": 333
+       }
+      }
+     ]
+    }
+   }
+  },
+  "yaw": {
+   "frozen_delta": -0.0201,
+   "mondrian_delta_by_bin": {
+    "[0.0,0.1)": -0.1543,
+    "[0.1,0.3)": -0.1516,
+    "[0.3,0.5)": -0.1662,
+    "[0.5,0.7)": -0.0201,
+    "[0.7,0.9)": 0.1905,
+    "[0.9,1.0)": 0.0886
+   },
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "marginal_cov_frozen": 0.9324,
+     "marginal_cov_mondrian": 0.8783,
+     "mid_cov_frozen": 0.783,
+     "mid_cov_mondrian": 0.627,
+     "min_bin_cov_frozen": 0.715,
+     "min_bin_cov_mondrian": 0.871,
+     "homogeneity_chi2": 2192.05,
+     "df": 5,
+     "p_value": 0.0,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 20026,
+       "mean_pT1": 0.011,
+       "empirical_exceed_T1": 0.004,
+       "cov_frozen": 0.956,
+       "cov_frozen_ci": [
+        0.9533,
+        0.959
+       ],
+       "cov_mondrian": 0.871,
+       "band_mix": {
+        "normal": 19942,
+        "middle": 84,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 2363,
+       "mean_pT1": 0.157,
+       "empirical_exceed_T1": 0.081,
+       "cov_frozen": 0.968,
+       "cov_frozen_ci": [
+        0.9599,
+        0.9742
+       ],
+       "cov_mondrian": 0.887,
+       "band_mix": {
+        "normal": 2171,
+        "middle": 192,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 503,
+       "mean_pT1": 0.387,
+       "empirical_exceed_T1": 0.195,
+       "cov_frozen": 0.972,
+       "cov_frozen_ci": [
+        0.9538,
+        0.9833
+       ],
+       "cov_mondrian": 0.887,
+       "band_mix": {
+        "normal": 405,
+        "middle": 94,
+        "div": 4
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 228,
+       "mean_pT1": 0.598,
+       "empirical_exceed_T1": 0.294,
+       "cov_frozen": 0.961,
+       "cov_frozen_ci": [
+        0.9267,
+        0.9791
+       ],
+       "cov_mondrian": 0.961,
+       "band_mix": {
+        "normal": 161,
+        "middle": 53,
+        "div": 14
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 482,
+       "mean_pT1": 0.819,
+       "empirical_exceed_T1": 0.695,
+       "cov_frozen": 0.865,
+       "cov_frozen_ci": [
+        0.8317,
+        0.8928
+       ],
+       "cov_mondrian": 0.929,
+       "band_mix": {
+        "normal": 147,
+        "middle": 117,
+        "div": 218
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 2549,
+       "mean_pT1": 0.982,
+       "empirical_exceed_T1": 0.973,
+       "cov_frozen": 0.715,
+       "cov_frozen_ci": [
+        0.6969,
+        0.732
+       ],
+       "cov_mondrian": 0.908,
+       "band_mix": {
+        "normal": 69,
+        "middle": 253,
+        "div": 2227
+       }
+      }
+     ]
+    },
+    "holdout": {
+     "n": 10827,
+     "marginal_cov_frozen": 0.9414,
+     "marginal_cov_mondrian": 0.9118,
+     "mid_cov_frozen": 0.785,
+     "mid_cov_mondrian": 0.543,
+     "min_bin_cov_frozen": 0.653,
+     "min_bin_cov_mondrian": 0.794,
+     "homogeneity_chi2": 729.08,
+     "df": 5,
+     "p_value": 2.5292361759119474e-155,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 8300,
+       "mean_pT1": 0.014,
+       "empirical_exceed_T1": 0.003,
+       "cov_frozen": 0.96,
+       "cov_frozen_ci": [
+        0.9557,
+        0.9641
+       ],
+       "cov_mondrian": 0.911,
+       "band_mix": {
+        "normal": 8274,
+        "middle": 26,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 997,
+       "mean_pT1": 0.15,
+       "empirical_exceed_T1": 0.067,
+       "cov_frozen": 0.971,
+       "cov_frozen_ci": [
+        0.9585,
+        0.9797
+       ],
+       "cov_mondrian": 0.906,
+       "band_mix": {
+        "normal": 930,
+        "middle": 64,
+        "div": 3
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 180,
+       "mean_pT1": 0.391,
+       "empirical_exceed_T1": 0.289,
+       "cov_frozen": 0.956,
+       "cov_frozen_ci": [
+        0.9148,
+        0.9773
+       ],
+       "cov_mondrian": 0.794,
+       "band_mix": {
+        "normal": 128,
+        "middle": 45,
+        "div": 7
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 98,
+       "mean_pT1": 0.601,
+       "empirical_exceed_T1": 0.357,
+       "cov_frozen": 0.929,
+       "cov_frozen_ci": [
+        0.8598,
+        0.965
+       ],
+       "cov_mondrian": 0.929,
+       "band_mix": {
+        "normal": 63,
+        "middle": 20,
+        "div": 15
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 329,
+       "mean_pT1": 0.826,
+       "empirical_exceed_T1": 0.86,
+       "cov_frozen": 0.653,
+       "cov_frozen_ci": [
+        0.6006,
+        0.7029
+       ],
+       "cov_mondrian": 0.897,
+       "band_mix": {
+        "normal": 46,
+        "middle": 35,
+        "div": 248
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 923,
+       "mean_pT1": 0.976,
+       "empirical_exceed_T1": 0.987,
+       "cov_frozen": 0.842,
+       "cov_frozen_ci": [
+        0.8169,
+        0.8639
+       ],
+       "cov_mondrian": 0.951,
+       "band_mix": {
+        "normal": 12,
+        "middle": 66,
+        "div": 845
+       }
+      }
+     ]
+    },
+    "crossroute": {
+     "n": 6023,
+     "marginal_cov_frozen": 0.904,
+     "marginal_cov_mondrian": 0.8658,
+     "mid_cov_frozen": 0.5,
+     "mid_cov_mondrian": 0.481,
+     "min_bin_cov_frozen": 0.809,
+     "min_bin_cov_mondrian": 0.855,
+     "homogeneity_chi2": 42.37,
+     "df": 5,
+     "p_value": 4.9646052885341227e-08,
+     "bins": [
+      {
+       "bin": "[0.0,0.1)",
+       "n": 4514,
+       "mean_pT1": 0.012,
+       "empirical_exceed_T1": 0.013,
+       "cov_frozen": 0.905,
+       "cov_frozen_ci": [
+        0.8965,
+        0.9136
+       ],
+       "cov_mondrian": 0.855,
+       "band_mix": {
+        "normal": 4456,
+        "middle": 58,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.1,0.3)",
+       "n": 651,
+       "mean_pT1": 0.158,
+       "empirical_exceed_T1": 0.127,
+       "cov_frozen": 0.889,
+       "cov_frozen_ci": [
+        0.863,
+        0.9112
+       ],
+       "cov_mondrian": 0.859,
+       "band_mix": {
+        "normal": 568,
+        "middle": 83,
+        "div": 0
+       }
+      },
+      {
+       "bin": "[0.3,0.5)",
+       "n": 250,
+       "mean_pT1": 0.397,
+       "empirical_exceed_T1": 0.136,
+       "cov_frozen": 0.98,
+       "cov_frozen_ci": [
+        0.954,
+        0.9914
+       ],
+       "cov_mondrian": 0.972,
+       "band_mix": {
+        "normal": 216,
+        "middle": 33,
+        "div": 1
+       }
+      },
+      {
+       "bin": "[0.5,0.7)",
+       "n": 127,
+       "mean_pT1": 0.607,
+       "empirical_exceed_T1": 0.26,
+       "cov_frozen": 0.953,
+       "cov_frozen_ci": [
+        0.9008,
+        0.9782
+       ],
+       "cov_mondrian": 0.953,
+       "band_mix": {
+        "normal": 94,
+        "middle": 23,
+        "div": 10
+       }
+      },
+      {
+       "bin": "[0.7,0.9)",
+       "n": 194,
+       "mean_pT1": 0.811,
+       "empirical_exceed_T1": 0.619,
+       "cov_frozen": 0.809,
+       "cov_frozen_ci": [
+        0.7482,
+        0.8583
+       ],
+       "cov_mondrian": 0.861,
+       "band_mix": {
+        "normal": 74,
+        "middle": 38,
+        "div": 82
+       }
+      },
+      {
+       "bin": "[0.9,1.0)",
+       "n": 287,
+       "mean_pT1": 0.958,
+       "empirical_exceed_T1": 0.937,
+       "cov_frozen": 0.892,
+       "cov_frozen_ci": [
+        0.8508,
+        0.9229
+       ],
+       "cov_mondrian": 0.927,
+       "band_mix": {
+        "normal": 18,
+        "middle": 35,
+        "div": 234
+       }
+      }
+     ]
+    }
+   }
+  }
+ }
+}

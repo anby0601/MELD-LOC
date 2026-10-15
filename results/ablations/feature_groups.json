@@ -1,0 +1,2148 @@
+{
+ "seed": 20260803,
+ "note": "registered pipeline retrained per config; frozen v1 untouched",
+ "configs": {
+  "full_120": {
+   "n_features": 120,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 4.876227216345562e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.014146540986560208,
+     "q90_coverage_conformal": 0.932507361095178,
+     "cov_by_band": {
+      "normal": 0.9581,
+      "middle": 0.3325,
+      "div": 0.9093
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9324,
+     "cov_by_band": {
+      "normal": 0.9496,
+      "middle": 0.904,
+      "div": 0.7851
+     },
+     "ECE_pT1": 0.0098,
+     "twIBS_MELD": 0.01399,
+     "auroc_T1_MELD": 0.99912,
+     "auroc_T2_MELD": 0.99858,
+     "auroc_3W_MELD": 0.99664,
+     "mid_macro_R": 0.2971,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1943
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9643,
+     "cov_by_band": {
+      "normal": 0.9932,
+      "middle": 0.614,
+      "div": 0.7006
+     },
+     "ECE_pT1": 0.034,
+     "twIBS_MELD": 0.0353,
+     "auroc_T1_MELD": 0.98899,
+     "auroc_T2_MELD": 0.9775,
+     "auroc_3W_MELD": 0.98022,
+     "mid_macro_R": -0.0793,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1988
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 8.604582315730109e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06666207136527613,
+     "q90_coverage_conformal": 0.9232534128714007,
+     "cov_by_band": {
+      "normal": 0.9508,
+      "middle": 0.5902,
+      "div": 0.7959
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9063,
+     "cov_by_band": {
+      "normal": 0.9606,
+      "middle": 0.5486,
+      "div": 0.5948
+     },
+     "ECE_pT1": 0.003,
+     "twIBS_MELD": 0.01776,
+     "auroc_T1_MELD": 0.98686,
+     "auroc_T2_MELD": 0.99691,
+     "auroc_3W_MELD": 0.99612,
+     "mid_macro_R": 0.2845,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0557
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9412,
+     "cov_by_band": {
+      "normal": 0.9746,
+      "middle": 0.256,
+      "div": 0.7564
+     },
+     "ECE_pT1": 0.0095,
+     "twIBS_MELD": 0.02033,
+     "auroc_T1_MELD": 0.97282,
+     "auroc_T2_MELD": 0.99381,
+     "auroc_3W_MELD": 0.99412,
+     "mid_macro_R": -0.1623,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8698
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 8.063738502875392e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.020063836701224247,
+     "q90_coverage_conformal": 0.9323926427287675,
+     "cov_by_band": {
+      "normal": 0.9654,
+      "middle": 0.7831,
+      "div": 0.674
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9414,
+     "cov_by_band": {
+      "normal": 0.9677,
+      "middle": 0.7852,
+      "div": 0.754
+     },
+     "ECE_pT1": 0.0048,
+     "twIBS_MELD": 0.02935,
+     "auroc_T1_MELD": 0.99055,
+     "auroc_T2_MELD": 0.9978,
+     "auroc_3W_MELD": 0.99616,
+     "mid_macro_R": 0.2464,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.7007
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.904,
+     "cov_by_band": {
+      "normal": 0.932,
+      "middle": 0.5,
+      "div": 0.7737
+     },
+     "ECE_pT1": 0.0143,
+     "twIBS_MELD": 0.0453,
+     "auroc_T1_MELD": 0.94329,
+     "auroc_T2_MELD": 0.9905,
+     "auroc_3W_MELD": 0.99058,
+     "mid_macro_R": 0.3522,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6516
+    }
+   }
+  },
+  "dedup_105": {
+   "n_features": 105,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 5.578691136887693e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.014224710313088806,
+     "q90_coverage_conformal": 0.9324308821842376,
+     "cov_by_band": {
+      "normal": 0.9582,
+      "middle": 0.3184,
+      "div": 0.9125
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9332,
+     "cov_by_band": {
+      "normal": 0.9498,
+      "middle": 0.912,
+      "div": 0.7905
+     },
+     "ECE_pT1": 0.0099,
+     "twIBS_MELD": 0.01395,
+     "auroc_T1_MELD": 0.99913,
+     "auroc_T2_MELD": 0.9986,
+     "auroc_3W_MELD": 0.99664,
+     "mid_macro_R": 0.3243,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1963
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9655,
+     "cov_by_band": {
+      "normal": 0.9928,
+      "middle": 0.5614,
+      "div": 0.7236
+     },
+     "ECE_pT1": 0.0351,
+     "twIBS_MELD": 0.0377,
+     "auroc_T1_MELD": 0.98692,
+     "auroc_T2_MELD": 0.97594,
+     "auroc_3W_MELD": 0.97783,
+     "mid_macro_R": -0.0474,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.2067
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 5.692188406966075e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.05366065130092751,
+     "q90_coverage_conformal": 0.9252418645558487,
+     "cov_by_band": {
+      "normal": 0.9527,
+      "middle": 0.6393,
+      "div": 0.7843
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.912,
+     "cov_by_band": {
+      "normal": 0.9625,
+      "middle": 0.5741,
+      "div": 0.6251
+     },
+     "ECE_pT1": 0.0036,
+     "twIBS_MELD": 0.01826,
+     "auroc_T1_MELD": 0.98633,
+     "auroc_T2_MELD": 0.99658,
+     "auroc_3W_MELD": 0.99542,
+     "mid_macro_R": 0.2415,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0527
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9382,
+     "cov_by_band": {
+      "normal": 0.9785,
+      "middle": 0.264,
+      "div": 0.6778
+     },
+     "ECE_pT1": 0.0097,
+     "twIBS_MELD": 0.02149,
+     "auroc_T1_MELD": 0.97385,
+     "auroc_T2_MELD": 0.99041,
+     "auroc_3W_MELD": 0.99154,
+     "mid_macro_R": -0.1538,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8548
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 3.267618748222857e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.01919985203327146,
+     "q90_coverage_conformal": 0.9319720087185959,
+     "cov_by_band": {
+      "normal": 0.9652,
+      "middle": 0.7818,
+      "div": 0.6711
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9386,
+     "cov_by_band": {
+      "normal": 0.9648,
+      "middle": 0.7773,
+      "div": 0.754
+     },
+     "ECE_pT1": 0.0043,
+     "twIBS_MELD": 0.02978,
+     "auroc_T1_MELD": 0.99023,
+     "auroc_T2_MELD": 0.99739,
+     "auroc_3W_MELD": 0.99579,
+     "mid_macro_R": 0.2656,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.7044
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9015,
+     "cov_by_band": {
+      "normal": 0.9335,
+      "middle": 0.5074,
+      "div": 0.6972
+     },
+     "ECE_pT1": 0.0128,
+     "twIBS_MELD": 0.04481,
+     "auroc_T1_MELD": 0.94206,
+     "auroc_T2_MELD": 0.99011,
+     "auroc_3W_MELD": 0.98953,
+     "mid_macro_R": 0.3533,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6437
+    }
+   }
+  },
+  "drop_mean": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 6.135639077608405e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.010077843190894775,
+     "q90_coverage_conformal": 0.9322014454514168,
+     "cov_by_band": {
+      "normal": 0.9578,
+      "middle": 0.3161,
+      "div": 0.914
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9331,
+     "cov_by_band": {
+      "normal": 0.9507,
+      "middle": 0.92,
+      "div": 0.7805
+     },
+     "ECE_pT1": 0.01,
+     "twIBS_MELD": 0.01387,
+     "auroc_T1_MELD": 0.99909,
+     "auroc_T2_MELD": 0.99848,
+     "auroc_3W_MELD": 0.99662,
+     "mid_macro_R": 0.237,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1998
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9643,
+     "cov_by_band": {
+      "normal": 0.993,
+      "middle": 0.6491,
+      "div": 0.6987
+     },
+     "ECE_pT1": 0.0327,
+     "twIBS_MELD": 0.03301,
+     "auroc_T1_MELD": 0.99106,
+     "auroc_T2_MELD": 0.98008,
+     "auroc_3W_MELD": 0.98183,
+     "mid_macro_R": 0.1122,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.2028
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.534812273300406e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06944431988058342,
+     "q90_coverage_conformal": 0.9236740468815724,
+     "cov_by_band": {
+      "normal": 0.9514,
+      "middle": 0.611,
+      "div": 0.7887
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9075,
+     "cov_by_band": {
+      "normal": 0.96,
+      "middle": 0.5556,
+      "div": 0.61
+     },
+     "ECE_pT1": 0.004,
+     "twIBS_MELD": 0.01738,
+     "auroc_T1_MELD": 0.987,
+     "auroc_T2_MELD": 0.99695,
+     "auroc_3W_MELD": 0.99576,
+     "mid_macro_R": 0.2701,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0617
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9447,
+     "cov_by_band": {
+      "normal": 0.9787,
+      "middle": 0.248,
+      "div": 0.7564
+     },
+     "ECE_pT1": 0.0096,
+     "twIBS_MELD": 0.02063,
+     "auroc_T1_MELD": 0.9716,
+     "auroc_T2_MELD": 0.99119,
+     "auroc_3W_MELD": 0.99151,
+     "mid_macro_R": -0.1091,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8868
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.3690930633914836e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.018162011857823068,
+     "q90_coverage_conformal": 0.930786585599021,
+     "cov_by_band": {
+      "normal": 0.9627,
+      "middle": 0.7995,
+      "div": 0.6768
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.938,
+     "cov_by_band": {
+      "normal": 0.9656,
+      "middle": 0.7812,
+      "div": 0.7406
+     },
+     "ECE_pT1": 0.0038,
+     "twIBS_MELD": 0.02949,
+     "auroc_T1_MELD": 0.99019,
+     "auroc_T2_MELD": 0.99733,
+     "auroc_3W_MELD": 0.99632,
+     "mid_macro_R": 0.2772,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6867
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9103,
+     "cov_by_band": {
+      "normal": 0.9405,
+      "middle": 0.537,
+      "div": 0.7187
+     },
+     "ECE_pT1": 0.0134,
+     "twIBS_MELD": 0.04333,
+     "auroc_T1_MELD": 0.94766,
+     "auroc_T2_MELD": 0.99106,
+     "auroc_3W_MELD": 0.99023,
+     "mid_macro_R": 0.3468,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6482
+    }
+   }
+  },
+  "drop_std": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 7.194293650816278e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.01277771206170042,
+     "q90_coverage_conformal": 0.9331574318381706,
+     "cov_by_band": {
+      "normal": 0.9596,
+      "middle": 0.3231,
+      "div": 0.9062
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9348,
+     "cov_by_band": {
+      "normal": 0.9511,
+      "middle": 0.896,
+      "div": 0.7969
+     },
+     "ECE_pT1": 0.0099,
+     "twIBS_MELD": 0.01399,
+     "auroc_T1_MELD": 0.99905,
+     "auroc_T2_MELD": 0.99857,
+     "auroc_3W_MELD": 0.99688,
+     "mid_macro_R": 0.2493,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1955
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9588,
+     "cov_by_band": {
+      "normal": 0.9919,
+      "middle": 0.5965,
+      "div": 0.6526
+     },
+     "ECE_pT1": 0.0329,
+     "twIBS_MELD": 0.03449,
+     "auroc_T1_MELD": 0.99065,
+     "auroc_T2_MELD": 0.97895,
+     "auroc_3W_MELD": 0.98085,
+     "mid_macro_R": 0.0349,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1837
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 6.757868059335019e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.061151572945796095,
+     "q90_coverage_conformal": 0.9237887652479829,
+     "cov_by_band": {
+      "normal": 0.9515,
+      "middle": 0.6012,
+      "div": 0.7916
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9107,
+     "cov_by_band": {
+      "normal": 0.9601,
+      "middle": 0.5579,
+      "div": 0.6385
+     },
+     "ECE_pT1": 0.0036,
+     "twIBS_MELD": 0.0176,
+     "auroc_T1_MELD": 0.98713,
+     "auroc_T2_MELD": 0.99705,
+     "auroc_3W_MELD": 0.99629,
+     "mid_macro_R": 0.303,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0555
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9376,
+     "cov_by_band": {
+      "normal": 0.9748,
+      "middle": 0.224,
+      "div": 0.7191
+     },
+     "ECE_pT1": 0.0091,
+     "twIBS_MELD": 0.02105,
+     "auroc_T1_MELD": 0.96992,
+     "auroc_T2_MELD": 0.9913,
+     "auroc_3W_MELD": 0.99162,
+     "mid_macro_R": -0.1107,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.878
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.1734584483679102e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.022374331629470445,
+     "q90_coverage_conformal": 0.9325456005506482,
+     "cov_by_band": {
+      "normal": 0.9654,
+      "middle": 0.7907,
+      "div": 0.6732
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9406,
+     "cov_by_band": {
+      "normal": 0.9673,
+      "middle": 0.7812,
+      "div": 0.7513
+     },
+     "ECE_pT1": 0.0042,
+     "twIBS_MELD": 0.02975,
+     "auroc_T1_MELD": 0.99048,
+     "auroc_T2_MELD": 0.99758,
+     "auroc_3W_MELD": 0.99608,
+     "mid_macro_R": 0.2963,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6949
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9107,
+     "cov_by_band": {
+      "normal": 0.9392,
+      "middle": 0.5111,
+      "div": 0.7676
+     },
+     "ECE_pT1": 0.014,
+     "twIBS_MELD": 0.04357,
+     "auroc_T1_MELD": 0.94545,
+     "auroc_T2_MELD": 0.991,
+     "auroc_3W_MELD": 0.99077,
+     "mid_macro_R": 0.3651,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6424
+    }
+   }
+  },
+  "drop_min": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 1.0,
+     "ece_calibrated": 8.163531573704486e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.0030277671087981517,
+     "q90_coverage_conformal": 0.9345340522350962,
+     "cov_by_band": {
+      "normal": 0.9608,
+      "middle": 0.3608,
+      "div": 0.8983
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9282,
+     "cov_by_band": {
+      "normal": 0.9458,
+      "middle": 0.928,
+      "div": 0.775
+     },
+     "ECE_pT1": 0.0109,
+     "twIBS_MELD": 0.01482,
+     "auroc_T1_MELD": 0.99891,
+     "auroc_T2_MELD": 0.99838,
+     "auroc_3W_MELD": 0.99648,
+     "mid_macro_R": 0.2471,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.2018
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9598,
+     "cov_by_band": {
+      "normal": 0.9947,
+      "middle": 0.6842,
+      "div": 0.6257
+     },
+     "ECE_pT1": 0.0348,
+     "twIBS_MELD": 0.03416,
+     "auroc_T1_MELD": 0.99298,
+     "auroc_T2_MELD": 0.97977,
+     "auroc_3W_MELD": 0.98073,
+     "mid_macro_R": -0.1817,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.2366
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 7.956844449731287e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.05369057171895619,
+     "q90_coverage_conformal": 0.9222591870291768,
+     "cov_by_band": {
+      "normal": 0.9486,
+      "middle": 0.6196,
+      "div": 0.7952
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9142,
+     "cov_by_band": {
+      "normal": 0.9608,
+      "middle": 0.5741,
+      "div": 0.6598
+     },
+     "ECE_pT1": 0.0037,
+     "twIBS_MELD": 0.01769,
+     "auroc_T1_MELD": 0.98665,
+     "auroc_T2_MELD": 0.99686,
+     "auroc_3W_MELD": 0.99572,
+     "mid_macro_R": 0.2723,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0524
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9417,
+     "cov_by_band": {
+      "normal": 0.9751,
+      "middle": 0.24,
+      "div": 0.7603
+     },
+     "ECE_pT1": 0.0087,
+     "twIBS_MELD": 0.02024,
+     "auroc_T1_MELD": 0.9669,
+     "auroc_T2_MELD": 0.99397,
+     "auroc_3W_MELD": 0.99419,
+     "mid_macro_R": -0.1738,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8743
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 3.087325216604293e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.016451637012156795,
+     "q90_coverage_conformal": 0.9313219379756033,
+     "cov_by_band": {
+      "normal": 0.9637,
+      "middle": 0.7881,
+      "div": 0.6768
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9382,
+     "cov_by_band": {
+      "normal": 0.9652,
+      "middle": 0.793,
+      "div": 0.7433
+     },
+     "ECE_pT1": 0.0045,
+     "twIBS_MELD": 0.0292,
+     "auroc_T1_MELD": 0.99076,
+     "auroc_T2_MELD": 0.99766,
+     "auroc_3W_MELD": 0.99615,
+     "mid_macro_R": 0.3241,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6985
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9024,
+     "cov_by_band": {
+      "normal": 0.9305,
+      "middle": 0.5222,
+      "div": 0.7492
+     },
+     "ECE_pT1": 0.0126,
+     "twIBS_MELD": 0.04265,
+     "auroc_T1_MELD": 0.94616,
+     "auroc_T2_MELD": 0.99162,
+     "auroc_3W_MELD": 0.99103,
+     "mid_macro_R": 0.3674,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6165
+    }
+   }
+  },
+  "drop_max": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 6.094172629669866e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.013715891650367684,
+     "q90_coverage_conformal": 0.9331956712936408,
+     "cov_by_band": {
+      "normal": 0.9596,
+      "middle": 0.309,
+      "div": 0.9111
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9306,
+     "cov_by_band": {
+      "normal": 0.9486,
+      "middle": 0.92,
+      "div": 0.775
+     },
+     "ECE_pT1": 0.0096,
+     "twIBS_MELD": 0.01398,
+     "auroc_T1_MELD": 0.99912,
+     "auroc_T2_MELD": 0.99856,
+     "auroc_3W_MELD": 0.99624,
+     "mid_macro_R": 0.3608,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.194
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9643,
+     "cov_by_band": {
+      "normal": 0.9932,
+      "middle": 0.6667,
+      "div": 0.6948
+     },
+     "ECE_pT1": 0.034,
+     "twIBS_MELD": 0.03488,
+     "auroc_T1_MELD": 0.98995,
+     "auroc_T2_MELD": 0.97892,
+     "auroc_3W_MELD": 0.98094,
+     "mid_macro_R": -0.0461,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.2206
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 6.634727966032054e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.05552958793081242,
+     "q90_coverage_conformal": 0.9241711598026844,
+     "cov_by_band": {
+      "normal": 0.9524,
+      "middle": 0.6135,
+      "div": 0.7846
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9105,
+     "cov_by_band": {
+      "normal": 0.96,
+      "middle": 0.5602,
+      "div": 0.6367
+     },
+     "ECE_pT1": 0.004,
+     "twIBS_MELD": 0.01762,
+     "auroc_T1_MELD": 0.98676,
+     "auroc_T2_MELD": 0.99693,
+     "auroc_3W_MELD": 0.99604,
+     "mid_macro_R": 0.2776,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0541
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9354,
+     "cov_by_band": {
+      "normal": 0.9738,
+      "middle": 0.224,
+      "div": 0.7033
+     },
+     "ECE_pT1": 0.0096,
+     "twIBS_MELD": 0.02094,
+     "auroc_T1_MELD": 0.97566,
+     "auroc_T2_MELD": 0.99209,
+     "auroc_3W_MELD": 0.9932,
+     "mid_macro_R": -0.1521,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8546
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 4.7116831385557874e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.01791404100106686,
+     "q90_coverage_conformal": 0.9324691216397079,
+     "cov_by_band": {
+      "normal": 0.9658,
+      "middle": 0.7818,
+      "div": 0.6711
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9401,
+     "cov_by_band": {
+      "normal": 0.9665,
+      "middle": 0.7695,
+      "div": 0.7558
+     },
+     "ECE_pT1": 0.0053,
+     "twIBS_MELD": 0.02922,
+     "auroc_T1_MELD": 0.99023,
+     "auroc_T2_MELD": 0.99769,
+     "auroc_3W_MELD": 0.99608,
+     "mid_macro_R": 0.2659,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6948
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9211,
+     "cov_by_band": {
+      "normal": 0.9504,
+      "middle": 0.5222,
+      "div": 0.7645
+     },
+     "ECE_pT1": 0.0174,
+     "twIBS_MELD": 0.04589,
+     "auroc_T1_MELD": 0.94419,
+     "auroc_T2_MELD": 0.99058,
+     "auroc_3W_MELD": 0.99019,
+     "mid_macro_R": 0.3973,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.685
+    }
+   }
+  },
+  "drop_last": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.1128683371645178e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.017838337130951065,
+     "q90_coverage_conformal": 0.9332339107491109,
+     "cov_by_band": {
+      "normal": 0.9599,
+      "middle": 0.3325,
+      "div": 0.9019
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9313,
+     "cov_by_band": {
+      "normal": 0.9509,
+      "middle": 0.896,
+      "div": 0.7641
+     },
+     "ECE_pT1": 0.0097,
+     "twIBS_MELD": 0.01404,
+     "auroc_T1_MELD": 0.99908,
+     "auroc_T2_MELD": 0.99857,
+     "auroc_3W_MELD": 0.99673,
+     "mid_macro_R": 0.241,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1865
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9602,
+     "cov_by_band": {
+      "normal": 0.9927,
+      "middle": 0.5965,
+      "div": 0.6603
+     },
+     "ECE_pT1": 0.0342,
+     "twIBS_MELD": 0.03513,
+     "auroc_T1_MELD": 0.99016,
+     "auroc_T2_MELD": 0.97841,
+     "auroc_3W_MELD": 0.98091,
+     "mid_macro_R": -0.2303,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1957
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 2.564677393319147e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.0579852102902694,
+     "q90_coverage_conformal": 0.9252418645558487,
+     "cov_by_band": {
+      "normal": 0.9534,
+      "middle": 0.6086,
+      "div": 0.7876
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.913,
+     "cov_by_band": {
+      "normal": 0.9633,
+      "middle": 0.5718,
+      "div": 0.6287
+     },
+     "ECE_pT1": 0.0041,
+     "twIBS_MELD": 0.01788,
+     "auroc_T1_MELD": 0.98655,
+     "auroc_T2_MELD": 0.99691,
+     "auroc_3W_MELD": 0.99614,
+     "mid_macro_R": 0.2631,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0561
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9356,
+     "cov_by_band": {
+      "normal": 0.9737,
+      "middle": 0.192,
+      "div": 0.7151
+     },
+     "ECE_pT1": 0.0083,
+     "twIBS_MELD": 0.02047,
+     "auroc_T1_MELD": 0.97478,
+     "auroc_T2_MELD": 0.99335,
+     "auroc_3W_MELD": 0.99523,
+     "mid_macro_R": -0.1552,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8553
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.4316514381489364e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.01938491252087715,
+     "q90_coverage_conformal": 0.9323544032732974,
+     "cov_by_band": {
+      "normal": 0.9657,
+      "middle": 0.7856,
+      "div": 0.6699
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9394,
+     "cov_by_band": {
+      "normal": 0.966,
+      "middle": 0.7812,
+      "div": 0.7504
+     },
+     "ECE_pT1": 0.0049,
+     "twIBS_MELD": 0.02905,
+     "auroc_T1_MELD": 0.99039,
+     "auroc_T2_MELD": 0.99778,
+     "auroc_3W_MELD": 0.99638,
+     "mid_macro_R": 0.2742,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6916
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9147,
+     "cov_by_band": {
+      "normal": 0.9442,
+      "middle": 0.5296,
+      "div": 0.7431
+     },
+     "ECE_pT1": 0.0159,
+     "twIBS_MELD": 0.04473,
+     "auroc_T1_MELD": 0.94351,
+     "auroc_T2_MELD": 0.99077,
+     "auroc_3W_MELD": 0.99095,
+     "mid_macro_R": 0.3534,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6602
+    }
+   }
+  },
+  "drop_slope": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.1173779393068305e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.008597370035918539,
+     "q90_coverage_conformal": 0.9323544032732974,
+     "cov_by_band": {
+      "normal": 0.9579,
+      "middle": 0.3208,
+      "div": 0.9129
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9334,
+     "cov_by_band": {
+      "normal": 0.9513,
+      "middle": 0.896,
+      "div": 0.7814
+     },
+     "ECE_pT1": 0.0102,
+     "twIBS_MELD": 0.01441,
+     "auroc_T1_MELD": 0.99907,
+     "auroc_T2_MELD": 0.99848,
+     "auroc_3W_MELD": 0.99657,
+     "mid_macro_R": 0.2272,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.2009
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9628,
+     "cov_by_band": {
+      "normal": 0.9938,
+      "middle": 0.5965,
+      "div": 0.6795
+     },
+     "ECE_pT1": 0.0344,
+     "twIBS_MELD": 0.03735,
+     "auroc_T1_MELD": 0.98552,
+     "auroc_T2_MELD": 0.97591,
+     "auroc_3W_MELD": 0.97912,
+     "mid_macro_R": -0.1198,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1929
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 8.500918136274451e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.05872817776021233,
+     "q90_coverage_conformal": 0.9257772169324309,
+     "cov_by_band": {
+      "normal": 0.9543,
+      "middle": 0.6184,
+      "div": 0.7828
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9099,
+     "cov_by_band": {
+      "normal": 0.9632,
+      "middle": 0.5764,
+      "div": 0.5984
+     },
+     "ECE_pT1": 0.0042,
+     "twIBS_MELD": 0.01806,
+     "auroc_T1_MELD": 0.98447,
+     "auroc_T2_MELD": 0.99691,
+     "auroc_3W_MELD": 0.99642,
+     "mid_macro_R": 0.2706,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0664
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9399,
+     "cov_by_band": {
+      "normal": 0.9766,
+      "middle": 0.328,
+      "div": 0.7014
+     },
+     "ECE_pT1": 0.0083,
+     "twIBS_MELD": 0.02144,
+     "auroc_T1_MELD": 0.97271,
+     "auroc_T2_MELD": 0.99241,
+     "auroc_3W_MELD": 0.99306,
+     "mid_macro_R": -0.1585,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8939
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 7.182864952007933e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.015958338070299227,
+     "q90_coverage_conformal": 0.9316278536193645,
+     "cov_by_band": {
+      "normal": 0.9641,
+      "middle": 0.7818,
+      "div": 0.678
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9384,
+     "cov_by_band": {
+      "normal": 0.9649,
+      "middle": 0.8086,
+      "div": 0.7442
+     },
+     "ECE_pT1": 0.0045,
+     "twIBS_MELD": 0.02979,
+     "auroc_T1_MELD": 0.99044,
+     "auroc_T2_MELD": 0.99781,
+     "auroc_3W_MELD": 0.99619,
+     "mid_macro_R": 0.2439,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6852
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9029,
+     "cov_by_band": {
+      "normal": 0.9329,
+      "middle": 0.5111,
+      "div": 0.7278
+     },
+     "ECE_pT1": 0.0139,
+     "twIBS_MELD": 0.04474,
+     "auroc_T1_MELD": 0.94198,
+     "auroc_T2_MELD": 0.98973,
+     "auroc_3W_MELD": 0.9902,
+     "mid_macro_R": 0.3844,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6381
+    }
+   }
+  },
+  "drop_q25": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.1802838024230491e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.014844793536356704,
+     "q90_coverage_conformal": 0.9325456005506482,
+     "cov_by_band": {
+      "normal": 0.9575,
+      "middle": 0.342,
+      "div": 0.9115
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9291,
+     "cov_by_band": {
+      "normal": 0.9487,
+      "middle": 0.896,
+      "div": 0.7614
+     },
+     "ECE_pT1": 0.0092,
+     "twIBS_MELD": 0.01423,
+     "auroc_T1_MELD": 0.99906,
+     "auroc_T2_MELD": 0.99862,
+     "auroc_3W_MELD": 0.9967,
+     "mid_macro_R": 0.3246,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1877
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9577,
+     "cov_by_band": {
+      "normal": 0.9923,
+      "middle": 0.5263,
+      "div": 0.643
+     },
+     "ECE_pT1": 0.0252,
+     "twIBS_MELD": 0.0268,
+     "auroc_T1_MELD": 0.99216,
+     "auroc_T2_MELD": 0.98241,
+     "auroc_3W_MELD": 0.98287,
+     "mid_macro_R": 0.0371,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1508
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 3.388866784556323e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06159035467046259,
+     "q90_coverage_conformal": 0.9238652441589231,
+     "cov_by_band": {
+      "normal": 0.9519,
+      "middle": 0.5865,
+      "div": 0.7934
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9098,
+     "cov_by_band": {
+      "normal": 0.9613,
+      "middle": 0.5394,
+      "div": 0.6269
+     },
+     "ECE_pT1": 0.0051,
+     "twIBS_MELD": 0.01966,
+     "auroc_T1_MELD": 0.98483,
+     "auroc_T2_MELD": 0.9968,
+     "auroc_3W_MELD": 0.99595,
+     "mid_macro_R": 0.2804,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.054
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9381,
+     "cov_by_band": {
+      "normal": 0.9748,
+      "middle": 0.232,
+      "div": 0.723
+     },
+     "ECE_pT1": 0.0094,
+     "twIBS_MELD": 0.02134,
+     "auroc_T1_MELD": 0.97047,
+     "auroc_T2_MELD": 0.99229,
+     "auroc_3W_MELD": 0.99321,
+     "mid_macro_R": -0.0729,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8336
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 3.405951357564519e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.008330708019476774,
+     "q90_coverage_conformal": 0.9311689801537226,
+     "cov_by_band": {
+      "normal": 0.9628,
+      "middle": 0.7957,
+      "div": 0.6809
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9317,
+     "cov_by_band": {
+      "normal": 0.9614,
+      "middle": 0.7422,
+      "div": 0.7236
+     },
+     "ECE_pT1": 0.0038,
+     "twIBS_MELD": 0.03037,
+     "auroc_T1_MELD": 0.98972,
+     "auroc_T2_MELD": 0.99786,
+     "auroc_3W_MELD": 0.99644,
+     "mid_macro_R": 0.2748,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.671
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9147,
+     "cov_by_band": {
+      "normal": 0.9434,
+      "middle": 0.5407,
+      "div": 0.7462
+     },
+     "ECE_pT1": 0.0158,
+     "twIBS_MELD": 0.04474,
+     "auroc_T1_MELD": 0.94654,
+     "auroc_T2_MELD": 0.99129,
+     "auroc_3W_MELD": 0.99096,
+     "mid_macro_R": 0.3859,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.644
+    }
+   }
+  },
+  "drop_q50": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 7.74612831834862e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.012150253406805867,
+     "q90_coverage_conformal": 0.9329662345608198,
+     "cov_by_band": {
+      "normal": 0.9593,
+      "middle": 0.3302,
+      "div": 0.9051
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9332,
+     "cov_by_band": {
+      "normal": 0.9511,
+      "middle": 0.904,
+      "div": 0.7805
+     },
+     "ECE_pT1": 0.0098,
+     "twIBS_MELD": 0.01411,
+     "auroc_T1_MELD": 0.99918,
+     "auroc_T2_MELD": 0.9985,
+     "auroc_3W_MELD": 0.99685,
+     "mid_macro_R": 0.233,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.204
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.962,
+     "cov_by_band": {
+      "normal": 0.9927,
+      "middle": 0.6316,
+      "div": 0.6775
+     },
+     "ECE_pT1": 0.023,
+     "twIBS_MELD": 0.02385,
+     "auroc_T1_MELD": 0.9948,
+     "auroc_T2_MELD": 0.98571,
+     "auroc_3W_MELD": 0.98621,
+     "mid_macro_R": 0.0025,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1696
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.2015738589459805e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.063474697247481,
+     "q90_coverage_conformal": 0.9222974264846469,
+     "cov_by_band": {
+      "normal": 0.9514,
+      "middle": 0.5644,
+      "div": 0.789
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9069,
+     "cov_by_band": {
+      "normal": 0.9589,
+      "middle": 0.5509,
+      "div": 0.6144
+     },
+     "ECE_pT1": 0.0034,
+     "twIBS_MELD": 0.01704,
+     "auroc_T1_MELD": 0.98649,
+     "auroc_T2_MELD": 0.99722,
+     "auroc_3W_MELD": 0.99628,
+     "mid_macro_R": 0.2663,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0632
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9454,
+     "cov_by_band": {
+      "normal": 0.9772,
+      "middle": 0.304,
+      "div": 0.7662
+     },
+     "ECE_pT1": 0.0087,
+     "twIBS_MELD": 0.02044,
+     "auroc_T1_MELD": 0.97137,
+     "auroc_T2_MELD": 0.99226,
+     "auroc_3W_MELD": 0.99413,
+     "mid_macro_R": -0.1877,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8895
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.6704247419216867e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.01863408783663978,
+     "q90_coverage_conformal": 0.931283698520133,
+     "cov_by_band": {
+      "normal": 0.9634,
+      "middle": 0.7932,
+      "div": 0.6776
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9394,
+     "cov_by_band": {
+      "normal": 0.9674,
+      "middle": 0.7656,
+      "div": 0.7424
+     },
+     "ECE_pT1": 0.0048,
+     "twIBS_MELD": 0.02936,
+     "auroc_T1_MELD": 0.99027,
+     "auroc_T2_MELD": 0.99761,
+     "auroc_3W_MELD": 0.99626,
+     "mid_macro_R": 0.1843,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6877
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9122,
+     "cov_by_band": {
+      "normal": 0.9407,
+      "middle": 0.5333,
+      "div": 0.7523
+     },
+     "ECE_pT1": 0.0128,
+     "twIBS_MELD": 0.04352,
+     "auroc_T1_MELD": 0.94916,
+     "auroc_T2_MELD": 0.99122,
+     "auroc_3W_MELD": 0.99012,
+     "mid_macro_R": 0.3951,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6263
+    }
+   }
+  },
+  "drop_q75": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 4.9842431831992995e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.00852441469957943,
+     "q90_coverage_conformal": 0.9318955298076556,
+     "cov_by_band": {
+      "normal": 0.957,
+      "middle": 0.3278,
+      "div": 0.9136
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9341,
+     "cov_by_band": {
+      "normal": 0.9515,
+      "middle": 0.896,
+      "div": 0.786
+     },
+     "ECE_pT1": 0.0099,
+     "twIBS_MELD": 0.01395,
+     "auroc_T1_MELD": 0.9992,
+     "auroc_T2_MELD": 0.99865,
+     "auroc_3W_MELD": 0.99658,
+     "mid_macro_R": 0.3069,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1981
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9605,
+     "cov_by_band": {
+      "normal": 0.9916,
+      "middle": 0.6316,
+      "div": 0.6718
+     },
+     "ECE_pT1": 0.0341,
+     "twIBS_MELD": 0.03598,
+     "auroc_T1_MELD": 0.98813,
+     "auroc_T2_MELD": 0.97719,
+     "auroc_3W_MELD": 0.97915,
+     "mid_macro_R": -0.2179,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1924
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 4.357609532037897e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06592798356720872,
+     "q90_coverage_conformal": 0.9230239761385798,
+     "cov_by_band": {
+      "normal": 0.9504,
+      "middle": 0.5914,
+      "div": 0.7967
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9065,
+     "cov_by_band": {
+      "normal": 0.9611,
+      "middle": 0.5208,
+      "div": 0.6046
+     },
+     "ECE_pT1": 0.0039,
+     "twIBS_MELD": 0.01797,
+     "auroc_T1_MELD": 0.98634,
+     "auroc_T2_MELD": 0.99678,
+     "auroc_3W_MELD": 0.996,
+     "mid_macro_R": 0.2887,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0603
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9434,
+     "cov_by_band": {
+      "normal": 0.9785,
+      "middle": 0.368,
+      "div": 0.7132
+     },
+     "ECE_pT1": 0.0148,
+     "twIBS_MELD": 0.02375,
+     "auroc_T1_MELD": 0.96688,
+     "auroc_T2_MELD": 0.98365,
+     "auroc_3W_MELD": 0.98493,
+     "mid_macro_R": -0.2359,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.0472
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 2.571652964473855e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.01514906349541345,
+     "q90_coverage_conformal": 0.932507361095178,
+     "cov_by_band": {
+      "normal": 0.9654,
+      "middle": 0.7869,
+      "div": 0.6736
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9376,
+     "cov_by_band": {
+      "normal": 0.9661,
+      "middle": 0.7891,
+      "div": 0.7299
+     },
+     "ECE_pT1": 0.0049,
+     "twIBS_MELD": 0.02943,
+     "auroc_T1_MELD": 0.99022,
+     "auroc_T2_MELD": 0.99757,
+     "auroc_3W_MELD": 0.99616,
+     "mid_macro_R": 0.2012,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.678
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9095,
+     "cov_by_band": {
+      "normal": 0.9403,
+      "middle": 0.5037,
+      "div": 0.7339
+     },
+     "ECE_pT1": 0.0168,
+     "twIBS_MELD": 0.04483,
+     "auroc_T1_MELD": 0.93878,
+     "auroc_T2_MELD": 0.98868,
+     "auroc_3W_MELD": 0.99045,
+     "mid_macro_R": 0.3478,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6656
+    }
+   }
+  },
+  "drop_ptp": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 8.112377971405291e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.016095855986361096,
+     "q90_coverage_conformal": 0.9328897556498795,
+     "cov_by_band": {
+      "normal": 0.9588,
+      "middle": 0.3384,
+      "div": 0.9054
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9331,
+     "cov_by_band": {
+      "normal": 0.9511,
+      "middle": 0.904,
+      "div": 0.7796
+     },
+     "ECE_pT1": 0.0097,
+     "twIBS_MELD": 0.0138,
+     "auroc_T1_MELD": 0.99911,
+     "auroc_T2_MELD": 0.99847,
+     "auroc_3W_MELD": 0.9965,
+     "mid_macro_R": 0.3154,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1908
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9625,
+     "cov_by_band": {
+      "normal": 0.9921,
+      "middle": 0.6316,
+      "div": 0.6891
+     },
+     "ECE_pT1": 0.0316,
+     "twIBS_MELD": 0.03262,
+     "auroc_T1_MELD": 0.99071,
+     "auroc_T2_MELD": 0.98022,
+     "auroc_3W_MELD": 0.98256,
+     "mid_macro_R": -0.0437,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1912
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 9.043285590957131e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06153937675433929,
+     "q90_coverage_conformal": 0.9257772169324309,
+     "cov_by_band": {
+      "normal": 0.9542,
+      "middle": 0.6184,
+      "div": 0.7836
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9093,
+     "cov_by_band": {
+      "normal": 0.9629,
+      "middle": 0.5625,
+      "div": 0.6002
+     },
+     "ECE_pT1": 0.0036,
+     "twIBS_MELD": 0.01872,
+     "auroc_T1_MELD": 0.98585,
+     "auroc_T2_MELD": 0.99655,
+     "auroc_3W_MELD": 0.99543,
+     "mid_macro_R": 0.2887,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0574
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9366,
+     "cov_by_band": {
+      "normal": 0.9768,
+      "middle": 0.256,
+      "div": 0.6778
+     },
+     "ECE_pT1": 0.009,
+     "twIBS_MELD": 0.0215,
+     "auroc_T1_MELD": 0.97399,
+     "auroc_T2_MELD": 0.99184,
+     "auroc_3W_MELD": 0.9922,
+     "mid_macro_R": -0.1361,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8602
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.746118432912955e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.017415292559014084,
+     "q90_coverage_conformal": 0.9322779243623571,
+     "cov_by_band": {
+      "normal": 0.965,
+      "middle": 0.7856,
+      "div": 0.6752
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9399,
+     "cov_by_band": {
+      "normal": 0.9674,
+      "middle": 0.8086,
+      "div": 0.737
+     },
+     "ECE_pT1": 0.0045,
+     "twIBS_MELD": 0.03036,
+     "auroc_T1_MELD": 0.99059,
+     "auroc_T2_MELD": 0.9972,
+     "auroc_3W_MELD": 0.9955,
+     "mid_macro_R": 0.2557,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6788
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9019,
+     "cov_by_band": {
+      "normal": 0.9346,
+      "middle": 0.4963,
+      "div": 0.6942
+     },
+     "ECE_pT1": 0.0139,
+     "twIBS_MELD": 0.04461,
+     "auroc_T1_MELD": 0.9435,
+     "auroc_T2_MELD": 0.98971,
+     "auroc_3W_MELD": 0.98951,
+     "mid_macro_R": 0.3672,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6303
+    }
+   }
+  },
+  "drop_mad": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 1.0323068765764886e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.012145812920657306,
+     "q90_coverage_conformal": 0.9322014454514168,
+     "cov_by_band": {
+      "normal": 0.9575,
+      "middle": 0.3455,
+      "div": 0.9076
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9305,
+     "cov_by_band": {
+      "normal": 0.949,
+      "middle": 0.904,
+      "div": 0.7714
+     },
+     "ECE_pT1": 0.0105,
+     "twIBS_MELD": 0.01414,
+     "auroc_T1_MELD": 0.99917,
+     "auroc_T2_MELD": 0.99856,
+     "auroc_3W_MELD": 0.99637,
+     "mid_macro_R": 0.352,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1945
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9655,
+     "cov_by_band": {
+      "normal": 0.9938,
+      "middle": 0.6316,
+      "div": 0.7063
+     },
+     "ECE_pT1": 0.0373,
+     "twIBS_MELD": 0.03631,
+     "auroc_T1_MELD": 0.9893,
+     "auroc_T2_MELD": 0.97844,
+     "auroc_3W_MELD": 0.98036,
+     "mid_macro_R": -0.1135,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.2256
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 6.302654529824885e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06650131685796991,
+     "q90_coverage_conformal": 0.924056441436274,
+     "cov_by_band": {
+      "normal": 0.9507,
+      "middle": 0.6135,
+      "div": 0.797
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9061,
+     "cov_by_band": {
+      "normal": 0.9588,
+      "middle": 0.5995,
+      "div": 0.5886
+     },
+     "ECE_pT1": 0.0037,
+     "twIBS_MELD": 0.01749,
+     "auroc_T1_MELD": 0.98542,
+     "auroc_T2_MELD": 0.99708,
+     "auroc_3W_MELD": 0.99633,
+     "mid_macro_R": 0.2394,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0685
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9422,
+     "cov_by_band": {
+      "normal": 0.974,
+      "middle": 0.312,
+      "div": 0.7603
+     },
+     "ECE_pT1": 0.0111,
+     "twIBS_MELD": 0.02163,
+     "auroc_T1_MELD": 0.97072,
+     "auroc_T2_MELD": 0.99046,
+     "auroc_3W_MELD": 0.99167,
+     "mid_macro_R": -0.1526,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.9992
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 5.644378553727685e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.012341233197323831,
+     "q90_coverage_conformal": 0.9324691216397079,
+     "cov_by_band": {
+      "normal": 0.9654,
+      "middle": 0.7907,
+      "div": 0.6724
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9432,
+     "cov_by_band": {
+      "normal": 0.9701,
+      "middle": 0.8008,
+      "div": 0.7487
+     },
+     "ECE_pT1": 0.0049,
+     "twIBS_MELD": 0.02944,
+     "auroc_T1_MELD": 0.99108,
+     "auroc_T2_MELD": 0.99728,
+     "auroc_3W_MELD": 0.99624,
+     "mid_macro_R": 0.3056,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.7009
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9218,
+     "cov_by_band": {
+      "normal": 0.9501,
+      "middle": 0.5778,
+      "div": 0.737
+     },
+     "ECE_pT1": 0.0212,
+     "twIBS_MELD": 0.04861,
+     "auroc_T1_MELD": 0.93933,
+     "auroc_T2_MELD": 0.99019,
+     "auroc_3W_MELD": 0.99101,
+     "mid_macro_R": 0.3365,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.7307
+    }
+   }
+  },
+  "drop_acf1": {
+   "n_features": 110,
+   "lon": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 8.7697209967548e-18,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": 0.010231832773271166,
+     "q90_coverage_conformal": 0.9321632059959466,
+     "cov_by_band": {
+      "normal": 0.9572,
+      "middle": 0.322,
+      "div": 0.9165
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.934,
+     "cov_by_band": {
+      "normal": 0.9509,
+      "middle": 0.904,
+      "div": 0.7896
+     },
+     "ECE_pT1": 0.0102,
+     "twIBS_MELD": 0.01388,
+     "auroc_T1_MELD": 0.99909,
+     "auroc_T2_MELD": 0.99858,
+     "auroc_3W_MELD": 0.99663,
+     "mid_macro_R": 0.2365,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 1.1956
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9618,
+     "cov_by_band": {
+      "normal": 0.9928,
+      "middle": 0.5965,
+      "div": 0.6775
+     },
+     "ECE_pT1": 0.0317,
+     "twIBS_MELD": 0.03222,
+     "auroc_T1_MELD": 0.99176,
+     "auroc_T2_MELD": 0.97977,
+     "auroc_3W_MELD": 0.9831,
+     "mid_macro_R": 0.0128,
+     "mid_n": 57,
+     "mean_asinh_width_q90": 1.1826
+    }
+   },
+   "lat": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 5.680736272425592e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.06589107802506848,
+     "q90_coverage_conformal": 0.924821230545677,
+     "cov_by_band": {
+      "normal": 0.9534,
+      "middle": 0.589,
+      "div": 0.7897
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9059,
+     "cov_by_band": {
+      "normal": 0.9616,
+      "middle": 0.5509,
+      "div": 0.5824
+     },
+     "ECE_pT1": 0.004,
+     "twIBS_MELD": 0.01852,
+     "auroc_T1_MELD": 0.98596,
+     "auroc_T2_MELD": 0.99676,
+     "auroc_3W_MELD": 0.99601,
+     "mid_macro_R": 0.2479,
+     "mid_n": 432,
+     "mean_asinh_width_q90": 1.0549
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9424,
+     "cov_by_band": {
+      "normal": 0.9772,
+      "middle": 0.312,
+      "div": 0.7289
+     },
+     "ECE_pT1": 0.0082,
+     "twIBS_MELD": 0.02057,
+     "auroc_T1_MELD": 0.97425,
+     "auroc_T2_MELD": 0.99098,
+     "auroc_3W_MELD": 0.99209,
+     "mid_macro_R": -0.1594,
+     "mid_n": 125,
+     "mean_asinh_width_q90": 0.8981
+    }
+   },
+   "yaw": {
+    "devval": {
+     "lambda": 0.5,
+     "ece_calibrated": 3.4542165301496045e-17,
+     "monotone_violation_pre_projection": 0.0,
+     "conformal_shift_asinh": -0.010749502689273882,
+     "q90_coverage_conformal": 0.9321632059959466,
+     "cov_by_band": {
+      "normal": 0.9642,
+      "middle": 0.7881,
+      "div": 0.6809
+     }
+    },
+    "holdout": {
+     "n_anchors": 10827,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9379,
+     "cov_by_band": {
+      "normal": 0.9656,
+      "middle": 0.793,
+      "div": 0.737
+     },
+     "ECE_pT1": 0.0045,
+     "twIBS_MELD": 0.02963,
+     "auroc_T1_MELD": 0.99101,
+     "auroc_T2_MELD": 0.99764,
+     "auroc_3W_MELD": 0.99622,
+     "mid_macro_R": 0.1817,
+     "mid_n": 245,
+     "mean_asinh_width_q90": 1.6807
+    },
+    "crossroute": {
+     "n_anchors": 6023,
+     "monotone_violation_pre_projection": 0.0,
+     "q90_coverage": 0.9103,
+     "cov_by_band": {
+      "normal": 0.9403,
+      "middle": 0.5296,
+      "div": 0.7278
+     },
+     "ECE_pT1": 0.0148,
+     "twIBS_MELD": 0.04483,
+     "auroc_T1_MELD": 0.9429,
+     "auroc_T2_MELD": 0.99079,
+     "auroc_3W_MELD": 0.99036,
+     "mid_macro_R": 0.3381,
+     "mid_n": 218,
+     "mean_asinh_width_q90": 1.6489
+    }
+   }
+  }
+ }
+}

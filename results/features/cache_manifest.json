@@ -1,0 +1,255 @@
+{
+ "generated_by": "models/features/build_features.py",
+ "regenerable": "built from the raw logs and the cohort indices only",
+ "python": "3.10.12",
+ "numpy": "2.0.2",
+ "cohort": {
+  "index_union_unique": 255,
+  "train_validation_all_roles": 255,
+  "excluded_smoke_shr": 0,
+  "smoke_ids": [],
+  "official_cohort": 255,
+  "status_mix": {
+   "VALID_COMPLETED": 213,
+   "VALID_COLLAPSE": 42
+  },
+  "VALID_COLLAPSE_included": true,
+  "VALID_COLLAPSE_rationale": "valid runs that ended in divergence; the main source of large-error anchors",
+  "by_source_index": {
+   "development": 255
+  },
+  "logs_loaded": 237,
+  "logs_missing": 18,
+  "missing_detail": [
+   {
+    "scenario_id": "expv2_valv2_translate_y_001",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_translate_y_002",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_translate_y_003",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_translate_y_004",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_translate_y_005",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_translate_y_006",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_trv2_translate_y_001",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "train"
+   },
+   {
+    "scenario_id": "expv2_trv2_translate_y_002",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "train"
+   },
+   {
+    "scenario_id": "expv2_trv2_translate_y_003",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "train"
+   },
+   {
+    "scenario_id": "expv2_trv2_translate_y_004",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "train"
+   },
+   {
+    "scenario_id": "expv2_trv2_translate_y_005",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "train"
+   },
+   {
+    "scenario_id": "expv2_trv2_translate_y_006",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "translate_y",
+    "split_role": "train"
+   },
+   {
+    "scenario_id": "expv2_valv2_sector_thin_001",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "sector_thin",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_sector_thin_002",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "sector_thin",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_sector_thin_003",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "sector_thin",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_sector_thin_004",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "sector_thin",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_sector_thin_005",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "sector_thin",
+    "split_role": "validation"
+   },
+   {
+    "scenario_id": "expv2_valv2_sector_thin_006",
+    "reason": "not_in_frozen_cache",
+    "dir_exists": true,
+    "family": "sector_thin",
+    "split_role": "validation"
+   }
+  ]
+ },
+ "target": {
+  "formula": "max over [t, t+1s) of |e_a|",
+  "axes": [
+   "lon",
+   "lat",
+   "yaw"
+  ],
+  "Y_curr": "|e_a(t)| - current error only (triviality audit)",
+  "Y_futr": "max over (t, t+1s) - strictly future (triviality audit)",
+  "lon_offset_removed_m": -1.6512603049722019,
+  "note": "includes the current time t: a near-term maximum-error assessment, not a forecast"
+ },
+ "features": {
+  "n": 120,
+  "signals": [
+   "transform_probability",
+   "iteration_num",
+   "ndt_inter_sample_jump",
+   "ndt_output_gap",
+   "ndt_yaw_rate_abs"
+  ],
+  "stats": [
+   "mean",
+   "std",
+   "min",
+   "max",
+   "last",
+   "slope",
+   "q25",
+   "q50",
+   "q75",
+   "ptp",
+   "mad",
+   "acf1"
+  ],
+  "scales_s": [
+   2.0,
+   8.0
+  ],
+  "ndt_specific": [
+   "transform_probability"
+  ],
+  "matcher_agnostic": [
+   "iteration_num",
+   "ndt_inter_sample_jump",
+   "ndt_output_gap",
+   "ndt_yaw_rate_abs"
+  ],
+  "excluded_by_prereg": [
+   "ndt_step_dist",
+   "ndt_speed"
+  ],
+  "excluded_reason": "dominated by the commanded vehicle speed"
+ },
+ "thresholds": {
+  "lon": {
+   "T1": 2.5,
+   "T2": 5.0,
+   "basis": "no geometric derivation; operational design choice 2.5/5.0 m after offset correction"
+  },
+  "lat": {
+   "T1": 0.85,
+   "T2": 1.75,
+   "basis": "T1=(lane 3.5 m - vehicle 1.8 m)/2=0.85 m (vehicle edge reaches the lane edge), T2=lane/2=1.75 m (centre leaves the lane)"
+  },
+  "yaw": {
+   "T1": 2.4336061007201213,
+   "T2": 4.858462919034286,
+   "basis": "T1=atan(0.85/20 m)=2.434 deg, T2=atan(0.85/10 m)=4.858 deg (half-margin consumed at the look-ahead distance)"
+  }
+ },
+ "anchors": {
+  "total": 106787,
+  "train": 80636,
+  "validation": 26151,
+  "stride_s": 0.5,
+  "history_min_s": 8.0,
+  "rule": "every time step is an anchor (health assessment covers segments that are already degraded)"
+ },
+ "clusters": {
+  "train": 46,
+  "validation": 14
+ },
+ "X_sha256": "c0a997e25d161c07c7cc4fbba9cde9dc83100a4f8decde45cc01770d7df1bf41",
+ "leak_guard": {
+  "checked_signals": [
+   "transform_probability",
+   "iteration_num",
+   "ndt_inter_sample_jump",
+   "ndt_output_gap",
+   "ndt_yaw_rate_abs"
+  ],
+  "forbidden_prefixes": [
+   "gt_",
+   "carla_ego_",
+   "raw_",
+   "route_",
+   "lane_",
+   "collision",
+   "safety_"
+  ],
+  "result": "PASS"
+ }
+}

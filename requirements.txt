@@ -1,0 +1,8 @@
+# Python 3.10; the versions the shipped results were produced with
+numpy==2.0.2
+lightgbm==4.7.0
+scikit-learn==1.7.2
+scipy==1.15.3
+joblib==1.5.3
+matplotlib==3.10.9   # figures/
+pillow==12.3.0       # figures/cases/

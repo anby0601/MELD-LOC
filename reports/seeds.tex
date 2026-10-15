@@ -1,0 +1,21 @@
+\begin{table}[!t]
+\caption{Seed variability of the headline holdout metrics. The frozen model (seed 20260803) is the one reported elsewhere; five additional seeds re-run the entire registered pipeline (subsampling and cluster-fold seeds, $\lambda$ selection, isotonic calibration, and conformal shift). Entries for the additional seeds are mean $\pm$ SD.}
+\label{tab:seeds}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccc}
+\toprule
+Metric & & lon & lat & yaw \\
+\midrule
+Coverage & frozen & 0.932 & 0.908 & 0.941 \\
+ & seeds & 0.930$\pm$0.002 & 0.909$\pm$0.004 & 0.938$\pm$0.003 \\
+\quad mid & frozen & 0.904 & 0.553 & 0.785 \\
+ & seeds & 0.907$\pm$0.009 & 0.502$\pm$0.030 & 0.777$\pm$0.005 \\
+ECE at $T_1$ & frozen & 0.010 & 0.003 & 0.005 \\
+ & seeds & 0.010$\pm$0.001 & 0.004$\pm$0.000 & 0.005$\pm$0.001 \\
+twIBS & frozen & 0.0140 & 0.0179 & 0.0294 \\
+ & seeds & 0.0141$\pm$0.0003 & 0.0176$\pm$0.0002 & 0.0293$\pm$0.0004 \\
+\bottomrule
+\end{tabular}
+\end{table}

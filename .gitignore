@@ -1,0 +1,7 @@
+# local configuration and generated run data
+env.sh
+data/logs/
+figures/out/
+__pycache__/
+*.pyc
+models/trained/

@@ -1,0 +1,331 @@
+{
+ "seed": 4,
+ "fold_seed": 4,
+ "gbdt": {
+  "n_estimators": 400,
+  "num_leaves": 63,
+  "learning_rate": 0.05,
+  "min_child_samples": 50,
+  "subsample": 0.8,
+  "subsample_freq": 1,
+  "colsample_bytree": 0.8,
+  "reg_lambda": 1.0,
+  "random_state": 4,
+  "verbose": -1,
+  "n_jobs": 12
+ },
+ "smoke": false,
+ "core_version_hash": "aa0759b9fc1cc8c3",
+ "frozen_v1_untouched": true,
+ "axes": {
+  "lon": {
+   "devval": {
+    "t_max": 253.7061153411863,
+    "lambda": 0.5,
+    "family_weights": {
+     "lateral_shear": 0.8156971624782973,
+     "longitudinal_shear": 2.0,
+     "random_dropout": 1.236625817042902,
+     "range_clip": 2.0,
+     "sector_remove": 1.0597977023833682,
+     "sector_thin": 0.8180771310279014,
+     "translate_y": 0.8058055509359021,
+     "yaw_rotate": 0.7771974632604453,
+     "yaw_shear": 1.0
+    },
+    "lam_grid_logloss": {
+     "0.0": 0.09923146304421394,
+     "0.25": 0.09508649485266606,
+     "0.5": 0.09307287479880515,
+     "1.0": 0.09422164484316745
+    },
+    "ece_raw": 0.008282741107258662,
+    "ece_calibrated": 6.347962160193488e-17,
+    "monotone_violation_pre_projection": 0.0,
+    "conformal_shift_asinh": 0.010207443358654977,
+    "q90_coverage_raw": 0.9255477801996099,
+    "q90_coverage_conformal": 0.9316278536193645,
+    "cov_by_band": {
+     "normal": 0.957,
+     "middle": 0.3314,
+     "div": 0.9101
+    }
+   },
+   "model_path": "models/meldloc_seeds/seed4/meldloc_lon.joblib",
+   "holdout": {
+    "n_anchors": 10827,
+    "monotone_violation_pre_projection": 0.0,
+    "q90_coverage": 0.9301,
+    "cov_by_band": {
+     "normal": 0.9476,
+     "middle": 0.904,
+     "div": 0.7796
+    },
+    "ECE_pT1": 0.0107,
+    "twIBS_MELD": 0.0146,
+    "auroc_T1_MELD": 0.99911,
+    "auroc_T2_MELD": 0.99851,
+    "auroc_3W_MELD": 0.99673,
+    "mid_macro_R": 0.2137,
+    "mid_n": 125,
+    "mean_asinh_width_q90": 1.1972
+   },
+   "crossroute": {
+    "n_anchors": 6023,
+    "monotone_violation_pre_projection": 0.0,
+    "q90_coverage": 0.9626,
+    "cov_by_band": {
+     "normal": 0.9938,
+     "middle": 0.614,
+     "div": 0.6756
+    },
+    "ECE_pT1": 0.0343,
+    "twIBS_MELD": 0.0351,
+    "auroc_T1_MELD": 0.99059,
+    "auroc_T2_MELD": 0.97954,
+    "auroc_3W_MELD": 0.98051,
+    "mid_macro_R": 0.0277,
+    "mid_n": 57,
+    "mean_asinh_width_q90": 1.2012
+   },
+   "baselines": {
+    "devval": {
+     "K_indep": {
+      "viol": 0.4621,
+      "twIBS": 0.12567
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.169,
+      "twIBS": 0.01691
+     }
+    },
+    "holdout": {
+     "K_indep": {
+      "viol": 0.4755,
+      "twIBS": 0.12515
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.1872,
+      "twIBS": 0.01728
+     }
+    },
+    "crossroute": {
+     "K_indep": {
+      "viol": 0.514,
+      "twIBS": 0.13974
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.3204,
+      "twIBS": 0.03152
+     }
+    }
+   }
+  },
+  "lat": {
+   "devval": {
+    "t_max": 298.4068466186521,
+    "lambda": 0.5,
+    "family_weights": {
+     "lateral_shear": 1.6989949950815002,
+     "longitudinal_shear": 1.9077714591838149,
+     "random_dropout": 1.0,
+     "range_clip": 2.0,
+     "sector_remove": 0.9408732331292942,
+     "sector_thin": 0.658440510383789,
+     "translate_y": 1.6511897837699014,
+     "yaw_rotate": 0.6081938411578441,
+     "yaw_shear": 0.8952759615111292
+    },
+    "lam_grid_logloss": {
+     "0.0": 0.08276028090156258,
+     "0.25": 0.07959645044208048,
+     "0.5": 0.07932789197543146,
+     "1.0": 0.08554085592336602
+    },
+    "ece_raw": 0.006159400330499571,
+    "ece_calibrated": 3.553946630749845e-17,
+    "monotone_violation_pre_projection": 0.0,
+    "conformal_shift_asinh": -0.06521155914432979,
+    "q90_coverage_raw": 0.957324767695308,
+    "q90_coverage_conformal": 0.9239034836143933,
+    "cov_by_band": {
+     "normal": 0.9547,
+     "middle": 0.5399,
+     "div": 0.785
+    }
+   },
+   "model_path": "models/meldloc_seeds/seed4/meldloc_lat.joblib",
+   "holdout": {
+    "n_anchors": 10827,
+    "monotone_violation_pre_projection": 0.0,
+    "q90_coverage": 0.9134,
+    "cov_by_band": {
+     "normal": 0.9641,
+     "middle": 0.4653,
+     "div": 0.667
+    },
+    "ECE_pT1": 0.0041,
+    "twIBS_MELD": 0.0177,
+    "auroc_T1_MELD": 0.9856,
+    "auroc_T2_MELD": 0.99696,
+    "auroc_3W_MELD": 0.99578,
+    "mid_macro_R": 0.2804,
+    "mid_n": 432,
+    "mean_asinh_width_q90": 1.0693
+   },
+   "crossroute": {
+    "n_anchors": 6023,
+    "monotone_violation_pre_projection": 0.0,
+    "q90_coverage": 0.9386,
+    "cov_by_band": {
+     "normal": 0.9759,
+     "middle": 0.184,
+     "div": 0.7289
+    },
+    "ECE_pT1": 0.0087,
+    "twIBS_MELD": 0.02094,
+    "auroc_T1_MELD": 0.9724,
+    "auroc_T2_MELD": 0.99472,
+    "auroc_3W_MELD": 0.99514,
+    "mid_macro_R": -0.1025,
+    "mid_n": 125,
+    "mean_asinh_width_q90": 0.867
+   },
+   "baselines": {
+    "devval": {
+     "K_indep": {
+      "viol": 0.409,
+      "twIBS": 0.12586
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.1875,
+      "twIBS": 0.01723
+     }
+    },
+    "holdout": {
+     "K_indep": {
+      "viol": 0.4078,
+      "twIBS": 0.13164
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.211,
+      "twIBS": 0.02465
+     }
+    },
+    "crossroute": {
+     "K_indep": {
+      "viol": 0.4933,
+      "twIBS": 0.14085
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.3411,
+      "twIBS": 0.02916
+     }
+    }
+   }
+  },
+  "yaw": {
+   "devval": {
+    "t_max": 179.91360473632812,
+    "lambda": 0.5,
+    "family_weights": {
+     "lateral_shear": 0.8738888373822579,
+     "longitudinal_shear": 1.5002889944962134,
+     "random_dropout": 0.9654708581568292,
+     "range_clip": 2.0,
+     "sector_remove": 1.0,
+     "sector_thin": 0.8808384884044632,
+     "translate_y": 0.8034378743089177,
+     "yaw_rotate": 2.0,
+     "yaw_shear": 1.5407435930229099
+    },
+    "lam_grid_logloss": {
+     "0.0": 0.10529238159777521,
+     "0.25": 0.101978912508792,
+     "0.5": 0.100768858247022,
+     "1.0": 0.1039960301476507
+    },
+    "ece_raw": 0.005187447029429175,
+    "ece_calibrated": 1.585142349850341e-17,
+    "monotone_violation_pre_projection": 0.0,
+    "conformal_shift_asinh": -0.009336107114898518,
+    "q90_coverage_raw": 0.9345340522350962,
+    "q90_coverage_conformal": 0.9301747543114987,
+    "cov_by_band": {
+     "normal": 0.9615,
+     "middle": 0.7844,
+     "div": 0.6862
+    }
+   },
+   "model_path": "models/meldloc_seeds/seed4/meldloc_yaw.joblib",
+   "holdout": {
+    "n_anchors": 10827,
+    "monotone_violation_pre_projection": 0.0,
+    "q90_coverage": 0.9355,
+    "cov_by_band": {
+     "normal": 0.963,
+     "middle": 0.7734,
+     "div": 0.7406
+    },
+    "ECE_pT1": 0.0043,
+    "twIBS_MELD": 0.02915,
+    "auroc_T1_MELD": 0.99077,
+    "auroc_T2_MELD": 0.99767,
+    "auroc_3W_MELD": 0.99627,
+    "mid_macro_R": 0.2264,
+    "mid_n": 245,
+    "mean_asinh_width_q90": 1.6699
+   },
+   "crossroute": {
+    "n_anchors": 6023,
+    "monotone_violation_pre_projection": 0.0,
+    "q90_coverage": 0.9148,
+    "cov_by_band": {
+     "normal": 0.946,
+     "middle": 0.5148,
+     "div": 0.7278
+    },
+    "ECE_pT1": 0.0168,
+    "twIBS_MELD": 0.04661,
+    "auroc_T1_MELD": 0.94467,
+    "auroc_T2_MELD": 0.99003,
+    "auroc_3W_MELD": 0.99082,
+    "mid_macro_R": 0.3765,
+    "mid_n": 218,
+    "mean_asinh_width_q90": 1.6598
+   },
+   "baselines": {
+    "devval": {
+     "K_indep": {
+      "viol": 0.4156,
+      "twIBS": 0.13719
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.1687,
+      "twIBS": 0.03286
+     }
+    },
+    "holdout": {
+     "K_indep": {
+      "viol": 0.4198,
+      "twIBS": 0.13408
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.1926,
+      "twIBS": 0.03202
+     }
+    },
+    "crossroute": {
+     "K_indep": {
+      "viol": 0.3726,
+      "twIBS": 0.15157
+     },
+     "Q_multi": {
+      "viol_quantile_crossing": 0.2592,
+      "twIBS": 0.04072
+     }
+    }
+   }
+  }
+ }
+}

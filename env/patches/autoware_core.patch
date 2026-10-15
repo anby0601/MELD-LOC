@@ -1,0 +1,51 @@
+diff --git a/common/autoware_global_parameter_loader/launch/global_params.launch.py b/common/autoware_global_parameter_loader/launch/global_params.launch.py
+index 8f9092b1..949aad08 100644
+--- a/common/autoware_global_parameter_loader/launch/global_params.launch.py
++++ b/common/autoware_global_parameter_loader/launch/global_params.launch.py
+@@ -12,6 +12,8 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++from ament_index_python.packages import get_package_share_directory
++from ament_index_python.packages import PackageNotFoundError
+ from launch import LaunchDescription
+ from launch.actions import DeclareLaunchArgument
+ from launch.actions import IncludeLaunchDescription
+@@ -22,14 +24,26 @@ from launch_ros.actions import SetParameter
+ from launch_ros.substitutions import FindPackageShare
+ 
+ 
++def resolve_vehicle_description_share_dir(vehicle_model: str) -> str:
++    candidates = [
++        f"{vehicle_model}_description",
++        f"autoware_{vehicle_model}_description",
++    ]
++    for candidate in candidates:
++        try:
++            return get_package_share_directory(candidate)
++        except PackageNotFoundError:
++            continue
++    raise PackageNotFoundError(candidates[0])
++
++
+ def launch_setup(context, *args, **kwargs):
+     # use_sim_time
+     set_use_sim_time = SetParameter(name="use_sim_time", value=LaunchConfiguration("use_sim_time"))
+ 
+     # vehicle_info
+-    vehicle_description_pkg = FindPackageShare(
+-        [LaunchConfiguration("vehicle_model"), "_description"]
+-    ).perform(context)
++    vehicle_model = LaunchConfiguration("vehicle_model").perform(context)
++    vehicle_description_pkg = resolve_vehicle_description_share_dir(vehicle_model)
+ 
+     load_vehicle_info = IncludeLaunchDescription(
+         PythonLaunchDescriptionSource(
+@@ -50,6 +64,7 @@ def generate_launch_description():
+     return LaunchDescription(
+         [
+             DeclareLaunchArgument("use_sim_time", default_value="false"),
++            DeclareLaunchArgument("vehicle_model", default_value="sample_vehicle"),
+             OpaqueFunction(function=launch_setup),
+         ]
+     )

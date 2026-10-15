@@ -1,0 +1,285 @@
+{
+ "status": "REGISTERED_BASELINE_COMPLETION (rev.9) — dev, NON_CONFIRMATORY",
+ "naming": "BL-3sigma and BL-TP (reference methods)",
+ "axes": {
+  "lon": {
+   "BL_3sigma": {
+    "constant_bound": 0.45,
+    "coverage": {
+     "overall": {
+      "BL_3sigma": 0.6414,
+      "MELD_conf": 0.9325
+     },
+     "by_band": {
+      "normal": {
+       "n": 22487,
+       "BL_3sigma": 0.7459,
+       "MELD_conf": 0.9581
+      },
+      "middle": {
+       "n": 851,
+       "BL_3sigma": 0.0,
+       "MELD_conf": 0.3325
+      },
+      "divergent": {
+       "n": 2813,
+       "BL_3sigma": 0.0,
+       "MELD_conf": 0.9093
+      }
+     },
+     "by_family": {
+      "lateral_shear": {
+       "BL_3sigma": 0.7894,
+       "MELD_conf": 0.9647
+      },
+      "random_dropout": {
+       "BL_3sigma": 0.6936,
+       "MELD_conf": 0.9425
+      },
+      "range_clip": {
+       "BL_3sigma": 0.0457,
+       "MELD_conf": 0.9079
+      },
+      "sector_remove": {
+       "BL_3sigma": 0.694,
+       "MELD_conf": 0.9518
+      },
+      "translate_x": {
+       "BL_3sigma": 0.1164,
+       "MELD_conf": 0.4058
+      },
+      "yaw_rotate": {
+       "BL_3sigma": 0.7947,
+       "MELD_conf": 0.9789
+      },
+      "yaw_shear": {
+       "BL_3sigma": 0.7509,
+       "MELD_conf": 0.9542
+      }
+     }
+    }
+   },
+   "BL_TP_rule": {
+    "note": "learning-free threshold rule (distinct from the learned TP-GBDT)",
+    "auroc_T1": 0.24269,
+    "auroc_T2": 0.1591
+   },
+   "B0_climatology": {
+    "definition": "input-free empirical quantiles / exceedance function of the training set",
+    "mae": 10.7677,
+    "MELD_mae": 5.2647,
+    "auroc_T1": 0.5,
+    "twIBS": 0.08854,
+    "MELD_twIBS": 0.01389,
+    "q90_coverage": 0.9512,
+    "q90_constant": 95.155,
+    "top10_note": "constant score -> random rejection; retained risk = overall mean 10.9985"
+   },
+   "auroc_T1_missing_CIs": {
+    "MELD": 0.92607,
+    "TP_GBDT": 0.89764,
+    "logistic": 0.93318,
+    "vs_TP_GBDT": {
+     "CI": [
+      0.00462,
+      0.06331
+     ],
+     "verdict": "WIN"
+    },
+    "vs_logistic": {
+     "CI": [
+      -0.02727,
+      0.00297
+     ],
+     "verdict": "LOSS_POINT"
+    }
+   }
+  },
+  "lat": {
+   "BL_3sigma": {
+    "constant_bound": 0.45,
+    "coverage": {
+     "overall": {
+      "BL_3sigma": 0.7854,
+      "MELD_conf": 0.9244
+     },
+     "by_band": {
+      "normal": {
+       "n": 22587,
+       "BL_3sigma": 0.9094,
+       "MELD_conf": 0.953
+      },
+      "middle": {
+       "n": 815,
+       "BL_3sigma": 0.0,
+       "MELD_conf": 0.5779
+      },
+      "divergent": {
+       "n": 2749,
+       "BL_3sigma": 0.0,
+       "MELD_conf": 0.7916
+      }
+     },
+     "by_family": {
+      "lateral_shear": {
+       "BL_3sigma": 0.6531,
+       "MELD_conf": 0.8778
+      },
+      "random_dropout": {
+       "BL_3sigma": 0.9062,
+       "MELD_conf": 0.943
+      },
+      "range_clip": {
+       "BL_3sigma": 0.1245,
+       "MELD_conf": 0.812
+      },
+      "sector_remove": {
+       "BL_3sigma": 0.9418,
+       "MELD_conf": 0.9252
+      },
+      "translate_x": {
+       "BL_3sigma": 0.969,
+       "MELD_conf": 0.9856
+      },
+      "yaw_rotate": {
+       "BL_3sigma": 0.9961,
+       "MELD_conf": 0.9856
+      },
+      "yaw_shear": {
+       "BL_3sigma": 0.9485,
+       "MELD_conf": 0.9649
+      }
+     }
+    }
+   },
+   "BL_TP_rule": {
+    "note": "learning-free threshold rule (distinct from the learned TP-GBDT)",
+    "auroc_T1": 0.26393,
+    "auroc_T2": 0.16786
+   },
+   "B0_climatology": {
+    "definition": "input-free empirical quantiles / exceedance function of the training set",
+    "mae": 15.6574,
+    "MELD_mae": 6.3517,
+    "auroc_T1": 0.5,
+    "twIBS": 0.08483,
+    "MELD_twIBS": 0.01486,
+    "q90_coverage": 0.9617,
+    "q90_constant": 190.252,
+    "top10_note": "constant score -> random rejection; retained risk = overall mean 15.7503"
+   },
+   "auroc_T1_missing_CIs": {
+    "MELD": 0.98746,
+    "TP_GBDT": 0.96995,
+    "logistic": 0.94558,
+    "vs_TP_GBDT": {
+     "CI": [
+      0.00628,
+      0.03428
+     ],
+     "verdict": "WIN"
+    },
+    "vs_logistic": {
+     "CI": [
+      0.0051,
+      0.12278
+     ],
+     "verdict": "WIN"
+    }
+   }
+  },
+  "yaw": {
+   "BL_3sigma": {
+    "constant_bound": 4.295,
+    "coverage": {
+     "overall": {
+      "BL_3sigma": 0.8967,
+      "MELD_conf": 0.9324
+     },
+     "by_band": {
+      "normal": {
+       "n": 22895,
+       "BL_3sigma": 1.0,
+       "MELD_conf": 0.9654
+      },
+      "middle": {
+       "n": 793,
+       "BL_3sigma": 0.6986,
+       "MELD_conf": 0.7831
+      },
+      "divergent": {
+       "n": 2463,
+       "BL_3sigma": 0.0,
+       "MELD_conf": 0.674
+      }
+     },
+     "by_family": {
+      "lateral_shear": {
+       "BL_3sigma": 1.0,
+       "MELD_conf": 0.9891
+      },
+      "random_dropout": {
+       "BL_3sigma": 0.98,
+       "MELD_conf": 0.9812
+      },
+      "range_clip": {
+       "BL_3sigma": 0.1804,
+       "MELD_conf": 0.7412
+      },
+      "sector_remove": {
+       "BL_3sigma": 1.0,
+       "MELD_conf": 0.985
+      },
+      "translate_x": {
+       "BL_3sigma": 0.9956,
+       "MELD_conf": 0.9922
+      },
+      "yaw_rotate": {
+       "BL_3sigma": 1.0,
+       "MELD_conf": 0.866
+      },
+      "yaw_shear": {
+       "BL_3sigma": 1.0,
+       "MELD_conf": 0.9507
+      }
+     }
+    }
+   },
+   "BL_TP_rule": {
+    "note": "learning-free threshold rule (distinct from the learned TP-GBDT)",
+    "auroc_T1": 0.20136,
+    "auroc_T2": 0.17143
+   },
+   "B0_climatology": {
+    "definition": "input-free empirical quantiles / exceedance function of the training set",
+    "mae": 11.7436,
+    "MELD_mae": 5.4812,
+    "auroc_T1": 0.5,
+    "twIBS": 0.11252,
+    "MELD_twIBS": 0.03049,
+    "q90_coverage": 0.9325,
+    "q90_constant": 92.026,
+    "top10_note": "constant score -> random rejection; retained risk = overall mean 11.9789"
+   },
+   "auroc_T1_missing_CIs": {
+    "MELD": 0.98808,
+    "TP_GBDT": 0.95468,
+    "logistic": 0.97083,
+    "vs_TP_GBDT": {
+     "CI": [
+      0.00973,
+      0.09285
+     ],
+     "verdict": "WIN"
+    },
+    "vs_logistic": {
+     "CI": [
+      0.00402,
+      0.05284
+     ],
+     "verdict": "WIN"
+    }
+   }
+  }
+ }
+}

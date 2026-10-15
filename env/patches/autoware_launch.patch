@@ -1,0 +1,362 @@
+diff --git a/autoware_launch/config/localization/ekf_localizer.param.yaml b/autoware_launch/config/localization/ekf_localizer.param.yaml
+index 4a7696ec..632626f4 100644
+--- a/autoware_launch/config/localization/ekf_localizer.param.yaml
++++ b/autoware_launch/config/localization/ekf_localizer.param.yaml
+@@ -13,12 +13,14 @@
+       pose_additional_delay: 0.0
+       pose_measure_uncertainty_time: 0.01
+       pose_smoothing_steps: 5
++      max_pose_queue_size: 5 # if multiple measurements arrive within one ekf_dt, this limits must be adjusted.
+       pose_gate_dist: 49.5 # corresponds to significance level = 10^-10
+ 
+     twist_measurement:
+       # for twist measurement
+       twist_additional_delay: 0.0
+       twist_smoothing_steps: 2
++      max_twist_queue_size: 2 # if multiple measurements arrive within one ekf_dt, this limits must be adjusted.
+       twist_gate_dist: 46.1 # corresponds to significance level = 10^-10
+ 
+     process_noise:
+diff --git a/autoware_launch/config/localization/ndt_scan_matcher/ndt_scan_matcher.param.yaml b/autoware_launch/config/localization/ndt_scan_matcher/ndt_scan_matcher.param.yaml
+index d1e721d7..befef708 100644
+--- a/autoware_launch/config/localization/ndt_scan_matcher/ndt_scan_matcher.param.yaml
++++ b/autoware_launch/config/localization/ndt_scan_matcher/ndt_scan_matcher.param.yaml
+@@ -62,7 +62,7 @@
+       initial_pose_distance_tolerance_m: 10.0
+ 
+       # Tolerance of distance difference from initial pose to result pose. [m]
+-      initial_to_result_distance_tolerance_m: 3.0
++      initial_to_result_distance_tolerance_m: 10.0
+ 
+       # The execution time which means probably NDT cannot matches scans properly. [ms]
+       critical_upper_bound_exe_time_ms: 100.0
+@@ -86,7 +86,7 @@
+ 
+       # Scan matching score based on no ground LiDAR scan
+       no_ground_points:
+-        enable: false
++        enable: true
+ 
+         # If lidar_point.z - base_link.z <= this threshold , the point will be removed
+         z_margin_for_ground_removal: 0.8
+diff --git a/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range.param.yaml b/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range.param.yaml
+index cb120443..e1d09c49 100644
+--- a/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range.param.yaml
++++ b/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range.param.yaml
+@@ -9,3 +9,4 @@
+     min_z: -200.0
+     max_z: 200.0
+     negative: False
++    processing_time_threshold_sec: 0.01
+diff --git a/autoware_launch/config/localization/pose_initializer.param.yaml b/autoware_launch/config/localization/pose_initializer.param.yaml
+index 90ec7825..e403160f 100644
+--- a/autoware_launch/config/localization/pose_initializer.param.yaml
++++ b/autoware_launch/config/localization/pose_initializer.param.yaml
+@@ -6,6 +6,8 @@
+ 
+     gnss_pose_timeout: 3.0 # [sec]
+     stop_check_duration: 3.0 # [sec]
++    pose_error_threshold: 5.0 # [m]
++    pose_error_check_enabled: false # check initial pose error with gnss
+     ekf_enabled: $(var ekf_enabled)
+     gnss_enabled: $(var gnss_enabled)
+     yabloc_enabled: $(var yabloc_enabled)
+diff --git a/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-awsim.yaml b/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-awsim.yaml
+index 9950acbc..f394ea48 100644
+--- a/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-awsim.yaml
++++ b/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-awsim.yaml
+@@ -1,5 +1 @@
+-files:
+-  - { path: $(find-pkg-share system_diagnostic_monitor)/config/autoware-main.yaml }
+-
+-edits:
+-  - { type: remove, path: /autoware/system/duplicated_node_checker }
++files: []
+diff --git a/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-main.yaml b/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-main.yaml
+index 42af3f79..f394ea48 100644
+--- a/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-main.yaml
++++ b/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-main.yaml
+@@ -1,2 +1 @@
+-files:
+-  - { path: $(find-pkg-share system_diagnostic_monitor)/config/autoware-main.yaml }
++files: []
+diff --git a/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-psim.yaml b/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-psim.yaml
+index dfc820f9..f394ea48 100644
+--- a/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-psim.yaml
++++ b/autoware_launch/config/system/diagnostic_graph_aggregator/autoware-psim.yaml
+@@ -1,2 +1 @@
+-files:
+-  - { path: $(find-pkg-share system_diagnostic_monitor)/config/autoware-psim.yaml }
++files: []
+diff --git a/autoware_launch/launch/autoware.launch.xml b/autoware_launch/launch/autoware.launch.xml
+index 38f8550f..20d27d23 100644
+--- a/autoware_launch/launch/autoware.launch.xml
++++ b/autoware_launch/launch/autoware.launch.xml
+@@ -51,7 +51,7 @@
+ 
+   <!-- Global parameters -->
+   <group scoped="false">
+-    <include file="$(find-pkg-share global_parameter_loader)/launch/global_params.launch.py">
++    <include file="$(find-pkg-share autoware_global_parameter_loader)/launch/global_params.launch.py">
+       <arg name="use_sim_time" value="$(var use_sim_time)"/>
+       <arg name="vehicle_model" value="$(var vehicle_model)"/>
+     </include>
+diff --git a/autoware_launch/launch/components/tier4_localization_component.launch.xml b/autoware_launch/launch/components/tier4_localization_component.launch.xml
+index 9a9588fe..efd848fc 100644
+--- a/autoware_launch/launch/components/tier4_localization_component.launch.xml
++++ b/autoware_launch/launch/components/tier4_localization_component.launch.xml
+@@ -6,11 +6,24 @@
+   <arg name="input_pointcloud" default="/sensing/lidar/top/pointcloud_before_sync" description="The topic will be used in the localization util module"/>
+   <arg name="localization_pointcloud_container_name" default="/pointcloud_container" description="The target container to which pointcloud preprocessing nodes in localization be attached"/>
+   <arg name="initial_pose" default="[]" description="initial pose (x, y, z, quat_x, quat_y, quat_z, quat_w)"/>
++  <arg name="stop_filter_param_path" default="$(find-pkg-share autoware_stop_filter)/config/stop_filter.param.yaml"/>
++  <arg name="pose_instability_detector_param_path" default="$(find-pkg-share autoware_pose_instability_detector)/config/pose_instability_detector.param.yaml"/>
++  <arg name="lidar_marker_localizer/lidar_marker_localizer_param_path" default="$(find-pkg-share autoware_lidar_marker_localizer)/config/lidar_marker_localizer.param.yaml"/>
++  <arg
++    name="lidar_marker_localizer/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path"
++    default="$(find-pkg-share autoware_pointcloud_preprocessor)/config/crop_box_filter_node.param.yaml"
++  />
++  <arg
++    name="lidar_marker_localizer/pointcloud_preprocessor/ring_filter_param_path"
++    default="$(find-pkg-share autoware_pointcloud_preprocessor)/config/passthrough_filter_uint16_node.param.yaml"
++  />
++  <let name="effective_twist_source" value="none" if="$(eval &quot;'$(var system_run_mode)'=='logging_simulation'&quot;)"/>
++  <let name="effective_twist_source" value="$(var twist_source)" unless="$(eval &quot;'$(var system_run_mode)'=='logging_simulation'&quot;)"/>
+ 
+   <group>
+     <include file="$(find-pkg-share tier4_localization_launch)/launch/localization.launch.xml">
+       <arg name="pose_source" value="$(var pose_source)"/>
+-      <arg name="twist_source" value="$(var twist_source)"/>
++      <arg name="twist_source" value="$(var effective_twist_source)"/>
+       <arg name="system_run_mode" value="$(var system_run_mode)"/>
+       <arg name="input_pointcloud" value="$(var input_pointcloud)"/>
+       <arg name="localization_pointcloud_container_name" value="$(var localization_pointcloud_container_name)"/>
+@@ -19,6 +32,8 @@
+       <!-- parameter paths for common -->
+       <arg name="localization_error_monitor_param_path" value="$(var loc_config_path)/localization_error_monitor.param.yaml"/>
+       <arg name="ekf_localizer_param_path" value="$(var loc_config_path)/ekf_localizer.param.yaml"/>
++      <arg name="stop_filter_param_path" value="$(var stop_filter_param_path)"/>
++      <arg name="pose_instability_detector_param_path" value="$(var pose_instability_detector_param_path)"/>
+       <arg name="pose_initializer_param_path" value="$(var loc_config_path)/pose_initializer.param.yaml"/>
+       <arg name="twist2accel_param_path" value="$(var loc_config_path)/twist2accel.param.yaml"/>
+ 
+@@ -53,6 +68,18 @@
+ 
+       <!-- parameter path for ar_tag_based_localizer -->
+       <arg name="ar_tag_based_localizer_param_path" value="$(var loc_config_path)/ar_tag_based_localizer.param.yaml"/>
++      <arg
++        name="lidar_marker_localizer/lidar_marker_localizer_param_path"
++        value="$(var lidar_marker_localizer/lidar_marker_localizer_param_path)"
++      />
++      <arg
++        name="lidar_marker_localizer/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path"
++        value="$(var lidar_marker_localizer/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path)"
++      />
++      <arg
++        name="lidar_marker_localizer/pointcloud_preprocessor/ring_filter_param_path"
++        value="$(var lidar_marker_localizer/pointcloud_preprocessor/ring_filter_param_path)"
++      />
+     </include>
+   </group>
+ </launch>
+diff --git a/autoware_launch/launch/components/tier4_sensing_component.launch.xml b/autoware_launch/launch/components/tier4_sensing_component.launch.xml
+index 4cd6eccb..431ec96f 100644
+--- a/autoware_launch/launch/components/tier4_sensing_component.launch.xml
++++ b/autoware_launch/launch/components/tier4_sensing_component.launch.xml
+@@ -1,10 +1,13 @@
+ <?xml version="1.0"?>
+ <launch>
++  <let name="use_prefixed_vehicle_description" value="$(eval &quot;'$(var vehicle_model)'=='sample_vehicle'&quot;)"/>
++  <let name="vehicle_description_pkg" value="autoware_sample_vehicle_description" if="$(var use_prefixed_vehicle_description)"/>
++  <let name="vehicle_description_pkg" value="$(eval &quot;'$(var vehicle_model)' + '_description'&quot;)" unless="$(var use_prefixed_vehicle_description)"/>
++
+   <include file="$(find-pkg-share tier4_sensing_launch)/launch/sensing.launch.xml">
+     <arg name="launch_driver" value="$(var launch_sensing_driver)"/>
+     <arg name="sensor_model" value="$(var sensor_model)"/>
+-    <arg name="vehicle_param_file" value="$(find-pkg-share $(var vehicle_model)_description)/config/vehicle_info.param.yaml"/>
+-    <arg name="vehicle_mirror_param_file" value="$(find-pkg-share $(var vehicle_model)_description)/config/mirror.param.yaml"/>
++    <arg name="vehicle_mirror_param_file" value="$(find-pkg-share $(var vehicle_description_pkg))/config/mirror.param.yaml"/>
+     <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
+   </include>
+ </launch>
+diff --git a/autoware_launch/launch/components/tier4_system_component.launch.xml b/autoware_launch/launch/components/tier4_system_component.launch.xml
+index 18042ddd..f27d2f84 100644
+--- a/autoware_launch/launch/components/tier4_system_component.launch.xml
++++ b/autoware_launch/launch/components/tier4_system_component.launch.xml
+@@ -1,8 +1,9 @@
+ <?xml version="1.0"?>
+ <launch>
+   <arg name="system_error_monitor_param_path" default="$(find-pkg-share autoware_launch)/config/system/system_error_monitor/system_error_monitor.param.yaml"/>
+-  <arg name="diagnostic_graph_aggregator_param_path" default="$(find-pkg-share diagnostic_graph_aggregator)/config/default.param.yaml"/>
++  <arg name="diagnostic_graph_aggregator_param_path" default="$(find-pkg-share autoware_launch)/config/system/diagnostic_graph_aggregator/default.param.yaml"/>
+   <arg name="diagnostic_graph_aggregator_graph_path" default="$(find-pkg-share autoware_launch)/config/system/diagnostic_graph_aggregator/autoware-main.yaml"/>
++  <arg name="pipeline_latency_monitor_param_path" default="$(find-pkg-share autoware_pipeline_latency_monitor)/config/pipeline_latency_monitor.param.yaml"/>
+ 
+   <include file="$(find-pkg-share tier4_system_launch)/launch/system.launch.xml">
+     <arg name="run_mode" value="$(var system_run_mode)"/>
+@@ -14,6 +15,7 @@
+     <arg name="emergency_handler_param_path" value="$(find-pkg-share autoware_launch)/config/system/emergency_handler/emergency_handler.param.yaml"/>
+     <arg name="duplicated_node_checker_param_path" value="$(find-pkg-share autoware_launch)/config/system/duplicated_node_checker/duplicated_node_checker.param.yaml"/>
+     <arg name="processing_time_checker_param_path" value="$(find-pkg-share autoware_launch)/config/system/processing_time_checker/processing_time_checker.param.yaml"/>
++    <arg name="pipeline_latency_monitor_param_path" value="$(var pipeline_latency_monitor_param_path)"/>
+     <arg name="mrm_comfortable_stop_operator_param_path" value="$(find-pkg-share autoware_launch)/config/system/mrm_comfortable_stop_operator/mrm_comfortable_stop_operator.param.yaml"/>
+     <arg name="mrm_emergency_stop_operator_param_path" value="$(find-pkg-share autoware_launch)/config/system/mrm_emergency_stop_operator/mrm_emergency_stop_operator.param.yaml"/>
+     <arg name="system_error_monitor_param_path" value="$(var system_error_monitor_param_path)"/>
+diff --git a/autoware_launch/launch/logging_simulator.launch.xml b/autoware_launch/launch/logging_simulator.launch.xml
+index 420f3909..8f4b82d4 100644
+--- a/autoware_launch/launch/logging_simulator.launch.xml
++++ b/autoware_launch/launch/logging_simulator.launch.xml
+@@ -22,6 +22,8 @@
+   <arg name="control" default="false" description="launch control"/>
+   <!-- Pointcloud container -->
+   <arg name="pointcloud_container_name" default="pointcloud_container"/>
++  <arg name="input_pointcloud" default="/sensing/lidar/top/pointcloud_before_sync"/>
++  <arg name="initial_pose" default="[]"/>
+   <!-- Vehicle -->
+   <arg name="launch_vehicle_interface" default="false"/>
+   <!-- Map -->
+@@ -31,44 +33,79 @@
+   <arg name="launch_system_monitor" default="false" description="launch system monitor"/>
+   <arg name="launch_dummy_diag_publisher" default="false" description="launch dummy diag publisher"/>
+   <!-- Tools -->
+-  <arg name="rviz" default="true" description="launch rviz"/>
++  <arg name="rviz" default="false" description="launch rviz"/>
+   <!-- Scenario simulation -->
+   <arg name="scenario_simulation" default="false" description="use scenario simulation"/>
++  <arg name="rviz_config" default="$(find-pkg-share autoware_launch)/rviz/autoware.rviz" description="rviz config"/>
++  <arg name="rviz_respawn" default="false"/>
+ 
+   <group scoped="false">
+-    <include file="$(find-pkg-share autoware_launch)/launch/autoware.launch.xml">
+-      <!-- Common -->
+-      <arg name="map_path" value="$(var map_path)"/>
++    <include file="$(find-pkg-share autoware_global_parameter_loader)/launch/global_params.launch.py">
++      <arg name="use_sim_time" value="true"/>
++      <arg name="vehicle_model" value="$(var vehicle_model)"/>
++    </include>
++  </group>
++
++  <include file="$(find-pkg-share autoware_launch)/launch/pointcloud_container.launch.py">
++    <arg name="use_multithread" value="true"/>
++    <arg name="container_name" value="$(var pointcloud_container_name)"/>
++  </include>
++
++  <group if="$(var vehicle)">
++    <include file="$(find-pkg-share tier4_vehicle_launch)/launch/vehicle.launch.xml">
+       <arg name="vehicle_model" value="$(var vehicle_model)"/>
+       <arg name="sensor_model" value="$(var sensor_model)"/>
+-      <!-- launch module preset -->
+-      <arg name="planning_module_preset" value="$(var planning_module_preset)"/>
+-      <!-- Modules to be launched -->
+-      <arg name="launch_vehicle" value="$(var vehicle)"/>
+-      <arg name="launch_map" value="$(var map)"/>
+-      <arg name="launch_sensing" value="$(var sensing)"/>
+-      <arg name="launch_localization" value="$(var localization)"/>
+-      <arg name="launch_perception" value="$(var perception)"/>
+-      <arg name="launch_planning" value="$(var planning)"/>
+-      <arg name="launch_control" value="$(var control)"/>
+-      <!-- Global parameters -->
+-      <arg name="use_sim_time" value="true"/>
+-      <!-- Pointcloud container -->
+-      <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
+-      <!-- Vehicle -->
+       <arg name="vehicle_id" value="$(var vehicle_id)"/>
+       <arg name="launch_vehicle_interface" value="$(var launch_vehicle_interface)"/>
+-      <!-- System -->
+-      <arg name="launch_system" value="$(var system)"/>
+-      <arg name="system_run_mode" value="logging_simulation"/>
++      <arg name="config_dir" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/$(var sensor_model)"/>
++      <arg name="raw_vehicle_cmd_converter_param_path" value="$(find-pkg-share autoware_launch)/config/vehicle/raw_vehicle_cmd_converter/raw_vehicle_cmd_converter.param.yaml"/>
++    </include>
++  </group>
++
++  <group if="$(var system)">
++    <let name="system_run_mode" value="logging_simulation"/>
++    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_system_component.launch.xml">
+       <arg name="launch_system_monitor" value="$(var launch_system_monitor)"/>
+       <arg name="launch_dummy_diag_publisher" value="$(var launch_dummy_diag_publisher)"/>
+       <arg name="diagnostic_graph_aggregator_graph_path" value="$(find-pkg-share autoware_launch)/config/system/diagnostic_graph_aggregator/autoware-main.yaml"/>
+-      <!-- Map -->
++    </include>
++  </group>
++
++  <group if="$(var map)">
++    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_map_component.launch.xml">
++      <arg name="map_path" value="$(var map_path)"/>
+       <arg name="lanelet2_map_file" value="$(var lanelet2_map_file)"/>
+       <arg name="pointcloud_map_file" value="$(var pointcloud_map_file)"/>
+-      <!-- Sensing -->
++    </include>
++  </group>
++
++  <group if="$(var sensing)">
++    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_sensing_component.launch.xml">
+       <arg name="launch_sensing_driver" value="false"/>
++      <arg name="sensor_model" value="$(var sensor_model)"/>
++      <arg name="vehicle_model" value="$(var vehicle_model)"/>
++      <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
++    </include>
++  </group>
++
++  <group if="$(var localization)">
++    <let name="system_run_mode" value="logging_simulation"/>
++    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_localization_component.launch.xml">
++      <arg name="system_run_mode" value="$(var system_run_mode)"/>
++      <arg name="input_pointcloud" value="$(var input_pointcloud)"/>
++      <arg name="initial_pose" value="$(var initial_pose)"/>
+     </include>
+   </group>
++
++  <group>
++    <node
++      pkg="rviz2"
++      exec="rviz2"
++      name="rviz2"
++      output="screen"
++      args="-d $(var rviz_config) -s $(find-pkg-share autoware_launch)/rviz/image/autoware.png"
++      if="$(var rviz)"
++      respawn="$(var rviz_respawn)"
++    />
++  </group>
+ </launch>
+diff --git a/autoware_launch/launch/pointcloud_container.launch.py b/autoware_launch/launch/pointcloud_container.launch.py
+index 650e555e..a7152761 100644
+--- a/autoware_launch/launch/pointcloud_container.launch.py
++++ b/autoware_launch/launch/pointcloud_container.launch.py
+@@ -39,8 +39,8 @@ def generate_launch_description():
+     )
+ 
+     glog_component = ComposableNode(
+-        package="glog_component",
+-        plugin="GlogComponent",
++        package="autoware_glog_component",
++        plugin="autoware::glog_component::GlogComponent",
+         name="glog_component",
+         namespace="pointcloud_container",
+     )
+diff --git a/autoware_launch/launch/urban_environment_localization_test.launch.xml b/autoware_launch/launch/urban_environment_localization_test.launch.xml
+index fd1ca864..3bf43786 100644
+--- a/autoware_launch/launch/urban_environment_localization_test.launch.xml
++++ b/autoware_launch/launch/urban_environment_localization_test.launch.xml
+@@ -24,7 +24,7 @@
+ 
+   <!-- Global parameters -->
+   <group scoped="false">
+-    <include file="$(find-pkg-share global_parameter_loader)/launch/global_params.launch.py">
++    <include file="$(find-pkg-share autoware_global_parameter_loader)/launch/global_params.launch.py">
+       <arg name="use_sim_time" value="$(var use_sim_time)"/>
+       <arg name="vehicle_model" value="$(var vehicle_model)"/>
+     </include>
+diff --git a/autoware_launch/package.xml b/autoware_launch/package.xml
+index f8000b80..eb7ab449 100644
+--- a/autoware_launch/package.xml
++++ b/autoware_launch/package.xml
+@@ -12,7 +12,7 @@
+   <buildtool_depend>ament_cmake_auto</buildtool_depend>
+ 
+   <exec_depend>ad_api_adaptors</exec_depend>
+-  <exec_depend>global_parameter_loader</exec_depend>
++  <exec_depend>autoware_global_parameter_loader</exec_depend>
+   <exec_depend>python3-bson</exec_depend>
+   <exec_depend>python3-tornado</exec_depend>
+   <exec_depend>rviz2</exec_depend>

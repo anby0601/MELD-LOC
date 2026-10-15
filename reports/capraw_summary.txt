@@ -1,0 +1,9 @@
+lon/devval: n=26151 Y>t_max 27 (0.10%), cov raw 0.9325 capped 0.9325, bound>t_max 0.00%, max bound 253.41 vs t_max 253.706
+lon/holdout: n=10827 Y>t_max 104 (0.96%), cov raw 0.9324 capped 0.9324, bound>t_max 0.00%, max bound 251.23 vs t_max 253.706
+lon/crossroute: n=6023 Y>t_max 0 (0.00%), cov raw 0.9643 capped 0.9643, bound>t_max 0.00%, max bound 240.31 vs t_max 253.706
+lat/devval: n=26151 Y>t_max 22 (0.08%), cov raw 0.9244 capped 0.9244, bound>t_max 0.00%, max bound 274.0 vs t_max 298.407
+lat/holdout: n=10827 Y>t_max 203 (1.88%), cov raw 0.9075 capped 0.9075, bound>t_max 0.00%, max bound 272.96 vs t_max 298.407
+lat/crossroute: n=6023 Y>t_max 0 (0.00%), cov raw 0.9421 capped 0.9421, bound>t_max 0.00%, max bound 261.68 vs t_max 298.407
+yaw/devval: n=26151 Y>t_max 73 (0.28%), cov raw 0.9324 capped 0.9324, bound>t_max 0.00%, max bound 173.45 vs t_max 179.914
+yaw/holdout: n=10827 Y>t_max 23 (0.21%), cov raw 0.9414 capped 0.9414, bound>t_max 0.00%, max bound 172.9 vs t_max 179.914
+yaw/crossroute: n=6023 Y>t_max 5 (0.08%), cov raw 0.904 capped 0.904, bound>t_max 0.00%, max bound 171.16 vs t_max 179.914

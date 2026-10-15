@@ -1,0 +1,109 @@
+{
+ "status": "REGISTERED_METRIC_COMPLETION (rev.7) — dev, NON_CONFIRMATORY",
+ "spec": "rank=median estimate / rejection 0-50% in 1% steps / risk=mean realized |error| of retained anchors / AURC=grid mean / comparison=P_asinh / group bootstrap CI",
+ "n_boot": 600,
+ "axes": {
+  "lon": {
+   "AURC": {
+    "MELD_e_med": 1.4485,
+    "P_asinh": 1.4514
+   },
+   "diff_MELD_minus_P": -0.0028,
+   "CI": [
+    -0.0627,
+    0.1178
+   ],
+   "verdict(lower_is_better)": "POINT_WIN",
+   "points": {
+    "reject_5%": {
+     "MELD": 4.9328,
+     "P_asinh": 4.9027
+    },
+    "reject_10%": {
+     "MELD": 0.9147,
+     "P_asinh": 0.9978
+    },
+    "reject_20%": {
+     "MELD": 0.4018,
+     "P_asinh": 0.4011
+    },
+    "reject_30%": {
+     "MELD": 0.3741,
+     "P_asinh": 0.3771
+    }
+   },
+   "top10_consistency_check": {
+    "MELD(from_eval)": null,
+    "reject_10%_here": 0.9147
+   }
+  },
+  "lat": {
+   "AURC": {
+    "MELD_e_med": 1.6832,
+    "P_asinh": 1.6429
+   },
+   "diff_MELD_minus_P": 0.0402,
+   "CI": [
+    -0.0052,
+    0.2899
+   ],
+   "verdict(lower_is_better)": "LOSS_POINT",
+   "points": {
+    "reject_5%": {
+     "MELD": 6.5743,
+     "P_asinh": 6.1067
+    },
+    "reject_10%": {
+     "MELD": 0.9676,
+     "P_asinh": 0.9163
+    },
+    "reject_20%": {
+     "MELD": 0.1811,
+     "P_asinh": 0.1857
+    },
+    "reject_30%": {
+     "MELD": 0.1564,
+     "P_asinh": 0.1527
+    }
+   },
+   "top10_consistency_check": {
+    "MELD(from_eval)": null,
+    "reject_10%_here": 0.9676
+   }
+  },
+  "yaw": {
+   "AURC": {
+    "MELD_e_med": 1.7535,
+    "P_asinh": 1.7231
+   },
+   "diff_MELD_minus_P": 0.0304,
+   "CI": [
+    -0.0049,
+    0.2272
+   ],
+   "verdict(lower_is_better)": "LOSS_POINT",
+   "points": {
+    "reject_5%": {
+     "MELD": 6.037,
+     "P_asinh": 5.9381
+    },
+    "reject_10%": {
+     "MELD": 1.2387,
+     "P_asinh": 1.1871
+    },
+    "reject_20%": {
+     "MELD": 0.6019,
+     "P_asinh": 0.5996
+    },
+    "reject_30%": {
+     "MELD": 0.5081,
+     "P_asinh": 0.5026
+    }
+   },
+   "top10_consistency_check": {
+    "MELD(from_eval)": null,
+    "reject_10%_here": 1.2387
+   }
+  }
+ }
+}

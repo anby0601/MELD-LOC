@@ -1,0 +1,128 @@
+{
+ "definition": "coverage is computed against the raw (uncapped) error: 1{Y_raw <= q90_conf}; only training labels are capped",
+ "axes": {
+  "lon": {
+   "t_max": 253.706,
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "n_Y_over_tmax": 27,
+     "frac_Y_over_tmax": 0.00103,
+     "cov_raw": 0.9325,
+     "cov_capped": 0.9325,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 253.41,
+     "max_Y": 274.13
+    },
+    "holdout": {
+     "n": 10827,
+     "n_Y_over_tmax": 104,
+     "frac_Y_over_tmax": 0.00961,
+     "cov_raw": 0.9324,
+     "cov_capped": 0.9324,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 251.23,
+     "max_Y": 302.83
+    },
+    "crossroute": {
+     "n": 6023,
+     "n_Y_over_tmax": 0,
+     "frac_Y_over_tmax": 0.0,
+     "cov_raw": 0.9643,
+     "cov_capped": 0.9643,
+     "cov_among_over_tmax": null,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 240.31,
+     "max_Y": 165.39
+    }
+   }
+  },
+  "lat": {
+   "t_max": 298.407,
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "n_Y_over_tmax": 22,
+     "frac_Y_over_tmax": 0.00084,
+     "cov_raw": 0.9244,
+     "cov_capped": 0.9244,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 274.0,
+     "max_Y": 343.83
+    },
+    "holdout": {
+     "n": 10827,
+     "n_Y_over_tmax": 203,
+     "frac_Y_over_tmax": 0.01875,
+     "cov_raw": 0.9075,
+     "cov_capped": 0.9075,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 272.96,
+     "max_Y": 362.25
+    },
+    "crossroute": {
+     "n": 6023,
+     "n_Y_over_tmax": 0,
+     "frac_Y_over_tmax": 0.0,
+     "cov_raw": 0.9421,
+     "cov_capped": 0.9421,
+     "cov_among_over_tmax": null,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 261.68,
+     "max_Y": 139.79
+    }
+   }
+  },
+  "yaw": {
+   "t_max": 179.914,
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "n_Y_over_tmax": 73,
+     "frac_Y_over_tmax": 0.00279,
+     "cov_raw": 0.9324,
+     "cov_capped": 0.9324,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 173.45,
+     "max_Y": 180.0
+    },
+    "holdout": {
+     "n": 10827,
+     "n_Y_over_tmax": 23,
+     "frac_Y_over_tmax": 0.00212,
+     "cov_raw": 0.9414,
+     "cov_capped": 0.9414,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 172.9,
+     "max_Y": 180.0
+    },
+    "crossroute": {
+     "n": 6023,
+     "n_Y_over_tmax": 5,
+     "frac_Y_over_tmax": 0.00083,
+     "cov_raw": 0.904,
+     "cov_capped": 0.904,
+     "cov_among_over_tmax": 0.0,
+     "frac_bound_over_tmax": 0.0,
+     "frac_raw_q90_at_tmax_grid_end": 0.0,
+     "max_bound": 171.16,
+     "max_Y": 180.0
+    }
+   }
+  }
+ }
+}

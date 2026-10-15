@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- CARLA Town01 localization stack used by the pilot launch.
+
+     This is a CARLA-only wrapper around the official Tier IV localization
+     launch files. It keeps NDT/map/TF behavior unchanged, but passes
+     gnss_enabled=false to pose_twist_estimator so the automatic GNSS pose
+     initializer is not launched. Initialization is performed explicitly once by
+     carla_direct_init.py and then NDT runs without further GT resets. -->
+<launch>
+  <let name="loc_config_path" value="$(find-pkg-share autoware_launch)/config/localization"/>
+
+  <arg name="pose_source" default="ndt"/>
+  <arg name="twist_source" default="gyro_odom"/>
+  <arg name="system_run_mode" default="logging_simulation"/>
+  <arg name="input_pointcloud" default="/sensing/lidar/top/pointcloud_before_sync"/>
+  <arg name="localization_pointcloud_container_name" default="/pointcloud_container"/>
+  <arg name="initial_pose" default="[]"/>
+
+  <arg name="localization_error_monitor_param_path" default="$(find-pkg-share autoware_launch)/config/localization/localization_error_monitor.param.yaml"/>
+  <arg name="ekf_localizer_param_path" default="$(find-pkg-share autoware_launch)/config/localization/ekf_localizer.param.yaml"/>
+  <arg name="stop_filter_param_path" default="$(find-pkg-share autoware_stop_filter)/config/stop_filter.param.yaml"/>
+  <arg name="pose_instability_detector_param_path" default="$(find-pkg-share autoware_pose_instability_detector)/config/pose_instability_detector.param.yaml"/>
+  <arg name="pose_initializer_param_path" default="$(find-pkg-share autoware_launch)/config/localization/pose_initializer.param.yaml"/>
+  <arg name="twist2accel_param_path" default="$(find-pkg-share autoware_launch)/config/localization/twist2accel.param.yaml"/>
+
+  <arg name="ndt_scan_matcher/ndt_scan_matcher_param_path" default="$(find-pkg-share autoware_launch)/config/localization/ndt_scan_matcher/ndt_scan_matcher.param.yaml"/>
+  <arg name="ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path" default="$(find-pkg-share autoware_launch)/config/localization/ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range.param.yaml"/>
+  <arg name="ndt_scan_matcher/pointcloud_preprocessor/voxel_grid_downsample_filter_param_path" default="$(find-pkg-share autoware_launch)/config/localization/ndt_scan_matcher/pointcloud_preprocessor/voxel_grid_filter.param.yaml"/>
+  <arg name="ndt_scan_matcher/pointcloud_preprocessor/random_downsample_filter_param_path" default="$(find-pkg-share autoware_launch)/config/localization/ndt_scan_matcher/pointcloud_preprocessor/random_downsample_filter.param.yaml"/>
+
+  <!-- Unused in ndt-only mode, but required by pose_twist_estimator.launch.xml. -->
+  <arg name="lidar_marker_localizer/lidar_marker_localizer_param_path" default="$(find-pkg-share autoware_lidar_marker_localizer)/config/lidar_marker_localizer.param.yaml"/>
+  <arg name="lidar_marker_localizer/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path" default="$(find-pkg-share autoware_pointcloud_preprocessor)/config/crop_box_filter_node.param.yaml"/>
+  <arg name="lidar_marker_localizer/pointcloud_preprocessor/ring_filter_param_path" default="$(find-pkg-share autoware_pointcloud_preprocessor)/config/passthrough_filter_uint16_node.param.yaml"/>
+
+  <group>
+    <push-ros-namespace namespace="localization"/>
+
+    <include file="$(find-pkg-share tier4_localization_launch)/launch/pose_twist_estimator/pose_twist_estimator.launch.xml">
+      <arg name="pose_source" value="$(var pose_source)"/>
+      <arg name="twist_source" value="$(var twist_source)"/>
+      <arg name="system_run_mode" value="$(var system_run_mode)"/>
+      <arg name="input_pointcloud" value="$(var input_pointcloud)"/>
+      <arg name="localization_pointcloud_container_name" value="$(var localization_pointcloud_container_name)"/>
+      <arg name="initial_pose" value="$(var initial_pose)"/>
+      <arg name="gnss_enabled" value="false"/>
+
+      <arg name="pose_initializer_param_path" value="$(var pose_initializer_param_path)"/>
+      <arg name="ndt_scan_matcher/ndt_scan_matcher_param_path" value="$(var ndt_scan_matcher/ndt_scan_matcher_param_path)"/>
+      <arg name="ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path" value="$(var ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path)"/>
+      <arg name="ndt_scan_matcher/pointcloud_preprocessor/voxel_grid_downsample_filter_param_path" value="$(var ndt_scan_matcher/pointcloud_preprocessor/voxel_grid_downsample_filter_param_path)"/>
+      <arg name="ndt_scan_matcher/pointcloud_preprocessor/random_downsample_filter_param_path" value="$(var ndt_scan_matcher/pointcloud_preprocessor/random_downsample_filter_param_path)"/>
+      <arg name="lidar_marker_localizer/lidar_marker_localizer_param_path" value="$(var lidar_marker_localizer/lidar_marker_localizer_param_path)"/>
+      <arg name="lidar_marker_localizer/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path" value="$(var lidar_marker_localizer/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path)"/>
+      <arg name="lidar_marker_localizer/pointcloud_preprocessor/ring_filter_param_path" value="$(var lidar_marker_localizer/pointcloud_preprocessor/ring_filter_param_path)"/>
+    </include>
+
+    <group>
+      <push-ros-namespace namespace="pose_twist_fusion_filter"/>
+      <include file="$(find-pkg-share tier4_localization_launch)/launch/pose_twist_fusion_filter/pose_twist_fusion_filter.launch.xml">
+        <arg name="ekf_localizer_param_path" value="$(var ekf_localizer_param_path)"/>
+        <arg name="stop_filter_param_path" value="$(var stop_filter_param_path)"/>
+        <arg name="twist2accel_param_path" value="$(var twist2accel_param_path)"/>
+        <arg name="pose_instability_detector_param_path" value="$(var pose_instability_detector_param_path)"/>
+      </include>
+    </group>
+
+    <group>
+      <include file="$(find-pkg-share tier4_localization_launch)/launch/localization_error_monitor/localization_error_monitor.launch.xml">
+        <arg name="localization_error_monitor_param_path" value="$(var localization_error_monitor_param_path)"/>
+      </include>
+    </group>
+  </group>
+</launch>

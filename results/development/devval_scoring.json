@@ -1,0 +1,417 @@
+{
+ "status": "DEVELOPMENT_VALIDATION_SCORING",
+ "revision": "R integration grid: 65 uniform points on [T1,3W] (end points included); monotonicity violations measured on raw curves",
+ "version_hash": "aa0759b9fc1cc8c3",
+ "n_boot": 600,
+ "axes": {
+  "lon": {
+   "lambda": 0.5,
+   "mid_spearman_pooled": {
+    "note": "reference figure, not the registered primary result",
+    "MELD_R": 0.4028,
+    "P_asinh": 0.5067,
+    "C2": 0.2565,
+    "vs_P_CI": [
+     -0.1673,
+     0.1337
+    ],
+    "vs_C2_CI": [
+     -0.071,
+     0.2354
+    ],
+    "verdict_vs_P": "LOSS_POINT",
+    "verdict_vs_C2": "POINT_WIN"
+   },
+   "mid_spearman_general_macro": {
+    "note": "registered primary result (family-macro over general-degradation families)",
+    "MELD_R": -0.0813,
+    "P_asinh": -0.1178,
+    "vs_P_CI": [
+     -0.05,
+     0.3252
+    ],
+    "verdict_vs_P": "POINT_WIN",
+    "n_groups_mid": 8,
+    "families": {
+     "random_dropout": {
+      "MELD": -0.266,
+      "P_asinh": -0.262,
+      "n_anchors": 45,
+      "n_groups": 3
+     },
+     "range_clip": {
+      "MELD": 0.103,
+      "P_asinh": 0.026,
+      "n_anchors": 105,
+      "n_groups": 4
+     }
+    }
+   },
+   "top10_retained_mean_err": {
+    "MELD_e_med": 0.9147,
+    "P_asinh": 0.9978,
+    "CI": [
+     -0.2613,
+     0.3329
+    ],
+    "verdict": "POINT_WIN"
+   },
+   "mae_median": {
+    "MELD_e_med": 5.2647,
+    "Q_gbdt_q50": 5.4736,
+    "P_asinh": 5.4736,
+    "CI_vs_q50": [
+     -0.8894,
+     0.4206
+    ],
+    "verdict_vs_q50": "POINT_WIN"
+   },
+   "auroc_T1": {
+    "MELD": 0.92607,
+    "C2": 0.94384,
+    "TP_GBDT": 0.89764,
+    "logistic": 0.93318,
+    "vs_C2_CI": [
+     -0.05788,
+     0.00051
+    ],
+    "verdict_vs_C2": "LOSS_POINT"
+   },
+   "auroc_T2": {
+    "MELD": 0.99898,
+    "P_asinh_as_score": 0.9981,
+    "C2_as_score": 0.99918
+   },
+   "auroc_3W": {
+    "MELD": 0.9992,
+    "P_asinh_as_score": 0.99854
+   },
+   "tw_integrated_brier": {
+    "MELD": 0.01389,
+    "K_indep": 0.12555,
+    "baseline_note": "the step-function quantile reconstruction is not used as a baseline (replaced by Q-multi)",
+    "vs_K_CI": [
+     -0.11366,
+     -0.11066
+    ],
+    "verdict_vs_K": "WIN"
+   },
+   "monotone_violation": {
+    "MELD_measured_pre_projection": 0.0,
+    "K_indep": 0.4637,
+    "note": "MELD values are measured on raw dev-val curves (adjacent-pair increase rate before projection)"
+   },
+   "q90_upper_coverage": {
+    "MELD_conformal": 0.9325,
+    "Q_gbdt_q90": 0.8385,
+    "scenario_mean_abs_err": 0.0325,
+    "criterion_3pp": false,
+    "per_family": {
+     "lateral_shear": 0.9647,
+     "random_dropout": 0.9425,
+     "range_clip": 0.9079,
+     "sector_remove": 0.9518,
+     "translate_x": 0.4058,
+     "yaw_rotate": 0.9789,
+     "yaw_shear": 0.9542
+    },
+    "verdict": "WIN"
+   },
+   "scoreboard": {
+    "mid_macro_vs_P_(primary)": "POINT_WIN",
+    "mid_pooled_vs_P_(reference)": "LOSS_POINT",
+    "mid_pooled_vs_C2_(reference)": "POINT_WIN",
+    "top10": "POINT_WIN",
+    "mae_vs_q50": "POINT_WIN",
+    "auroc_T1_vs_C2": "LOSS_POINT",
+    "twIBS_vs_K": "WIN",
+    "q90_coverage": "WIN"
+   },
+   "losses": [
+    "auroc_T1_vs_C2",
+    "mid_pooled_vs_P_(reference)"
+   ]
+  },
+  "lat": {
+   "lambda": 0.5,
+   "mid_spearman_pooled": {
+    "note": "reference figure, not the registered primary result",
+    "MELD_R": 0.3865,
+    "P_asinh": 0.1768,
+    "C2": 0.3155,
+    "vs_P_CI": [
+     -0.0727,
+     0.3034
+    ],
+    "vs_C2_CI": [
+     -0.0829,
+     0.1105
+    ],
+    "verdict_vs_P": "POINT_WIN",
+    "verdict_vs_C2": "POINT_WIN"
+   },
+   "mid_spearman_general_macro": {
+    "note": "registered primary result (family-macro over general-degradation families)",
+    "MELD_R": 0.2128,
+    "P_asinh": 0.1241,
+    "vs_P_CI": [
+     -0.0822,
+     0.1906
+    ],
+    "verdict_vs_P": "POINT_WIN",
+    "n_groups_mid": 12,
+    "families": {
+     "lateral_shear": {
+      "MELD": 0.39,
+      "P_asinh": 0.06,
+      "n_anchors": 548,
+      "n_groups": 2
+     },
+     "random_dropout": {
+      "MELD": 0.256,
+      "P_asinh": 0.174,
+      "n_anchors": 121,
+      "n_groups": 3
+     },
+     "range_clip": {
+      "MELD": -0.298,
+      "P_asinh": -0.343,
+      "n_anchors": 84,
+      "n_groups": 4
+     },
+     "yaw_shear": {
+      "MELD": 0.503,
+      "P_asinh": 0.606,
+      "n_anchors": 48,
+      "n_groups": 2
+     }
+    }
+   },
+   "top10_retained_mean_err": {
+    "MELD_e_med": 0.9676,
+    "P_asinh": 0.9163,
+    "CI": [
+     -0.2662,
+     1.2052
+    ],
+    "verdict": "LOSS_POINT"
+   },
+   "mae_median": {
+    "MELD_e_med": 6.3517,
+    "Q_gbdt_q50": 6.5873,
+    "P_asinh": 6.5228,
+    "CI_vs_q50": [
+     -0.9279,
+     0.3068
+    ],
+    "verdict_vs_q50": "POINT_WIN"
+   },
+   "auroc_T1": {
+    "MELD": 0.98746,
+    "C2": 0.99188,
+    "TP_GBDT": 0.96995,
+    "logistic": 0.94558,
+    "vs_C2_CI": [
+     -0.01236,
+     0.00036
+    ],
+    "verdict_vs_C2": "LOSS_POINT"
+   },
+   "auroc_T2": {
+    "MELD": 0.99841,
+    "P_asinh_as_score": 0.99813,
+    "C2_as_score": 0.99665
+   },
+   "auroc_3W": {
+    "MELD": 0.99837,
+    "P_asinh_as_score": 0.99809
+   },
+   "tw_integrated_brier": {
+    "MELD": 0.01486,
+    "K_indep": 0.12592,
+    "baseline_note": "the step-function quantile reconstruction is not used as a baseline (replaced by Q-multi)",
+    "vs_K_CI": [
+     -0.11269,
+     -0.10978
+    ],
+    "verdict_vs_K": "WIN"
+   },
+   "monotone_violation": {
+    "MELD_measured_pre_projection": 0.0,
+    "K_indep": 0.4104,
+    "note": "MELD values are measured on raw dev-val curves (adjacent-pair increase rate before projection)"
+   },
+   "q90_upper_coverage": {
+    "MELD_conformal": 0.9244,
+    "Q_gbdt_q90": 0.8647,
+    "scenario_mean_abs_err": 0.0243,
+    "criterion_3pp": true,
+    "per_family": {
+     "lateral_shear": 0.8778,
+     "random_dropout": 0.943,
+     "range_clip": 0.812,
+     "sector_remove": 0.9252,
+     "translate_x": 0.9856,
+     "yaw_rotate": 0.9856,
+     "yaw_shear": 0.9649
+    },
+    "verdict": "WIN"
+   },
+   "scoreboard": {
+    "mid_macro_vs_P_(primary)": "POINT_WIN",
+    "mid_pooled_vs_P_(reference)": "POINT_WIN",
+    "mid_pooled_vs_C2_(reference)": "POINT_WIN",
+    "top10": "LOSS_POINT",
+    "mae_vs_q50": "POINT_WIN",
+    "auroc_T1_vs_C2": "LOSS_POINT",
+    "twIBS_vs_K": "WIN",
+    "q90_coverage": "WIN"
+   },
+   "losses": [
+    "auroc_T1_vs_C2",
+    "top10"
+   ]
+  },
+  "yaw": {
+   "lambda": 0.5,
+   "mid_spearman_pooled": {
+    "note": "reference figure, not the registered primary result",
+    "MELD_R": 0.7387,
+    "P_asinh": 0.7344,
+    "C2": 0.6449,
+    "vs_P_CI": [
+     -0.0531,
+     0.0299
+    ],
+    "vs_C2_CI": [
+     -0.0323,
+     0.253
+    ],
+    "verdict_vs_P": "POINT_WIN",
+    "verdict_vs_C2": "POINT_WIN"
+   },
+   "mid_spearman_general_macro": {
+    "note": "registered primary result (family-macro over general-degradation families)",
+    "MELD_R": 0.2023,
+    "P_asinh": 0.2982,
+    "vs_P_CI": [
+     -0.4799,
+     0.0133
+    ],
+    "verdict_vs_P": "LOSS_POINT",
+    "n_groups_mid": 12,
+    "families": {
+     "lateral_shear": {
+      "MELD": -0.199,
+      "P_asinh": 0.192,
+      "n_anchors": 32,
+      "n_groups": 2
+     },
+     "random_dropout": {
+      "MELD": 0.527,
+      "P_asinh": 0.582,
+      "n_anchors": 87,
+      "n_groups": 3
+     },
+     "range_clip": {
+      "MELD": 0.525,
+      "P_asinh": 0.518,
+      "n_anchors": 381,
+      "n_groups": 4
+     },
+     "yaw_shear": {
+      "MELD": -0.044,
+      "P_asinh": -0.1,
+      "n_anchors": 213,
+      "n_groups": 2
+     }
+    }
+   },
+   "top10_retained_mean_err": {
+    "MELD_e_med": 1.2387,
+    "P_asinh": 1.1871,
+    "CI": [
+     -0.1751,
+     0.8505
+    ],
+    "verdict": "LOSS_POINT"
+   },
+   "mae_median": {
+    "MELD_e_med": 5.4812,
+    "Q_gbdt_q50": 5.6993,
+    "P_asinh": 5.6993,
+    "CI_vs_q50": [
+     -0.8437,
+     0.4758
+    ],
+    "verdict_vs_q50": "POINT_WIN"
+   },
+   "auroc_T1": {
+    "MELD": 0.98808,
+    "C2": 0.99199,
+    "TP_GBDT": 0.95468,
+    "logistic": 0.97083,
+    "vs_C2_CI": [
+     -0.01339,
+     -0.00089
+    ],
+    "verdict_vs_C2": "LOSS_CI"
+   },
+   "auroc_T2": {
+    "MELD": 0.99815,
+    "P_asinh_as_score": 0.9981,
+    "C2_as_score": 0.99781
+   },
+   "auroc_3W": {
+    "MELD": 0.99547,
+    "P_asinh_as_score": 0.9957
+   },
+   "tw_integrated_brier": {
+    "MELD": 0.03049,
+    "K_indep": 0.13702,
+    "baseline_note": "the step-function quantile reconstruction is not used as a baseline (replaced by Q-multi)",
+    "vs_K_CI": [
+     -0.10841,
+     -0.10481
+    ],
+    "verdict_vs_K": "WIN"
+   },
+   "monotone_violation": {
+    "MELD_measured_pre_projection": 0.0,
+    "K_indep": 0.4024,
+    "note": "MELD values are measured on raw dev-val curves (adjacent-pair increase rate before projection)"
+   },
+   "q90_upper_coverage": {
+    "MELD_conformal": 0.9324,
+    "Q_gbdt_q90": 0.7888,
+    "scenario_mean_abs_err": 0.0323,
+    "criterion_3pp": false,
+    "per_family": {
+     "lateral_shear": 0.9891,
+     "random_dropout": 0.9812,
+     "range_clip": 0.7412,
+     "sector_remove": 0.985,
+     "translate_x": 0.9922,
+     "yaw_rotate": 0.866,
+     "yaw_shear": 0.9507
+    },
+    "verdict": "WIN"
+   },
+   "scoreboard": {
+    "mid_macro_vs_P_(primary)": "LOSS_POINT",
+    "mid_pooled_vs_P_(reference)": "POINT_WIN",
+    "mid_pooled_vs_C2_(reference)": "POINT_WIN",
+    "top10": "LOSS_POINT",
+    "mae_vs_q50": "POINT_WIN",
+    "auroc_T1_vs_C2": "LOSS_CI",
+    "twIBS_vs_K": "WIN",
+    "q90_coverage": "WIN"
+   },
+   "losses": [
+    "auroc_T1_vs_C2",
+    "mid_macro_vs_P_(primary)",
+    "top10"
+   ]
+  }
+ }
+}

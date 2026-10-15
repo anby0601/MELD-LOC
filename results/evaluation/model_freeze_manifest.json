@@ -1,0 +1,71 @@
+{
+ "frozen_at": "2026-08-08",
+ "purpose": "freeze manifest of the frozen models",
+ "code_version_hash_now": "580dd6d3c1e318cc",
+ "code_version_hash_frozen": "aa0759b9fc1cc8c3",
+ "code_version_note": "code_version_hash_now is the hash of models/meldloc/meldloc_core.py as shipped (comments edited after the freeze, logic unchanged); code_version_hash_frozen is the hash of the copy the models were trained with.",
+ "axes": {
+  "lon": {
+   "file_sha256": "1b23aed189a8e96c",
+   "F_sha": "a2835a428bf89e9e",
+   "G_sha": "4d703f7ded2bb1ff",
+   "lambda": 0.5,
+   "h_isotonic_sha": "4b58694397eeb323",
+   "conformal_shift": 0.014146540987,
+   "t_max": 253.706115341,
+   "t_grid_sha": "a852b8b600dc8063",
+   "t_grid_len": 41,
+   "R_grid_sha": "ceacb3bb7d7c9bcb",
+   "R_grid_len": 65,
+   "family_weights_sha": "e95e7c3937a49379",
+   "feature_masks_sha": "8d15e30f0478d6c5",
+   "trained_version_hash": "16dc88c45a9e600e",
+   "trained_at": "2026-08-03 10:49:01"
+  },
+  "lat": {
+   "file_sha256": "faab18c0ebd67090",
+   "F_sha": "01123b799caada59",
+   "G_sha": "5b986a8feeeb660f",
+   "lambda": 0.5,
+   "h_isotonic_sha": "158670db30c2e755",
+   "conformal_shift": -0.064511321791,
+   "t_max": 298.406846619,
+   "t_grid_sha": "564f085a76cb2dfc",
+   "t_grid_len": 41,
+   "R_grid_sha": "144aef185250396e",
+   "R_grid_len": 65,
+   "family_weights_sha": "5c3015ea3ee34e30",
+   "feature_masks_sha": "8d15e30f0478d6c5",
+   "trained_version_hash": "16dc88c45a9e600e",
+   "trained_at": "2026-08-03 10:50:49"
+  },
+  "yaw": {
+   "file_sha256": "6c1b4c99b356f061",
+   "F_sha": "d97fe9976afd2dd8",
+   "G_sha": "13f3d04b8237dd03",
+   "lambda": 0.5,
+   "h_isotonic_sha": "936b17af4c256160",
+   "conformal_shift": -0.020063836701,
+   "t_max": 179.913604736,
+   "t_grid_sha": "9c233ee24981eb2f",
+   "t_grid_len": 41,
+   "R_grid_sha": "b0d92eadfbc6a7e7",
+   "R_grid_len": 65,
+   "family_weights_sha": "6ce110e11c030bae",
+   "feature_masks_sha": "8d15e30f0478d6c5",
+   "trained_version_hash": "16dc88c45a9e600e",
+   "trained_at": "2026-08-03 10:52:34"
+  }
+ },
+ "shared": {
+  "LON_OFFSETS": {
+   "routeA": -1.6512603049722019,
+   "routeB_town02_S1": -1.5855934394574358
+  },
+  "LON_OFFSETS_sha": "555c84f493c6daba",
+  "N_RGRID": 65,
+  "N_TGRID": 41,
+  "FEATURE_SET_ID": "A6-0",
+  "T1_T2_W3_sha": "97612d408494f41c"
+ }
+}

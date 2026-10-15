@@ -1,0 +1,36 @@
+\begin{table}[H]
+\caption{Seed variability on both final evaluation sets. The frozen model (seed 20260803) is the one reported elsewhere; five additional seeds re-run the entire registered pipeline (subsampling and cluster-fold seeds, $\lambda$ selection, isotonic calibration, and conformal shift). Entries for the additional seeds are mean $\pm$ SD over the five seeds. Raw monotonicity violations are zero for every seed, axis, and set.}
+\label{tab:seeds}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccc}
+\toprule
+Metric & & lon & lat & yaw \\
+\midrule
+\multicolumn{5}{l}{\textit{In-route holdout (routeA)}} \\
+Coverage & frozen & 0.932 & 0.908 & 0.941 \\
+ & seeds & 0.930$\pm$0.002 & 0.909$\pm$0.004 & 0.938$\pm$0.003 \\
+\quad mid & frozen & 0.904 & 0.553 & 0.785 \\
+ & seeds & 0.907$\pm$0.009 & 0.502$\pm$0.030 & 0.777$\pm$0.005 \\
+ECE at $T_1$ & frozen & 0.010 & 0.003 & 0.005 \\
+ & seeds & 0.010$\pm$0.001 & 0.004$\pm$0.000 & 0.005$\pm$0.001 \\
+twIBS & frozen & 0.0140 & 0.0179 & 0.0294 \\
+ & seeds & 0.0141$\pm$0.0003 & 0.0176$\pm$0.0002 & 0.0293$\pm$0.0004 \\
+AUROC at $T_1$ & frozen & 0.9991 & 0.9865 & 0.9906 \\
+ & seeds & 0.9991$\pm$0.0001 & 0.9861$\pm$0.0006 & 0.9904$\pm$0.0004 \\
+\midrule
+\multicolumn{5}{l}{\textit{Cross-route (routeB)}} \\
+Coverage & frozen & 0.964 & 0.942 & 0.904 \\
+ & seeds & 0.962$\pm$0.002 & 0.941$\pm$0.002 & 0.912$\pm$0.008 \\
+\quad mid & frozen & 0.614 & 0.264 & 0.500 \\
+ & seeds & 0.635$\pm$0.057 & 0.219$\pm$0.039 & 0.518$\pm$0.013 \\
+ECE at $T_1$ & frozen & 0.034 & 0.009 & 0.014 \\
+ & seeds & 0.033$\pm$0.001 & 0.008$\pm$0.001 & 0.016$\pm$0.002 \\
+twIBS & frozen & 0.0353 & 0.0204 & 0.0453 \\
+ & seeds & 0.0343$\pm$0.0012 & 0.0206$\pm$0.0003 & 0.0452$\pm$0.0019 \\
+AUROC at $T_1$ & frozen & 0.9890 & 0.9744 & 0.9433 \\
+ & seeds & 0.9907$\pm$0.0008 & 0.9720$\pm$0.0020 & 0.9421$\pm$0.0020 \\
+\bottomrule
+\end{tabular}
+\end{table}

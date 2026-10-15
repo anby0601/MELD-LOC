@@ -1,0 +1,193 @@
+diff --git a/common_sensor_launch/launch/hesai_xt32.launch.xml b/common_sensor_launch/launch/hesai_xt32.launch.xml
+index cda617d..833b903 100644
+--- a/common_sensor_launch/launch/hesai_xt32.launch.xml
++++ b/common_sensor_launch/launch/hesai_xt32.launch.xml
+@@ -35,7 +35,7 @@
+   </include>
+ 
+   <!-- Velodyne Monitor -->
+-  <include file="$(find-pkg-share velodyne_monitor)/launch/velodyne_monitor.launch.xml" if="$(var launch_driver)">
++  <include file="$(find-pkg-share autoware_velodyne_monitor)/launch/velodyne_monitor.launch.xml" if="$(var launch_driver)">
+     <arg name="ip_address" value="$(var sensor_ip)"/>
+   </include>
+ </launch>
+diff --git a/common_sensor_launch/launch/nebula_node_container.launch.py b/common_sensor_launch/launch/nebula_node_container.launch.py
+index 32f0bb8..977ec88 100644
+--- a/common_sensor_launch/launch/nebula_node_container.launch.py
++++ b/common_sensor_launch/launch/nebula_node_container.launch.py
+@@ -95,8 +95,8 @@ def launch_setup(context, *args, **kwargs):
+ 
+     nodes.append(
+         ComposableNode(
+-            package="glog_component",
+-            plugin="GlogComponent",
++            package="autoware_glog_component",
++            plugin="autoware::glog_component::GlogComponent",
+             name="glog_component",
+         )
+     )
+diff --git a/common_sensor_launch/launch/velodyne_VLP16.launch.xml b/common_sensor_launch/launch/velodyne_VLP16.launch.xml
+index f0fcc07..c4c7971 100644
+--- a/common_sensor_launch/launch/velodyne_VLP16.launch.xml
++++ b/common_sensor_launch/launch/velodyne_VLP16.launch.xml
+@@ -35,7 +35,7 @@
+   </include>
+ 
+   <!-- Velodyne Monitor -->
+-  <include file="$(find-pkg-share velodyne_monitor)/launch/velodyne_monitor.launch.xml" if="$(var launch_driver)">
++  <include file="$(find-pkg-share autoware_velodyne_monitor)/launch/velodyne_monitor.launch.xml" if="$(var launch_driver)">
+     <arg name="ip_address" value="$(var sensor_ip)"/>
+   </include>
+ </launch>
+diff --git a/common_sensor_launch/package.xml b/common_sensor_launch/package.xml
+index 2f490e5..f0ee9ab 100644
+--- a/common_sensor_launch/package.xml
++++ b/common_sensor_launch/package.xml
+@@ -11,7 +11,7 @@
+   <buildtool_depend>ament_cmake_auto</buildtool_depend>
+ 
+   <exec_depend>nebula_sensor_driver</exec_depend>
+-  <exec_depend>velodyne_monitor</exec_depend>
++  <exec_depend>autoware_velodyne_monitor</exec_depend>
+ 
+   <test_depend>ament_lint_auto</test_depend>
+   <test_depend>autoware_lint_common</test_depend>
+diff --git a/sample_sensor_kit_launch/launch/gnss.launch.xml b/sample_sensor_kit_launch/launch/gnss.launch.xml
+index 8636bb9..efa89bc 100644
+--- a/sample_sensor_kit_launch/launch/gnss.launch.xml
++++ b/sample_sensor_kit_launch/launch/gnss.launch.xml
+@@ -24,7 +24,7 @@
+ <!--    </group>-->
+ 
+     <!-- NavSatFix to MGRS Pose -->
+-    <include file="$(find-pkg-share gnss_poser)/launch/gnss_poser.launch.xml">
++    <include file="$(find-pkg-share autoware_gnss_poser)/launch/gnss_poser.launch.xml">
+       <arg name="input_topic_fix" value="$(var navsatfix_topic_name)"/>
+       <arg name="input_topic_orientation" value="$(var orientation_topic_name)"/>
+ 
+diff --git a/sample_sensor_kit_launch/launch/imu.launch.xml b/sample_sensor_kit_launch/launch/imu.launch.xml
+index ff01fa8..fc2d006 100644
+--- a/sample_sensor_kit_launch/launch/imu.launch.xml
++++ b/sample_sensor_kit_launch/launch/imu.launch.xml
+@@ -15,13 +15,13 @@
+ 
+     <arg name="imu_raw_name" default="tamagawa/imu_raw"/>
+     <arg name="imu_corrector_param_file" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/sample_sensor_kit/imu_corrector.param.yaml"/>
+-    <include file="$(find-pkg-share imu_corrector)/launch/imu_corrector.launch.xml">
++    <include file="$(find-pkg-share autoware_imu_corrector)/launch/imu_corrector.launch.xml">
+       <arg name="input_topic" value="$(var imu_raw_name)"/>
+       <arg name="output_topic" value="imu_data"/>
+       <arg name="param_file" value="$(var imu_corrector_param_file)"/>
+     </include>
+ 
+-    <include file="$(find-pkg-share imu_corrector)/launch/gyro_bias_estimator.launch.xml">
++    <include file="$(find-pkg-share autoware_imu_corrector)/launch/gyro_bias_estimator.launch.xml">
+       <arg name="input_imu_raw" value="$(var imu_raw_name)"/>
+       <arg name="input_odom" value="/localization/kinematic_state"/>
+       <arg name="imu_corrector_param_file" value="$(var imu_corrector_param_file)"/>
+diff --git a/sample_sensor_kit_launch/launch/lidar.launch.xml b/sample_sensor_kit_launch/launch/lidar.launch.xml
+index 6d3ecf7..4198f89 100644
+--- a/sample_sensor_kit_launch/launch/lidar.launch.xml
++++ b/sample_sensor_kit_launch/launch/lidar.launch.xml
+@@ -1,7 +1,7 @@
+ <launch>
+   <arg name="launch_driver" default="true"/>
+   <arg name="host_ip" default="192.168.1.10"/>
+-  <arg name="use_concat_filter" default="true"/>
++  <arg name="use_concat_filter" default="false"/>
+   <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
+   <arg name="vehicle_mirror_param_file"/>
+   <arg name="pointcloud_container_name" default="pointcloud_container"/>
+@@ -11,7 +11,7 @@
+ 
+     <group>
+       <push-ros-namespace namespace="top"/>
+-      <include file="$(find-pkg-share common_sensor_launch)/launch/hesai_xt32.launch.xml">
++      <include file="$(find-pkg-share common_sensor_launch)/launch/hesai_xt32.launch.xml" if="$(var launch_driver)">
+         <arg name="max_range" value="250.0"/>
+         <arg name="sensor_frame" value="hesai"/>
+         <arg name="sensor_ip" value="192.168.1.201"/>
+@@ -22,6 +22,13 @@
+         <arg name="vehicle_mirror_param_file" value="$(var vehicle_mirror_param_file)"/>
+         <arg name="container_name" value="pointcloud_container"/>
+       </include>
++
++      <node pkg="topic_tools" exec="relay" name="pandar_points_relay" output="log" unless="$(var launch_driver)">
++        <param name="input_topic" value="/pandar_points"/>
++        <param name="output_topic" value="pointcloud_before_sync"/>
++        <param name="type" value="sensor_msgs/msg/PointCloud2"/>
++        <param name="reliability" value="best_effort"/>
++      </node>
+     </group>
+ 
+ <!--    <group>-->
+@@ -75,8 +82,9 @@
+ <!--      </include>-->
+ <!--    </group>-->
+ 
+-    <include file="$(find-pkg-share sample_sensor_kit_launch)/launch/pointcloud_preprocessor.launch.py">
++    <include file="$(find-pkg-share sample_sensor_kit_launch)/launch/pointcloud_preprocessor.launch.py" if="$(var use_concat_filter)">
+       <arg name="base_frame" value="base_link"/>
++      <arg name="use_concat_filter" value="$(var use_concat_filter)"/>
+       <arg name="use_intra_process" value="true"/>
+       <arg name="use_multithread" value="true"/>
+       <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
+diff --git a/sample_sensor_kit_launch/launch/pointcloud_preprocessor.launch.py b/sample_sensor_kit_launch/launch/pointcloud_preprocessor.launch.py
+index 24c66aa..50f4abf 100644
+--- a/sample_sensor_kit_launch/launch/pointcloud_preprocessor.launch.py
++++ b/sample_sensor_kit_launch/launch/pointcloud_preprocessor.launch.py
+@@ -31,7 +31,7 @@ def launch_setup(context, *args, **kwargs):
+         plugin="autoware::pointcloud_preprocessor::PointCloudConcatenateDataSynchronizerComponent",
+         name="concatenate_data",
+         remappings=[
+-            ("~/input/twist", "/applanix/lvx_client/twist_with_covariance"),
++            ("~/input/twist", "/localization/twist_estimator/twist_with_covariance"),
+             ("output", "concatenated/pointcloud"),
+         ],
+         parameters=[
+@@ -64,6 +64,7 @@ def generate_launch_description():
+         launch_arguments.append(DeclareLaunchArgument(name, default_value=default_value))
+ 
+     add_launch_arg("base_frame", "base_link")
++    add_launch_arg("use_concat_filter", "false")
+     add_launch_arg("use_multithread", "False")
+     add_launch_arg("use_intra_process", "False")
+     add_launch_arg("pointcloud_container_name", "pointcloud_container")
+diff --git a/sample_sensor_kit_launch/launch/sensing.launch.xml b/sample_sensor_kit_launch/launch/sensing.launch.xml
+index 192ae75..7176cce 100644
+--- a/sample_sensor_kit_launch/launch/sensing.launch.xml
++++ b/sample_sensor_kit_launch/launch/sensing.launch.xml
+@@ -18,7 +18,7 @@
+     </include> -->
+ 
+     <!-- IMU Driver -->
+-    <include file="$(find-pkg-share sample_sensor_kit_launch)/launch/imu.launch.xml">
++    <include file="$(find-pkg-share sample_sensor_kit_launch)/launch/imu.launch.xml" if="$(var launch_driver)">
+       <arg name="launch_driver" value="$(var launch_driver)"/>
+     </include>
+ 
+@@ -28,7 +28,7 @@
+     </include>
+ 
+     <!-- Vehicle Velocity Converter  -->
+-    <include file="$(find-pkg-share vehicle_velocity_converter)/launch/vehicle_velocity_converter.launch.xml">
++    <include file="$(find-pkg-share autoware_vehicle_velocity_converter)/launch/vehicle_velocity_converter.launch.xml" if="$(var launch_driver)">
+       <arg name="input_vehicle_velocity_topic" value="/vehicle/status/velocity_status"/>
+       <arg name="output_twist_with_covariance" value="/sensing/vehicle_velocity_converter/twist_with_covariance"/>
+     </include>
+diff --git a/sample_sensor_kit_launch/package.xml b/sample_sensor_kit_launch/package.xml
+index 210c5a8..5a12f0d 100644
+--- a/sample_sensor_kit_launch/package.xml
++++ b/sample_sensor_kit_launch/package.xml
+@@ -10,9 +10,10 @@
+ 
+   <buildtool_depend>ament_cmake_auto</buildtool_depend>
+ 
++  <exec_depend>autoware_gnss_poser</exec_depend>
+   <exec_depend>autoware_pointcloud_preprocessor</exec_depend>
++  <exec_depend>autoware_vehicle_velocity_converter</exec_depend>
+   <exec_depend>common_sensor_launch</exec_depend>
+-  <exec_depend>gnss_poser</exec_depend>
+   <exec_depend>tamagawa_imu_driver</exec_depend>
+   <exec_depend>topic_tools</exec_depend>
+   <exec_depend>ublox_gps</exec_depend>

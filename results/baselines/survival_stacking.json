@@ -1,0 +1,165 @@
+{
+ "method": "survival stacking (discrete hazard on 41-pt asinh grid, GBDT classifier, no monotone constraint)",
+ "seed": 20260803,
+ "axes": {
+  "lon": {
+   "t_max": 253.7061153411863,
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "viol_raw": 0.0,
+     "twIBS": 0.01394,
+     "auroc_T1": 0.91729,
+     "ECE_T1_unweighted": 0.0233,
+     "ECE_pairs": 0.0119,
+     "q90_coverage_conformal": 0.9452,
+     "mean_width_asinh": 1.1699,
+     "cov_by_band": {
+      "normal": 0.983,
+      "middle": 0.327,
+      "div": 0.834
+     },
+     "conformal_shift": 0.0789
+    },
+    "holdout": {
+     "n": 10827,
+     "viol_raw": 0.0,
+     "twIBS": 0.01272,
+     "auroc_T1": 0.99941,
+     "ECE_T1_unweighted": 0.0045,
+     "ECE_pairs": 0.0025,
+     "q90_coverage_conformal": 0.9519,
+     "mean_width_asinh": 1.1806,
+     "cov_by_band": {
+      "normal": 0.977,
+      "middle": 0.936,
+      "div": 0.737
+     },
+     "conformal_shift": 0.0789
+    },
+    "crossroute": {
+     "n": 6023,
+     "viol_raw": 0.0,
+     "twIBS": 0.03225,
+     "auroc_T1": 0.99531,
+     "ECE_T1_unweighted": 0.0322,
+     "ECE_pairs": 0.0252,
+     "q90_coverage_conformal": 0.9223,
+     "mean_width_asinh": 0.7552,
+     "cov_by_band": {
+      "normal": 0.993,
+      "middle": 0.456,
+      "div": 0.23
+     },
+     "conformal_shift": 0.0789
+    }
+   }
+  },
+  "lat": {
+   "t_max": 298.4068466186521,
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "viol_raw": 0.0,
+     "twIBS": 0.01505,
+     "auroc_T1": 0.98961,
+     "ECE_T1_unweighted": 0.0083,
+     "ECE_pairs": 0.0066,
+     "q90_coverage_conformal": 0.925,
+     "mean_width_asinh": 0.9707,
+     "cov_by_band": {
+      "normal": 0.957,
+      "middle": 0.596,
+      "div": 0.76
+     },
+     "conformal_shift": -0.0156
+    },
+    "holdout": {
+     "n": 10827,
+     "viol_raw": 0.0,
+     "twIBS": 0.0225,
+     "auroc_T1": 0.98847,
+     "ECE_T1_unweighted": 0.0201,
+     "ECE_pairs": 0.0138,
+     "q90_coverage_conformal": 0.8911,
+     "mean_width_asinh": 0.9415,
+     "cov_by_band": {
+      "normal": 0.96,
+      "middle": 0.551,
+      "div": 0.452
+     },
+     "conformal_shift": -0.0156
+    },
+    "crossroute": {
+     "n": 6023,
+     "viol_raw": 0.0,
+     "twIBS": 0.032,
+     "auroc_T1": 0.97743,
+     "ECE_T1_unweighted": 0.0524,
+     "ECE_pairs": 0.0258,
+     "q90_coverage_conformal": 0.8727,
+     "mean_width_asinh": 0.4735,
+     "cov_by_band": {
+      "normal": 0.949,
+      "middle": 0.144,
+      "div": 0.242
+     },
+     "conformal_shift": -0.0156
+    }
+   }
+  },
+  "yaw": {
+   "t_max": 179.91360473632812,
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "viol_raw": 0.0,
+     "twIBS": 0.02875,
+     "auroc_T1": 0.99192,
+     "ECE_T1_unweighted": 0.0073,
+     "ECE_pairs": 0.0114,
+     "q90_coverage_conformal": 0.9197,
+     "mean_width_asinh": 1.4946,
+     "cov_by_band": {
+      "normal": 0.943,
+      "middle": 0.799,
+      "div": 0.739
+     },
+     "conformal_shift": 0.0625
+    },
+    "holdout": {
+     "n": 10827,
+     "viol_raw": 0.0,
+     "twIBS": 0.02829,
+     "auroc_T1": 0.99234,
+     "ECE_T1_unweighted": 0.0103,
+     "ECE_pairs": 0.0117,
+     "q90_coverage_conformal": 0.919,
+     "mean_width_asinh": 1.4359,
+     "cov_by_band": {
+      "normal": 0.945,
+      "middle": 0.781,
+      "div": 0.73
+     },
+     "conformal_shift": 0.0625
+    },
+    "crossroute": {
+     "n": 6023,
+     "viol_raw": 0.0,
+     "twIBS": 0.04032,
+     "auroc_T1": 0.9674,
+     "ECE_T1_unweighted": 0.0354,
+     "ECE_pairs": 0.022,
+     "q90_coverage_conformal": 0.8096,
+     "mean_width_asinh": 1.1011,
+     "cov_by_band": {
+      "normal": 0.858,
+      "middle": 0.356,
+      "div": 0.373
+     },
+     "conformal_shift": 0.0625
+    }
+   }
+  }
+ }
+}

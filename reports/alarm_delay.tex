@@ -1,0 +1,20 @@
+\begin{table}[!t]
+\caption{Alarm latency on the final evaluation runs. An alarm is raised when the calibrated $S_a(x,T_{1,a}) \ge 0.5$ at a $0.5$\,s anchor. Sustained crossings are episodes in which the raw error stays above $T_{1,a}$ for at least the $1$\,s label window; transient crossings are any first exceedance. Delay is the first alarm time minus the crossing time (negative: the alarm precedes the crossing, which the $1$\,s look-ahead label permits). FA: false-alarm rate over anchors whose realized window error is below $T_{1,a}$.}
+\label{tab:delay}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{llcccccc}
+\toprule
+Set & Axis & Sust.\ ep. & Det. & Median [s] & Max [s] & $\le 1$\,s & FA \\
+\midrule
+Holdout & lon & 4 & 4 & -0.28 & 0.55 & 1.00 & 0.005 \\
+ & lat & 6 & 6 & -0.62 & -0.55 & 1.00 & 0.011 \\
+ & yaw & 4 & 4 & 0.47 & 1.00 & 1.00 & 0.013 \\
+\midrule
+Cross-route & lon & 4 & 4 & 1.80 & 2.30 & 0.00 & 0.072 \\
+ & lat & 6 & 6 & 1.18 & 43.40 & 0.50 & 0.008 \\
+ & yaw & 4 & 4 & 0.17 & 0.95 & 1.00 & 0.034 \\
+\bottomrule
+\end{tabular}
+\end{table}

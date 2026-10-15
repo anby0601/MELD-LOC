@@ -1,0 +1,16 @@
+scenario_id,role,route,family,mode,schedule,sector,seed,profile,covtype,replicate,split_role,cluster_id,recipe_group_id,run_status,frozen_cache,raw_run_dir
+healthy,ndt_covariance,routeA,healthy,dropout,0:0,-,150,std,laplace_raw,60,,,,VALID,,data/logs/ndt_covariance/healthy_std_laplace_raw_r60_a2
+healthy,ndt_covariance,routeA,healthy,dropout,0:0,-,150,std,laplace,60,,,,VALID,,data/logs/ndt_covariance/healthy_std_laplace_r60_a1
+ho_ls08,ndt_covariance,routeA,lateral_shear,lateral_shear,"0:0,300:0.8",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_ls08_std_laplace_cal_r61_a1
+ho_rc_early12,ndt_covariance,routeA,range_clip,range_clip,"0.00:60,16.20:40,42.40:25,78.30:16,134.97:12",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_rc_early12_std_laplace_cal_r61_a1
+ho_rd_6080,ndt_covariance,routeA,random_dropout,dropout,"0:0,28.51:0.65,111.37:0.7",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_rd_6080_std_laplace_cal_r61_a1
+ho_rd_7090,ndt_covariance,routeA,random_dropout,dropout,"0:0,28.51:0.669,111.37:0.749",-,150,std,laplace_raw,60,,,,VALID,,data/logs/ndt_covariance/ho_rd_7090_std_laplace_raw_r60_a4
+ho_rd_7090,ndt_covariance,routeA,random_dropout,dropout,"0:0,28.51:0.669,111.37:0.749",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_rd_7090_std_laplace_cal_r61_a1
+ho_rd_gradsweep,ndt_covariance,routeA,random_dropout,dropout,"0.00:0,28.51:0.6,111.37:0.8",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_rd_gradsweep_std_laplace_cal_r61_a1
+ho_rd_temporal80,ndt_covariance,routeA,random_dropout,dropout,"0.00:0,42.40:0.8",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_rd_temporal80_std_laplace_cal_r61_a1
+ho_rd_uniform60,ndt_covariance,routeA,random_dropout,dropout,"0.00:0,28.51:0.6",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_rd_uniform60_std_laplace_cal_r61_a1
+ho_sr_rear120,ndt_covariance,routeA,sector_remove,sector_remove,"0.00:0,28.51:60,78.30:90,134.97:120",rear,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_sr_rear120_std_laplace_cal_r61_a1
+ho_sr_right125,ndt_covariance,routeA,sector_remove,sector_remove,"0.00:0,28.51:60,78.30:90,134.97:125",right,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_sr_right125_std_laplace_cal_r61_a1
+ho_sr_right140,ndt_covariance,routeA,sector_remove,sector_remove,"0.00:0,28.51:60,78.30:100,134.97:140",right,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_sr_right140_std_laplace_cal_r61_a1
+ho_yr_1p2,ndt_covariance,routeA,yaw_rotate,yaw_rotate,"0.00:0,20.71:1.2",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_yr_1p2_std_laplace_cal_r61_a1
+ho_ys15,ndt_covariance,routeA,yaw_shear,yaw_shear,"0:0,300:1.5",-,151,std,laplace_cal,61,,,,VALID,,data/logs/ndt_covariance/ho_ys15_std_laplace_cal_r61_a1

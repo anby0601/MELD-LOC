@@ -1,0 +1,351 @@
+{
+ "method": "Q-multi (9 quantile GBDTs, asinh target) with (a) cummax [as used by Q-multi] vs (b) sorting rearrangement [Chernozhukov et al. 2010]",
+ "seed": 20260803,
+ "axes": {
+  "lon": {
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "quantile_crossing_rate_adjacent": 0.1685,
+     "anchors_with_any_crossing": 0.7455,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01677,
+       "auroc_T1": 0.9303,
+       "ECE_pairs": 0.0168,
+       "q90_coverage_conformal": 0.9454,
+       "mean_width_asinh": 1.3366,
+       "cov_mid": 0.389,
+       "conformal_shift": -0.0325
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01609,
+       "auroc_T1": 0.93056,
+       "ECE_pairs": 0.0126,
+       "q90_coverage_conformal": 0.9453,
+       "mean_width_asinh": 1.3369,
+       "cov_mid": 0.387,
+       "conformal_shift": -0.0235
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01687,
+       "auroc_T1": 0.92975,
+       "ECE_pairs": 0.0175,
+       "q90_coverage_conformal": 0.9453,
+       "mean_width_asinh": 1.3342,
+       "cov_mid": 0.384,
+       "conformal_shift": -0.0282
+      }
+     }
+    },
+    "holdout": {
+     "n": 10827,
+     "quantile_crossing_rate_adjacent": 0.1816,
+     "anchors_with_any_crossing": 0.7906,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01709,
+       "auroc_T1": 0.99747,
+       "ECE_pairs": 0.0122,
+       "q90_coverage_conformal": 0.9541,
+       "mean_width_asinh": 1.3478,
+       "cov_mid": 0.936,
+       "conformal_shift": -0.0325
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01627,
+       "auroc_T1": 0.9976,
+       "ECE_pairs": 0.0066,
+       "q90_coverage_conformal": 0.9542,
+       "mean_width_asinh": 1.3484,
+       "cov_mid": 0.936,
+       "conformal_shift": -0.0235
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01696,
+       "auroc_T1": 0.99736,
+       "ECE_pairs": 0.012,
+       "q90_coverage_conformal": 0.9514,
+       "mean_width_asinh": 1.3465,
+       "cov_mid": 0.936,
+       "conformal_shift": -0.0282
+      }
+     }
+    },
+    "crossroute": {
+     "n": 6023,
+     "quantile_crossing_rate_adjacent": 0.3309,
+     "anchors_with_any_crossing": 0.9899,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03023,
+       "auroc_T1": 0.90775,
+       "ECE_pairs": 0.0332,
+       "q90_coverage_conformal": 0.9452,
+       "mean_width_asinh": 1.1163,
+       "cov_mid": 0.684,
+       "conformal_shift": -0.0325
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.0278,
+       "auroc_T1": 0.91499,
+       "ECE_pairs": 0.0205,
+       "q90_coverage_conformal": 0.9444,
+       "mean_width_asinh": 1.0896,
+       "cov_mid": 0.684,
+       "conformal_shift": -0.0235
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.02827,
+       "auroc_T1": 0.90796,
+       "ECE_pairs": 0.0211,
+       "q90_coverage_conformal": 0.944,
+       "mean_width_asinh": 1.0321,
+       "cov_mid": 0.684,
+       "conformal_shift": -0.0282
+      }
+     }
+    }
+   }
+  },
+  "lat": {
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "quantile_crossing_rate_adjacent": 0.1878,
+     "anchors_with_any_crossing": 0.8151,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01729,
+       "auroc_T1": 0.96247,
+       "ECE_pairs": 0.0213,
+       "q90_coverage_conformal": 0.9296,
+       "mean_width_asinh": 1.2299,
+       "cov_mid": 0.557,
+       "conformal_shift": -0.1621
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.01628,
+       "auroc_T1": 0.96155,
+       "ECE_pairs": 0.0132,
+       "q90_coverage_conformal": 0.9284,
+       "mean_width_asinh": 1.2233,
+       "cov_mid": 0.555,
+       "conformal_shift": -0.1592
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 5e-06,
+       "twIBS": 0.01733,
+       "auroc_T1": 0.96046,
+       "ECE_pairs": 0.0211,
+       "q90_coverage_conformal": 0.9262,
+       "mean_width_asinh": 1.2054,
+       "cov_mid": 0.514,
+       "conformal_shift": -0.1832
+      }
+     }
+    },
+    "holdout": {
+     "n": 10827,
+     "quantile_crossing_rate_adjacent": 0.2069,
+     "anchors_with_any_crossing": 0.8514,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.02496,
+       "auroc_T1": 0.94782,
+       "ECE_pairs": 0.0224,
+       "q90_coverage_conformal": 0.9071,
+       "mean_width_asinh": 1.222,
+       "cov_mid": 0.539,
+       "conformal_shift": -0.1621
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.02442,
+       "auroc_T1": 0.9502,
+       "ECE_pairs": 0.0112,
+       "q90_coverage_conformal": 0.9063,
+       "mean_width_asinh": 1.2121,
+       "cov_mid": 0.528,
+       "conformal_shift": -0.1592
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.02539,
+       "auroc_T1": 0.94553,
+       "ECE_pairs": 0.0228,
+       "q90_coverage_conformal": 0.9002,
+       "mean_width_asinh": 1.1943,
+       "cov_mid": 0.509,
+       "conformal_shift": -0.1832
+      }
+     }
+    },
+    "crossroute": {
+     "n": 6023,
+     "quantile_crossing_rate_adjacent": 0.3325,
+     "anchors_with_any_crossing": 0.9723,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.02817,
+       "auroc_T1": 0.89869,
+       "ECE_pairs": 0.0284,
+       "q90_coverage_conformal": 0.9176,
+       "mean_width_asinh": 0.8362,
+       "cov_mid": 0.28,
+       "conformal_shift": -0.1621
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.02822,
+       "auroc_T1": 0.89694,
+       "ECE_pairs": 0.0241,
+       "q90_coverage_conformal": 0.9175,
+       "mean_width_asinh": 0.8229,
+       "cov_mid": 0.272,
+       "conformal_shift": -0.1592
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.0299,
+       "auroc_T1": 0.88151,
+       "ECE_pairs": 0.0378,
+       "q90_coverage_conformal": 0.9138,
+       "mean_width_asinh": 0.807,
+       "cov_mid": 0.248,
+       "conformal_shift": -0.1832
+      }
+     }
+    }
+   }
+  },
+  "yaw": {
+   "sets": {
+    "devval": {
+     "n": 26151,
+     "quantile_crossing_rate_adjacent": 0.167,
+     "anchors_with_any_crossing": 0.7883,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03295,
+       "auroc_T1": 0.98492,
+       "ECE_pairs": 0.0091,
+       "q90_coverage_conformal": 0.9234,
+       "mean_width_asinh": 1.6764,
+       "cov_mid": 0.881,
+       "conformal_shift": 0.0239
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03236,
+       "auroc_T1": 0.98669,
+       "ECE_pairs": 0.0071,
+       "q90_coverage_conformal": 0.9234,
+       "mean_width_asinh": 1.6709,
+       "cov_mid": 0.878,
+       "conformal_shift": 0.0276
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03336,
+       "auroc_T1": 0.98562,
+       "ECE_pairs": 0.0112,
+       "q90_coverage_conformal": 0.9212,
+       "mean_width_asinh": 1.664,
+       "cov_mid": 0.859,
+       "conformal_shift": 0.015
+      }
+     }
+    },
+    "holdout": {
+     "n": 10827,
+     "quantile_crossing_rate_adjacent": 0.1899,
+     "anchors_with_any_crossing": 0.8405,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03204,
+       "auroc_T1": 0.98858,
+       "ECE_pairs": 0.009,
+       "q90_coverage_conformal": 0.9305,
+       "mean_width_asinh": 1.6154,
+       "cov_mid": 0.875,
+       "conformal_shift": 0.0239
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03168,
+       "auroc_T1": 0.98955,
+       "ECE_pairs": 0.0055,
+       "q90_coverage_conformal": 0.9307,
+       "mean_width_asinh": 1.609,
+       "cov_mid": 0.863,
+       "conformal_shift": 0.0276
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.03269,
+       "auroc_T1": 0.98859,
+       "ECE_pairs": 0.0118,
+       "q90_coverage_conformal": 0.9283,
+       "mean_width_asinh": 1.6031,
+       "cov_mid": 0.852,
+       "conformal_shift": 0.015
+      }
+     }
+    },
+    "crossroute": {
+     "n": 6023,
+     "quantile_crossing_rate_adjacent": 0.2697,
+     "anchors_with_any_crossing": 0.9678,
+     "variants": {
+      "cummax": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.04055,
+       "auroc_T1": 0.94513,
+       "ECE_pairs": 0.0197,
+       "q90_coverage_conformal": 0.9168,
+       "mean_width_asinh": 1.5122,
+       "cov_mid": 0.811,
+       "conformal_shift": 0.0239
+      },
+      "sorted": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.04043,
+       "auroc_T1": 0.9468,
+       "ECE_pairs": 0.014,
+       "q90_coverage_conformal": 0.9142,
+       "mean_width_asinh": 1.4895,
+       "cov_mid": 0.804,
+       "conformal_shift": 0.0276
+      },
+      "raw_unprojected": {
+       "viol_curve_raw": 0.0,
+       "twIBS": 0.04105,
+       "auroc_T1": 0.94524,
+       "ECE_pairs": 0.0135,
+       "q90_coverage_conformal": 0.8977,
+       "mean_width_asinh": 1.4471,
+       "cov_mid": 0.774,
+       "conformal_shift": 0.015
+      }
+     }
+    }
+   }
+  }
+ }
+}

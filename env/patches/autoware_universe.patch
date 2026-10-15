@@ -1,0 +1,27 @@
+diff --git a/localization/yabloc/yabloc_image_processing/src/lanelet2_overlay/lanelet2_overlay_core.cpp b/localization/yabloc/yabloc_image_processing/src/lanelet2_overlay/lanelet2_overlay_core.cpp
+index 948f5764e..235ddd40b 100644
+--- a/localization/yabloc/yabloc_image_processing/src/lanelet2_overlay/lanelet2_overlay_core.cpp
++++ b/localization/yabloc/yabloc_image_processing/src/lanelet2_overlay/lanelet2_overlay_core.cpp
+@@ -157,8 +157,8 @@ void Lanelet2Overlay::draw_overlay_line_segments(
+     bool p2_is_visible = from_camera2.z() > epsilon;
+     if ((!p1_is_visible) && (!p2_is_visible)) return {false, cv::Point2i{}, cv::Point2i{}};
+ 
+-    Eigen::Vector3f uv1;
+-    Eigen::Vector3f uv2;
++    Eigen::Vector3f uv1 = Eigen::Vector3f::Zero();
++    Eigen::Vector3f uv2 = Eigen::Vector3f::Zero();
+     if (p1_is_visible) uv1 = from_camera1 / from_camera1.z();
+     if (p2_is_visible) uv2 = from_camera2 / from_camera2.z();
+ 
+diff --git a/sensing/autoware_cuda_pointcloud_preprocessor/CMakeLists.txt b/sensing/autoware_cuda_pointcloud_preprocessor/CMakeLists.txt
+index a828845af..0061fefaa 100644
+--- a/sensing/autoware_cuda_pointcloud_preprocessor/CMakeLists.txt
++++ b/sensing/autoware_cuda_pointcloud_preprocessor/CMakeLists.txt
+@@ -46,6 +46,7 @@ include_directories(
+     include
+     SYSTEM
+     ${CUDA_INCLUDE_DIRS}
++    ${CUDA_INCLUDE_DIRS}/cccl
+ )
+ 
+ # cSpell: ignore expt

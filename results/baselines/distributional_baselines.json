@@ -1,0 +1,106 @@
+{
+ "status": "DISTRIBUTIONAL_BASELINES (dev-val scoring)",
+ "spec": "Q-multi q10..q90 in asinh space, maximum.accumulate, arcsinh piecewise-linear, clipped extrapolation / K-indep calibrated: is_unbalance=False + dev isotonic (equal group weights, same procedure as MELD)",
+ "n_boot": 600,
+ "axes": {
+  "lon": {
+   "twIBS": {
+    "MELD": 0.01389,
+    "K_indep_current(is_unbalance,uncalibrated)": 0.12555,
+    "K_indep_fixed(+isotonic)": 0.11241,
+    "Q_multi": 0.01677
+   },
+   "MELD_vs_Kfixed": {
+    "diff": -0.09851,
+    "CI": [
+     -0.10106,
+     -0.09307
+    ],
+    "verdict": "WIN"
+   },
+   "MELD_vs_Qmulti": {
+    "diff": -0.00288,
+    "CI": [
+     -0.00511,
+     -0.00145
+    ],
+    "verdict": "WIN"
+   },
+   "qmulti_crossing": {
+    "anchor_rate": 0.7455,
+    "pair_rate": 0.1685
+   },
+   "qmulti_monotone_violation": {
+    "pre_sort(adjacent_pair_crossing_rate)": 0.1685,
+    "post_sort_curve": 0.0
+   },
+   "qmulti_q90_coverage": 0.8489
+  },
+  "lat": {
+   "twIBS": {
+    "MELD": 0.01486,
+    "K_indep_current(is_unbalance,uncalibrated)": 0.12592,
+    "K_indep_fixed(+isotonic)": 0.11287,
+    "Q_multi": 0.01729
+   },
+   "MELD_vs_Kfixed": {
+    "diff": -0.09801,
+    "CI": [
+     -0.09995,
+     -0.09413
+    ],
+    "verdict": "WIN"
+   },
+   "MELD_vs_Qmulti": {
+    "diff": -0.00243,
+    "CI": [
+     -0.00575,
+     -0.00025
+    ],
+    "verdict": "WIN"
+   },
+   "qmulti_crossing": {
+    "anchor_rate": 0.815,
+    "pair_rate": 0.1877
+   },
+   "qmulti_monotone_violation": {
+    "pre_sort(adjacent_pair_crossing_rate)": 0.1877,
+    "post_sort_curve": 0.0
+   },
+   "qmulti_q90_coverage": 0.8816
+  },
+  "yaw": {
+   "twIBS": {
+    "MELD": 0.03049,
+    "K_indep_current(is_unbalance,uncalibrated)": 0.13702,
+    "K_indep_fixed(+isotonic)": 0.12545,
+    "Q_multi": 0.03295
+   },
+   "MELD_vs_Kfixed": {
+    "diff": -0.09496,
+    "CI": [
+     -0.09765,
+     -0.09016
+    ],
+    "verdict": "WIN"
+   },
+   "MELD_vs_Qmulti": {
+    "diff": -0.00246,
+    "CI": [
+     -0.00837,
+     0.00244
+    ],
+    "verdict": "POINT_WIN"
+   },
+   "qmulti_crossing": {
+    "anchor_rate": 0.7884,
+    "pair_rate": 0.1669
+   },
+   "qmulti_monotone_violation": {
+    "pre_sort(adjacent_pair_crossing_rate)": 0.1669,
+    "post_sort_curve": 0.0
+   },
+   "qmulti_q90_coverage": 0.8008
+  }
+ }
+}
