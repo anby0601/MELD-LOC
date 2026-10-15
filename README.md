@@ -73,7 +73,7 @@ stress sets, and runs with the matcher's Hessian covariance output enabled.
 
 ```
 data/indices/   cohort tables, one per role (development, holdout, crossroute, stress, ndt_covariance)
-data/logs/      run logs (not in git; from the data archive or regenerated with datagen/)
+data/logs/      run logs (not in the repository; regenerated with datagen/)
 datagen/        CARLA + Autoware scenario runner: generate_<role>.sh, perturbation node, routes, map tools
 env/            the pinned Autoware workspace (sub-repository commits, patches, sensor kit), CARLA, maps
 models/         feature extraction, the model, training, baselines, evaluation scripts, trained models
@@ -91,7 +91,7 @@ threads), 32 GB RAM, NVIDIA RTX 3090 (24 GB).
 | what you want to run | needs |
 |---|---|
 | scoring, tables and figures from the shipped files | Linux or macOS, Python 3.10, about 2 GB RAM; no GPU. The scripts use up to 12 threads (`n_jobs` in `meldloc_core.py`) and simply take longer on fewer cores: re-scoring the development split takes about 2 min, the feature-pruning and seed-variability retrainings about 30 min each on this machine |
-| rerunning the pipeline from the run logs | the above plus the data archive (0.9 GB of logs); feature extraction reads every log once (a few minutes) |
+| rerunning the pipeline from run logs | the above plus the run logs (0.9 GB for the archived cohorts, not in the repository); feature extraction reads every log once (a few minutes) |
 | generating new runs | Ubuntu 22.04, ROS 2 Humble, the Autoware workspace of `env/README.md` (about 5 GB built), CARLA 0.9.15 (19 GB) and the two maps (0.9 GB); an NVIDIA GPU for CARLA (run at `-quality-level=Low`, the RTX 3090 is far more than needed). One run takes about 6 min wall-clock including the CARLA restart, so a full role is hours to a day |
 
 ## Installation
@@ -117,7 +117,7 @@ python3 models/meldloc/seed_variability_summary.py
 python3 figures/plot_validity.py --lang en       # figures/out/validity_en.{pdf,png,svg}
 ```
 
-With the run logs under `data/logs/` (see Data) the whole pipeline can be rerun:
+With run logs under `data/logs/` (regenerated with `datagen/`, see Data) the whole pipeline can be rerun:
 
 ```
 python3 models/features/build_features.py        # logs -> results/features/development_features.npz
@@ -143,10 +143,11 @@ the archived logs.
 ## Data
 
 Each cohort table in `data/indices/` has one row per run with the executed recipe (perturbation
-mode, schedule, sector, seed, speed profile, covariance option) and the run directory. The run
-logs (about 0.9 GB) and the two maps are archived separately: *link to be added*. A run directory
-holds the logged matcher signals and ground truth (`long_route_pilot.csv`), the perturbation log
-and the executed command line (`commands.txt`).
+mode, schedule, sector, seed, speed profile, covariance option) and the run directory. The raw
+run logs (about 0.9 GB) and the two maps are not part of this repository; the processed feature
+files in `results/features/` are their output, so every analysis after feature extraction runs
+without them. A run directory produced by `datagen/` holds the logged matcher signals and ground
+truth (`long_route_pilot.csv`), the perturbation log and the executed command line (`commands.txt`).
 
 ## License
 

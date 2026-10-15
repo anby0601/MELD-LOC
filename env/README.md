@@ -69,7 +69,7 @@ importable by the system `python3` used for the generation scripts (`import carl
 ## Maps
 
 The localization stack loads `$AUTOWARE_MAP_DIR/<Town>/{pointcloud_map.pcd, lanelet2_map.osm, map_projector_info.yaml}`.
-The maps are part of the data archive. They were built with the two tools in `../datagen/tools/`:
+The maps are not part of the repository; they are built with the two tools in `../datagen/tools/`:
 `mapping_sweep.py` accumulates LiDAR scans at ground-truth poses along every lane (the point clouds
 shipped with CARLA do not register well enough with the run-time LiDAR), and `xodr_to_lanelet2.py`
 converts the town's OpenDRIVE file into the lanelet2 map. Town01 (routeA, 16.7 M points) and Town02

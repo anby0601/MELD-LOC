@@ -38,15 +38,16 @@ python3 models/meldloc/devval_scoring.py     # re-scores the development-validat
 python3 models/meldloc/seed_variability_summary.py
 ```
 
-`models/frozen/` holds the models every result file was computed with; `train.py` writes to `models/trained/`
-because a retraining reproduces the metrics closely but not bit-identically (LightGBM's histogram layout and
-thread scheduling are not deterministic), and the evaluation scripts verify the shipped models against
-`results/evaluation/model_freeze_manifest.json` before scoring.
+`models/frozen/` holds the models every result file was computed with. `train.py` writes to `models/trained/`
+and leaves them untouched: the shipped models were produced by an earlier revision of the same training
+code, and a rerun reproduces their metrics to about 1e-3 but not the files bit-for-bit. The evaluation
+scripts verify the shipped models against `results/evaluation/model_freeze_manifest.json` before scoring.
+(The seed-variability runs, made with the current code, do reproduce bit-for-bit.)
 
 `build_features.py` reproduces the frozen cache (237 runs; the 18 development runs marked `frozen_cache = 0`
 in the index are skipped unless `--all` is given, see `data/indices/README.md`).
 
 Scripts marked "run logs" need the run directories under `data/logs/<role>/` and the per-role
-`ledger.csv` (both in the data archive, or produced by `datagen/generate_<role>.sh`); the shipped
+`ledger.csv` (produced by `datagen/generate_<role>.sh`; the archived logs are not part of the repository); the shipped
 `results/features/*.npz` files are their outputs, so the later stages run without the logs.
 Scripts that use the trained models first re-verify `results/evaluation/model_freeze_manifest.json`.
