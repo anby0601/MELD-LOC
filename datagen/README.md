@@ -33,14 +33,13 @@ up to four times. The scripts are re-runnable: valid rows in the ledger are skip
    covariance sets, as in the original runs).
 
 `commands.txt` in each run directory records the executed recipe; the recipe tables were built
-from exactly these files for the archived runs.
+from exactly these files for the original runs.
 
 ## Reproduction notes
 
 - CARLA is not deterministic across machines or restarts. Regenerated runs follow the same
-  recipes but are not bit-identical to the archived logs (see the top-level README for the data
-  archive).
-- The archived cohorts were produced over several campaigns with earlier revisions of this
+  recipes but are not bit-identical to the original logs (which are not part of the repository).
+- The original cohorts were produced over several campaigns with earlier revisions of this
   runner. The perturbation node shipped here is the final one; the earlier revision used for the
   first 58 development runs differs only in lacking the non-rigid and longitudinal modes, and the
   rigid-mode kernels (`nodes/awsim_kernels/`) are identical. The logger shipped here is the
